@@ -15,7 +15,7 @@ const {
   type = 'website' 
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://mentor.group');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.mentorgroup.com.tr');
 
 // Formulate TR and EN routes for hreflang tag links
 const currentPath = Astro.url.pathname;
@@ -35,8 +35,8 @@ if (hasTrPrefix) {
   hreflangEnPath = '/en' + currentPath;
 }
 
-const hreflangTr = new URL(hreflangTrPath, Astro.site || 'https://mentor.group');
-const hreflangEn = new URL(hreflangEnPath, Astro.site || 'https://mentor.group');
+const hreflangTr = new URL(hreflangTrPath, Astro.site || 'https://www.mentorgroup.com.tr');
+const hreflangEn = new URL(hreflangEnPath, Astro.site || 'https://www.mentorgroup.com.tr');
 ---
 
 <!-- Core Metadata -->
