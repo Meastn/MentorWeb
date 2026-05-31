@@ -3,14 +3,14 @@
 import Layout from '../../../layouts/Layout.astro';
 
 const pageTitle = "İlk Değerlendirme Randevusu";
-const pageDesc = "Türkiye’de yapacağınız yatırımlar ve teşvik başvuruları için resmi durum tespit görüşmesi kapsamı ve dosya giriş formu.";
+const pageDesc = "Türkiye’de yapacağınız yatırımlar ve teşvik başvuruları için durum tespit görüşmesi kapsamı ve dosya giriş formu.";
 
 // Scope Table Content
 const scopeInclusions = [
-  'Mevcut durum analizi ve temel stratejik hedeflerinizin resmi kaydı',
+  'Mevcut durum analizi ve temel stratejik hedeflerinizin kaydı',
   'Yatırımınıza uygun idari teşvik ve mevzuat alanlarının tespiti',
   'Eşgüdümlü yönetilmesi gereken idari süreçlerin listelenmesi',
-  'İlk aşamada ihtiyaç duyulacak resmî evrak ve bilgi listesinin çıkarılması',
+  'İlk aşamada ihtiyaç duyulacak evrak ve bilgi listesinin çıkarılması',
   'Mentor Group ile çalışabileceğiniz sonraki aşamaların yol haritası'
 ];
 
@@ -18,7 +18,7 @@ const scopeExclusions = [
   'Nihai yasal uygunluk taahhüdü ve bağlayıcı vergi/vatandaşlık garantisi',
   'Bakanlıkların teşvik onay kararları hakkında kesin taahhüt',
   'Derinlemesine mali/teknik fizibilite raporu hazırlığı',
-  'Görüşme süresince resmi başvuru dosyalarının hazırlanması veya tescili',
+  'Görüşme süresince başvuru dosyalarının hazırlanması veya tescili',
   'İlk seans dışındaki araştırma, dilekçe yazımı veya masa başı çalışmaları'
 ];
 ---
@@ -28,17 +28,17 @@ const scopeExclusions = [
   <section class="py-xl">
     <div class="ledger-container">
       
-      <!-- 01. OFFICIAL INTAKE DOSSIER HEADER -->
+      <!-- 01. ADVISORY INTAKE DOSSIER HEADER -->
       <div class="dossier-box">
         <div class="dossier-header-bar">
           <span class="ref-stamp">REF: MG-2026-TR-ADVISORY</span>
-          <span class="classification-stamp">[ CLASSIFICATION: MANDATORY / INTAKE ]</span>
+          <span class="classification-stamp">[ ADVISORY INTAKE DOSSIER ]</span>
         </div>
 
         <div class="hero-title-box">
           <span class="sec-number">05. İLK DEĞERLENDİRME RANDEVUSU</span>
           <h1 class="hero-main-title">Durum Tespit & İlk Değerlendirme</h1>
-          <p class="hero-subtitle">Türkiye’deki yatırım projeleriniz için 30 dakikalık resmi durum tespit görüşmesini başlatmadan önce, kapsamı incelemeniz ve dosya girişini tamamlamanız gerekmektedir.</p>
+          <p class="hero-subtitle">Türkiye’deki yatırım projeleriniz için 30 dakikalık durum tespit görüşmesini başlatmadan önce, kapsamı incelemeniz ve dosya girişini tamamlamanız gerekmektedir.</p>
           <hr class="double-rule" />
         </div>
 
@@ -91,7 +91,7 @@ const scopeExclusions = [
 
           <!-- STAGE 1: Intake Form -->
           <div class="wizard-panel active" id="wizard-panel-form">
-            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: var(--space-md);">Resmi Yatırım Dosyası Giriş Formu</h3>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: var(--space-md);">Yatırım Dosyası Giriş Formu</h3>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-lg);">Görüşmenizin maksimum verimle geçmesi amacıyla aşağıdaki tüm alanları eksiksiz doldurunuz. Girilen veriler KVKK uyarınca Mentor Group güvencesindedir.</p>
 
             <form id="intake-form" class="retro-form">

@@ -9,32 +9,32 @@ const { locale = 'tr' } = Astro.props;
 const isEn = locale === 'en';
 
 const translations = {
-  secTitle: isEn ? 'ADVISORY COMPLIANCE TERMINAL' : 'STRATEJİK DANIŞMA UYUM TERMİNALİ',
-  refStamp: isEn ? 'TERM-REF: AC-2026-EN' : 'TERM-REF: DU-2026-TR',
+  secTitle: isEn ? 'REGULATORY KNOWLEDGE PANEL' : 'MEVZUAT BİLGİ PANELİ',
+  refStamp: isEn ? 'TERM-REF: KP-2026-EN' : 'TERM-REF: BP-2026-TR',
   tagline: isEn 
-    ? 'RESTRICTED INFORMATION ACCESS: Mentor Group Verified Content Base'
-    : 'YETKİLİ BİLGİ ERİŞİMİ: Mentor Group Doğrulanmış Mevzuat Veri Tabanı',
+    ? 'ADVISORY KNOWLEDGE FILE: Mentor Group Verified Information Base'
+    : 'MEVZUAT BİLGİ DOSYASI: Mentor Group Doğrulanmış Bilgi Paneli',
   placeholder: isEn ? 'Enter your regulatory query...' : 'Mevzuat veya teşvik sorunuzu yazın...',
-  submitBtn: isEn ? 'QUERY DATA BASE' : 'VERİ TABANINI SORGULA',
+  submitBtn: isEn ? 'SEARCH KNOWLEDGE BASE' : 'BİLGİ PANELİNDE ARA',
   disclaimer: isEn
-    ? 'COMPLIANCE CLEARANCE NOTICE: The provided brief is strictly informational and extracted from approved regulatory sources. No legal, fiscal, or citizenship guarantees are given. Complex dossiers require direct executive partner overview.'
-    : 'DANIŞMA VE UYUM BEYANI: Sunulan veriler yalnızca genel bilgilendirme amaçlı olup, akredite mevzuat kaynaklarından derlenmiştir. Hukuki, vergisel ya da vatandaşlık hak kazanımı garantisi teşkil etmez. Karmaşık dosyaların nihai incelenmesi için uzman ortaklarımızın incelemesi zorunludur.',
+    ? 'COMPLIANCE AUDIT NOTICE: The provided brief is strictly informational and extracted from verified regulatory sources. No legal, fiscal, or citizenship guarantees are given. Complex dossiers require direct expert partner overview.'
+    : 'DANIŞMA VE UYUM BEYANI: Sunulan veriler yalnızca genel bilgilendirme amaçlı olup, doğrulanmış mevzuat kaynaklarından derlenmiştir. Hukuki, vergisel ya da vatandaşlık hak kazanımı garantisi teşkil etmez. Karmaşık dosyaların nihai incelenmesi için uzman ortaklarımızın incelemesi zorunludur.',
   
-  samplePromptsLabel: isEn ? 'Select Approved Dossier Scope:' : 'Onaylı İnceleme Konuları:',
+  samplePromptsLabel: isEn ? 'Select Advisory Dossier Scope:' : 'Onaylı İnceleme Konuları:',
   
   samplePrompts: isEn
     ? [
-        { q: 'What is the minimum capital for company formation?', a: 'Under the Turkish Commercial Code (TCC), the minimum capital for a Limited Liability Company (Limited Şirket) is 10,000 TRY (though a higher threshold is strongly recommended for operational credibility and banking clearance). For a Joint Stock Company (Anonim Şirket), the statutory minimum is 50,000 TRY. To schedule formal dossier preparation, please book our Initial Advisory Session.' },
-        { q: 'What supports are included in the Investment Incentive Certificate?', a: 'The Investment Incentive Certificate (Yatırım Teşvik Belgesi) offers tiered benefits based on location (Regions 1 to 6) and scope. Typical benefits include VAT exemption, Customs Duty exemption, corporate tax reduction, social security premium support (employer share), and interest rate support for loans. Precise incentive calculations require scoping. To proceed, book our Initial Advisory Session.' },
-        { q: 'Can you guarantee residence permits or citizenship approvals?', a: 'No. Mentor Group explicitly avoids guaranteeing any administrative, residency, or citizenship approvals. All relocation and citizenship applications undergo strict sovereign review by Turkish ministries. Mentor Group assists in organizing corporate dossiers and coordinating legal representation through qualified partners. Book an Initial Advisory Session to clarify documents.' }
+        { q: 'What is the minimum capital for company formation?', a: 'Under the Turkish Commercial Code (TCC), the minimum capital for a Limited Liability Company (Limited Şirket) is 10,000 TRY (though a higher threshold is strongly recommended for operational credibility and banking clearance). For a Joint Stock Company (Anonim Şirket), the statutory minimum is 50,000 TRY. To schedule formal dossier preparation, please book our Initial Review.' },
+        { q: 'What supports are included in the Investment Incentive Certificate?', a: 'The Investment Incentive Certificate (Yatırım Teşvik Belgesi) offers tiered benefits based on location (Regions 1 to 6) and scope. Typical benefits include VAT exemption, Customs Duty exemption, corporate tax reduction, social security premium support (employer share), and interest rate support for loans. Precise incentive calculations require scoping. To proceed, book our Initial Review.' },
+        { q: 'Can you guarantee residence permits or citizenship approvals?', a: 'No. Mentor Group explicitly avoids guaranteeing any administrative, residency, or citizenship approvals. All relocation and citizenship applications undergo strict sovereign review by Turkish ministries. Mentor Group assists in organizing corporate dossiers and coordinating legal representation through qualified partners. Book an Initial Review to clarify documents.' }
       ]
     : [
         { q: 'Yatırım Teşvik Belgesi başvurusu için asgari yatırım tutarı nedir?', a: 'Yatırım Teşvik Belgesi (YTB) kapsamında genel teşvik uygulamaları için asgari sabit yatırım tutarı 1. ve 2. bölgelerde 3 Milyon TL, 3., 4., 5. ve 6. bölgelerde ise 1.5 Milyon TL’dir. Stratejik yatırımlarda asgari tutar 50 Milyon TL olarak uygulanmaktadır. Şirketinizin uygunluk analizini yapmak üzere "İlk Değerlendirme Randevusu" almanızı öneririz.' },
         { q: 'Yabancı yatırımcılar Türkiye’de doğrudan şirket kurabilir mi?', a: 'Evet. Türkiye’deki Doğrudan Yabancı Yatırımlar Kanunu uyarınca, yabancı yatırımcılar yerli yatırımcılarla aynı haklara sahiptir ve %100 yabancı sermayeli limited veya anonim şirket kurabilirler. Kuruluş süreci vergi kimlik numarası alımı, şirket ana sözleşmesinin MERSİS üzerinden tescili ve banka hesabı blokaj işlemlerini kapsar. Detaylı planlama için danışmanlık talep edebilirsiniz.' },
-        { q: 'Devlet desteklerinde kesin hak kazanım garantisi veriliyor mu?', a: 'Hayır. Mentor Group, hiçbir devlet desteği, hibe veya teşvik başvurusunda nihai onay garantisi taahhüt etmez. Tüm onaylar T.C. Sanayi ve Teknoloji Bakanlığı ile ilgili resmi kurumların münhasır yetkisindedir. Mentor Group, dosyanın mevzuata tam uyumlu hazırlanmasını ve idari takip sürecini üstlenir. İlk Değerlendirme Randevusu alarak riskleri inceleyebilirsiniz.' }
+        { q: 'Devlet desteklerinde kesin hak kazanım garantisi veriliyor mu?', a: 'Hayır. Mentor Group, hiçbir devlet desteği, hibe veya teşvik başvurusunda nihai onay garantisi taahhüt etmez. Tüm onaylar T.C. Sanayi ve Teknoloji Bakanlığı ile ilgili yetkili kurumların münhasır yetkisindedir. Mentor Group, dosyanın mevzuata tam uyumlu hazırlanmasını ve idari takip sürecini üstlenir. İlk Değerlendirme Randevusu alarak riskleri inceleyebilirsiniz.' }
       ],
   
-  ctaBtnLabel: isEn ? 'BOOK OFFICIAL SESSION' : 'RESMİ RANDEVU OLUŞTUR'
+  ctaBtnLabel: isEn ? 'BOOK INITIAL REVIEW' : 'DEĞERLENDİRME RANDEVUSU AL'
 };
 ---
 
@@ -63,12 +63,12 @@ const translations = {
       <!-- Output Screen -->
       <div class="assistant-terminal">
         <div class="terminal-header">
-          <span>TERMINAL RESPONSE ACTIVE</span>
+          <span>{isEn ? 'KNOWLEDGE PANEL ACTIVE' : 'BİLGİ PANELİ AKTİF'}</span>
           <span class="pulse-dot"></span>
         </div>
         <div class="terminal-body" id="terminal-output">
           <p class="initial-msg">
-            {isEn ? '> System idle. Select a dossier scope above or input a question to retrieve regulatory briefings.' : '> Sistem hazır. Mevzuat özetlerini görüntülemek için yukarıdan bir konu seçin veya soru yazın.'}
+            {isEn ? '> Knowledge panel ready. Select an advisory topic above or search for quick regulatory reference.' : '> Bilgi paneli hazır. Mevzuat özetlerini ve süreç adımlarını görüntülemek için yukarıdan bir inceleme konusu seçin.'}
           </p>
         </div>
       </div>
@@ -81,7 +81,7 @@ const translations = {
 
     <!-- Boundaries Banner -->
     <div class="boundaries-banner">
-      <span class="boundaries-stamp">[ STRATEGIC BOUNDARY ]</span>
+      <span class="boundaries-stamp">{isEn ? '[ ADVISORY SCOPE ]' : '[ HİZMET KAPSAMI ]'}</span>
       <p class="boundaries-text">{translations.disclaimer}</p>
       <div class="text-center" style="margin-top: 15px;">
         <a href={`${isEn ? '/en' : '/tr'}/advisory/`} class="btn btn-burgundy" style="font-size: 0.8rem; letter-spacing: 0.05em;">{translations.ctaBtnLabel}</a>
@@ -320,8 +320,8 @@ const translations = {
           const val = input.value.trim();
           if (val) {
             const fallbackAns = isEnglish
-              ? `Under regulatory protocols, the query [${val}] requires custom partner oversight to verify document parameters. Mentor Group does not provide automated legal or fiscal determinations. We advise booking the official Initial Advisory Session.`
-              : `Yönetmelikler ve mevzuat sınırları uyarınca, ilettiğiniz [${val}] sorusu özel ortaklarımızın doküman incelemesini gerektirmektedir. Mentor Group, otomatik hukuki ve mali uygunluk kararları sunmaz. Resmi "İlk Değerlendirme Randevusu" oluşturmanızı tavsiye ederiz.`;
+              ? `Under advisory standards, the query [${val}] requires custom partner oversight to verify document parameters. Mentor Group does not provide automated legal or fiscal determinations. We advise booking the Initial Review.`
+              : `Danışmanlık standartları ve mevzuat analizleri uyarınca, ilettiğiniz [${val}] sorusu uzmanlarımızın özel incelemesini gerektirmektedir. Mentor Group, otomatik hukuki ve mali uygunluk kararları sunmaz. "İlk Değerlendirme Randevusu" oluşturmanızı tavsiye ederiz.`;
             
             // Check if user input roughly matches keywords in sample
             let matched = false;

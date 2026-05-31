@@ -9,8 +9,8 @@ const { locale = 'tr' } = Astro.props;
 const isEn = locale === 'en';
 
 const translations = {
-  sectionTitle: isEn ? 'ROUTE FINDER PROTOCOL' : 'YOL HARİTASI TESPİT PROTOKOLÜ',
-  refStamp: isEn ? 'FORM-REF: RF-2026-EN-09' : 'FORM-REF: YH-2026-TR-09',
+  sectionTitle: isEn ? 'ROUTE FINDER DOSSIER' : 'YOL HARİTASI TESPİT DOSYASI',
+  refStamp: isEn ? 'FORM-REF: RD-2026-EN-09' : 'FORM-REF: YD-2026-TR-09',
   introduction: isEn 
     ? 'Answer three structural questions to determine your appropriate regulatory path and matching advisory support scope.'
     : 'Yatırımınızın hukuki, mali ve teşviksel kapsamını belirlemek için aşağıdaki üç yapısal soruyu yanıtlayınız.',
@@ -37,23 +37,23 @@ const translations = {
 
   nextBtn: isEn ? 'PROCEED TO NEXT SECTION' : 'SONRAKİ BÖLÜME GEÇ',
   prevBtn: isEn ? 'PREVIOUS SECTION' : 'ÖNCEKİ BÖLÜM',
-  evalBtn: isEn ? 'GENERATE STRATEGIC ROUTE REPORT' : 'STRATEJİK YOL HARİTASI RAPORUNU OLUŞTUR',
+  evalBtn: isEn ? 'GENERATE ADVISORY SUMMARY' : 'ÖN DEĞERLENDİRME DOSYASINI OLUŞTUR',
   
-  resultTitle: isEn ? 'OFFICIAL ADVISORY ASSESSMENT REPORT' : 'STRATEJİK DEĞERLENDİRME VE SEVK RAPORU',
-  resultReset: isEn ? 'RESET PROTOCOL' : 'PROTOKOLÜ YENİDEN BAŞLAT',
+  resultTitle: isEn ? 'PRELIMINARY ADVISORY ASSESSMENT' : 'ÖN DEĞERLENDİRME VE SÜREÇ ÖZETİ',
+  resultReset: isEn ? 'RESET ASSESSMENT' : 'ÖN DEĞERLENDİRMEYİ YENİDEN BAŞLAT',
   
   incentiveRecTitle: isEn ? 'PATHWAY A: INVESTMENT INCENTIVE DEPT' : 'ROTA A: YATIRIM TEŞVİK VE DESTEKLER DANIŞMANLIĞI',
   incentiveRecDesc: isEn
-    ? 'Based on your response, your project meets the baseline structural requirements for the Turkish State Investment Incentive Certificate (Yatırım Teşvik Belgesi). We recommend exploring our specific Incentive Guide and scheduling the structured Initial Advisory Session for dossier formulation.'
+    ? 'Based on your response, your project meets the baseline structural requirements for the Turkish State Investment Incentive Certificate (Yatırım Teşvik Belgesi). We recommend exploring our specific Incentive Guide and scheduling the structured Initial Review for dossier formulation.'
     : 'Yapmış olduğunuz beyana göre, planlanan faaliyetiniz Türkiye Cumhuriyeti Devlet Teşvik ve Yatırım Destekleri (Yatırım Teşvik Belgesi vb.) kapsamıyla eşleşmektedir. Size özel teşvik yönergemizi incelemenizi ve başvuru dosyasının hazırlanması için "İlk Değerlendirme Randevusu" oluşturmanızı tavsiye ederiz.',
   
   relocateRecTitle: isEn ? 'PATHWAY B: INVEST & RELOCATE DIRECTORY' : 'ROTA B: YABANCI SERMAYE YATIRIMI VE YERLEŞİM KOORDİNASYONU',
   relocateRecDesc: isEn
     ? 'Your file requires specialized commercial setup, tax coordination, and regulatory clearance in Türkiye. Our directory provides structured oversight for market entry, company formation, administrative Relocation clearance, and legal partner coordination.'
-    : 'Dosyanız, Türkiye pazarında resmi şirket kurulumu, vergilendirme planlaması, yerleşim/faaliyet izinleri ve akredite yerel ortakların eşgüdümünü gerektirmektedir. Mentor Group, pazar girişinizi koordine etmek üzere özel yol haritaları sunar. Başlamadan önce kapsamlı bir "İlk Değerlendirme Randevusu" almanızı öneririz.',
+    : 'Dosyanız, Türkiye pazarında şirket kurulumu, vergilendirme planlaması, yerleşim/faaliyet izinleri ve akredite yerel ortakların eşgüdümünü gerektirmektedir. Mentor Group, pazar girişinizi koordine etmek üzere özel yol haritaları sunar. Başlamadan önce kapsamlı bir "İlk Değerlendirme Randevusu" almanızı öneririz.',
 
   readGuideBtn: isEn ? 'VIEW DETAILED SERVICE GUIDE' : 'HİZMET YOL HARİTASINI İNCELE',
-  bookAdvisoryBtn: isEn ? 'BOOK INITIAL ADVISORY SESSION (€150)' : 'İLK DEĞERLENDİRME RANDEVUSU AL (150 €)',
+  bookAdvisoryBtn: isEn ? 'BOOK INITIAL REVIEW (€150)' : 'İLK DEĞERLENDİRME RANDEVUSU AL (150 €)',
   
   termsNotice: isEn 
     ? 'This tool provides automated preliminary routing based on standard criteria and does not constitute a formal binding legal, tax, or investment guarantee.'
@@ -128,7 +128,7 @@ const translations = {
 
     <!-- Result panel -->
     <div class="step-panel result-panel" data-step="result">
-      <div class="report-stamp">[ STRATEGIC ASSESSMENT REPORT ]</div>
+      <div class="report-stamp">{isEn ? '[ PRELIMINARY ADVISORY NOTE ]' : '[ ÖN DEĞERLENDİRME NOTU ]'}</div>
       <h3 class="result-title">{translations.resultTitle}</h3>
       <div class="double-rule" style="margin: 15px 0;"></div>
       
