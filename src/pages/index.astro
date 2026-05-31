@@ -1,5 +1,5 @@
 ---
-/* REF: MG-2026-ASTRO-INDEX-REDIRECT-02 */
+/* REF: MG-2026-ASTRO-INDEX-REDIRECT-03 */
 ---
 <!DOCTYPE html>
 <html lang="tr">
@@ -14,17 +14,9 @@
     <script is:inline>
       (async function() {
         try {
-          const userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-          
-          // 1. If browser preference is Turkish, immediately redirect to /tr/ (0ms latency, no fetch required)
-          if (userLang.startsWith('tr')) {
-            window.location.replace('/tr/');
-            return;
-          }
-          
-          // 2. For non-Turkish browsers, run a fast GeoIP check to see if the IP is in Turkey
+          // 1. Prioritize fast GeoIP check so VPN testing works perfectly
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 600); // Strict 600ms timeout for absolute speed
+          const timeoutId = setTimeout(() => controller.abort(), 800); // 800ms strict timeout for high-speed routing
           
           try {
             const res = await fetch('https://ipapi.co/country/', { signal: controller.signal });
@@ -37,8 +29,13 @@
               window.location.replace('/en/');
             }
           } catch (apiErr) {
-            // 3. Fallback if API fails or times out: redirect to /en/ (since browser language is non-Turkish)
-            window.location.replace('/en/');
+            // 2. Fallback to Browser Preference if API fails or times out
+            const userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (userLang.startsWith('tr')) {
+              window.location.replace('/tr/');
+            } else {
+              window.location.replace('/en/');
+            }
           }
         } catch (e) {
           // Absolute fallback
