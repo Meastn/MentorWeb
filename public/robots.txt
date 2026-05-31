@@ -9,4 +9,4 @@ Disallow: /advisory/success/
 Disallow: /admin/
 
 # 03. SITEMAP INDEX LINK
-Sitemap: https://mentor.group/sitemap-index.xml
+Sitemap: https://www.mentorgroup.com.tr/sitemap-index.xml

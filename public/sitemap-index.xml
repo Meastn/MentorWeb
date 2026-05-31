@@ -2,122 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- ROOT REDIRECT -->
   <url>
-    <loc>https://mentor.group/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/"/>
+    <loc>https://www.mentorgroup.com.tr/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/"/>
   </url>
   
   <!-- TURKISH ROUTES -->
   <url>
-    <loc>https://mentor.group/tr/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/about/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/about/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/about/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/about/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/services/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/services/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/services/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/services/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/services/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/services/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/services/investment-incentives/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/services/investment-incentives/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/services/investment-incentives/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/services/investment-incentives/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/services/investment-incentives/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/services/investment-incentives/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/services/invest-relocate/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/services/invest-relocate/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/services/invest-relocate/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/services/invest-relocate/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/services/invest-relocate/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/services/invest-relocate/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/how-work/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/how-work/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/how-work/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/how-work/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/how-work/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/how-work/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/advisory/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/advisory/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/advisory/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/advisory/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/advisory/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/advisory/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/advisory/terms/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/advisory/terms/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/advisory/terms/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/advisory/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/advisory/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/advisory/terms/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/insights/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/insights/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/insights/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/insights/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/insights/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/contact/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/contact/"/>
   </url>
   <url>
-    <loc>https://mentor.group/tr/privacy/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/privacy/"/>
+    <loc>https://www.mentorgroup.com.tr/tr/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/privacy/"/>
   </url>
 
   <!-- ENGLISH ROUTES -->
   <url>
-    <loc>https://mentor.group/en/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/"/>
+    <loc>https://www.mentorgroup.com.tr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/about/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/about/"/>
+    <loc>https://www.mentorgroup.com.tr/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/about/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/services/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/services/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/services/"/>
+    <loc>https://www.mentorgroup.com.tr/en/services/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/services/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/services/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/services/investment-incentives/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/services/investment-incentives/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/services/investment-incentives/"/>
+    <loc>https://www.mentorgroup.com.tr/en/services/investment-incentives/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/services/investment-incentives/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/services/investment-incentives/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/services/invest-relocate/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/services/invest-relocate/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/services/invest-relocate/"/>
+    <loc>https://www.mentorgroup.com.tr/en/services/invest-relocate/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/services/invest-relocate/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/services/invest-relocate/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/how-work/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/how-work/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/how-work/"/>
+    <loc>https://www.mentorgroup.com.tr/en/how-work/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/how-work/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/how-work/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/advisory/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/advisory/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/advisory/"/>
+    <loc>https://www.mentorgroup.com.tr/en/advisory/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/advisory/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/advisory/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/advisory/terms/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/advisory/terms/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/advisory/terms/"/>
+    <loc>https://www.mentorgroup.com.tr/en/advisory/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/advisory/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/advisory/terms/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/insights/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/insights/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/insights/"/>
+    <loc>https://www.mentorgroup.com.tr/en/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/insights/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/insights/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/contact/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/contact/"/>
+    <loc>https://www.mentorgroup.com.tr/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/contact/"/>
   </url>
   <url>
-    <loc>https://mentor.group/en/privacy/</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://mentor.group/tr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mentor.group/en/privacy/"/>
+    <loc>https://www.mentorgroup.com.tr/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.mentorgroup.com.tr/tr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mentorgroup.com.tr/en/privacy/"/>
   </url>
 </urlset>
