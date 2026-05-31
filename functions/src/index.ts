@@ -1,6 +1,7 @@
 /* REF: MG-2026-FUNCTIONS-INDEX-01 */
 
 import * as functions from 'firebase-functions';
+import { onDocumentCreated } from 'firebase-functions/v2/firestore';
 import * as admin from 'firebase-admin';
 import { getFirestore } from 'firebase-admin/firestore';
 import Stripe from 'stripe';
@@ -14,9 +15,6 @@ const stripeSecret = process.env.STRIPE_SECRET_KEY || 'mock_stripe_key';
 const stripeWebhookSecret = process.env.STRIPE_WEBHOOK_SECRET || 'mock_webhook_secret';
 const stripe = new Stripe(stripeSecret, { apiVersion: '2023-10-16' as any });
 
-const geminiApiKey = process.env.GEMINI_API_KEY || '';
-// Instantiate GoogleGenerativeAI client if api key is provided, else fallback to mock mode
-const ai = geminiApiKey ? new GoogleGenerativeAI(geminiApiKey) : null;
 
 // ==================== ENDPOINT 1: GENERAL CONTACT SUBMISSION ====================
 export const contactSubmission = functions.https.onRequest(async (req, res) => {
@@ -103,68 +101,77 @@ export const advisoryIntakeSubmission = functions.https.onRequest(async (req, re
 });
 
 // ==================== FIRESTORE TRIGGER: CASE INTAKE AGENT (GEMINI AI BRIEF) ====================
-export const onAdvisoryIntakeCreated = functions
-  .runWith({ secrets: ['GEMINI_API_KEY'] })
-  .firestore.document('advisoryIntakes/{docId}')
-  .onCreate(async (snapshot, context) => {
-    const docId = context.params.docId;
-    const data = snapshot.data();
+export const onAdvisoryIntakeCreated = onDocumentCreated({
+  database: 'mentorweb',
+  document: 'advisoryIntakes/{docId}',
+  secrets: ['GEMINI_API_KEY'],
+  region: 'europe-west1'
+}, async (event) => {
+  const docId = event.params.docId;
+  const snapshot = event.data;
+  if (!snapshot) {
+    functions.logger.error('No snapshot data found for trigger.');
+    return;
+  }
+  const data = snapshot.data();
 
-    try {
-      functions.logger.info(`Analyzing dossier file: ${docId}`);
+  try {
+    functions.logger.info(`Analyzing dossier file: ${docId}`);
+    
+    let aiBriefText = '';
+    const key = process.env.GEMINI_API_KEY;
+
+    if (key && key !== 'mock_gemini_key') {
+      // Safely instantiate generative AI client at runtime with Secret Manager injected key
+      const runtimeAi = new GoogleGenerativeAI(key);
+      const prompt = `Act as an elite corporate B2B regulatory auditor. We are reviewing a new client case file for Mentor Group Advisory.
+      Client details:
+      Name: ${data.fullName}
+      Sector: ${data.sector}
+      Estimated Budget: ${data.budgetRange}
+      Timeline: ${data.timelineRange}
+      Topic: ${data.mainTopic}
+      Company Status in TR: ${data.hasTrCompany}
+      Prior Official Applications: ${data.prevApp}
+      Case Description: ${data.caseDetail}
+
+      Generate a strict, formal, and highly structured analytical board brief containing the following exactly:
+      01. CLIENT PROFILE AND STRATEGIC SCENE
+      02. REGULATORY TOPIC AND SERVICE FIT (Match with Investment Incentive certificates, company setup, relocations, or compliance)
+      03. URGENCY AND DOSSIER FEASIBILITY AUDIT
+      04. PROPOSED 30-MINUTES MEETING AGENDA
+      05. SECURITY RISK NOTES AND REGULATORY BARRIERS (Explicitly state that idari approvals are sovereign ministry authority only; no guarantees; list compliance issues)
       
-      let aiBriefText = '';
+      Keep the register formal, authoritative, and strictly professional.`;
 
-      if (ai) {
-        // Formulate professional B2B prompt for Gemini model
-        const prompt = `Act as an elite corporate B2B regulatory auditor. We are reviewing a new client case file for Mentor Group Advisory.
-        Client details:
-        Name: ${data.fullName}
-        Sector: ${data.sector}
-        Estimated Budget: ${data.budgetRange}
-        Timeline: ${data.timelineRange}
-        Topic: ${data.mainTopic}
-        Company Status in TR: ${data.hasTrCompany}
-        Prior Official Applications: ${data.prevApp}
-        Case Description: ${data.caseDetail}
-
-        Generate a strict, formal, and highly structured analytical board brief containing the following exactly:
-        01. CLIENT PROFILE AND STRATEGIC SCENE
-        02. REGULATORY TOPIC AND SERVICE FIT (Match with Investment Incentive certificates, company setup, relocations, or compliance)
-        03. URGENCY AND DOSSIER FEASIBILITY AUDIT
-        04. PROPOSED 30-MINUTES MEETING AGENDA
-        05. SECURITY RISK NOTES AND REGULATORY BARRIERS (Explicitly state that idari approvals are sovereign ministry authority only; no guarantees; list compliance issues)
-        
-        Keep the register formal, authoritative, and strictly professional.`;
-
-        const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        aiBriefText = response.text() || 'Error: AI Brief content empty.';
-      } else {
-        // Offline / local development mock fallback
-        functions.logger.info('Gemini API key missing. Operating in local sandbox mock mode.');
-        aiBriefText = `[ MOCK ANALYTICAL BRIEF: LOCAL SANDBOX ]
-        REF-ID: MG-REQ-${docId.slice(-4)}-M
-        01. MÜŞTERİ PROFİLİ: ${data.fullName.toUpperCase()} (Sector: ${data.sector})
-        02. DOSYA KATEGORİSİ: ${data.mainTopic.toUpperCase()}
-        03. BÜTÇESEL HACİM: ${data.budgetRange}
-        04. GÖRÜŞME GÜNDEMİ:
-            - Asgari yatırım sınırlarının ve mevzuat uygunluğunun analizi.
-            - Türkiye pazar giriş tescil ve vergi planlaması adımları.
-        05. RİSK NOTLARI: İdari onaylar tamamen bakanlık yetkisindedir.`;
-      }
-
-      await db.collection('advisoryIntakes').doc(docId).update({
-        aiBrief: aiBriefText,
-        briefGeneratedAt: admin.firestore.FieldValue.serverTimestamp()
-      });
-      
-      functions.logger.info(`AI Dossier Brief successfully generated for: ${docId}`);
-    } catch (error) {
-      functions.logger.error('Gemini AI trigger failed:', error);
+      const model = runtimeAi.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      aiBriefText = response.text() || 'Error: AI Brief content empty.';
+    } else {
+      // Offline / local development mock fallback
+      functions.logger.info('Gemini API key missing. Operating in local sandbox mock mode.');
+      aiBriefText = `[ MOCK ANALYTICAL BRIEF: LOCAL SANDBOX ]
+      REF-ID: MG-REQ-${docId.slice(-4)}-M
+      01. MÜŞTERİ PROFİLİ: ${data.fullName.toUpperCase()} (Sector: ${data.sector})
+      02. DOSYA KATEGORİSİ: ${data.mainTopic.toUpperCase()}
+      03. BÜTÇESEL HACİM: ${data.budgetRange}
+      04. GÖRÜŞME GÜNDEMİ:
+          - Asgari yatırım sınırlarının ve mevzuat uygunluğunun analizi.
+          - Türkiye pazar giriş tescil ve vergi planlaması adımları.
+      05. RİSK NOTLARI: İdari onaylar tamamen bakanlık yetkisindedir.`;
     }
-  });
+
+    await db.collection('advisoryIntakes').doc(docId).update({
+      aiBrief: aiBriefText,
+      briefGeneratedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    functions.logger.info(`AI Dossier Brief successfully generated for: ${docId}`);
+  } catch (error) {
+    functions.logger.error('Gemini AI trigger failed:', error);
+  }
+});
 
 // ==================== ENDPOINT 3: STRIPE CHECKOUT SESSION ====================
 export const createStripeCheckout = functions
