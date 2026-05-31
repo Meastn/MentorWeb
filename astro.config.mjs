@@ -1,0 +1,15 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+
+// REF: MG-2026-ASTRO-CONFIG-01
+// https://astro.build/config
+export default defineConfig({
+  site: 'https://mentor.group',
+  i18n: {
+    defaultLocale: 'tr',
+    locales: ['tr', 'en'],
+    routing: {
+      prefixDefaultLocale: true,
+    }
+  }
+});

@@ -1,0 +1,62 @@
+---
+/* REF: MG-2026-ASTRO-TR-INSIGHTS-INDEX-01 */
+import Layout from '../../../layouts/Layout.astro';
+import { insightsArticles } from '../../../data/insights';
+
+const pageTitle = "Bilgi Merkezi / Kurumsal Bültenler";
+const pageDesc = "Türkiye’de yatırım teşviki, yabancı sermaye şirket tescilleri, pazar giriş stratejileri ve idari uyum süreçlerine dair resmi bilgi notları.";
+
+const trArticles = insightsArticles.filter(art => art.locale === 'tr');
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  
+  <section class="py-xl">
+    <div class="ledger-container">
+      
+      <div class="dossier-box">
+        <div class="dossier-header-bar">
+          <span class="ref-stamp">REF: MG-2026-TR-INSIGHTS</span>
+          <span class="classification-stamp">[ RESMİ BÜLTEN ENDEKSİ / KNOWLEDGE BASE ]</span>
+        </div>
+
+        <div class="hero-title-box">
+          <span class="sec-number">06. BİLGİ MERKEZİ</span>
+          <h1 class="hero-main-title">Kurumsal Bilgi Notları & Mevzuat Brifingleri</h1>
+          <p class="hero-subtitle">Mevzuat değişiklikleri, yatırım tescil rehberleri ve Türkiye Cumhuriyeti idari uyum şartlarına dair başyazar ve ortaklarımızın hazırladığı resmi brifingler.</p>
+          <hr class="double-rule" />
+        </div>
+
+        <!-- Articles Grid Index -->
+        <div class="articles-index-grid">
+          {trArticles.map(art => (
+            <div class="article-dossier-row" style="border: 1px solid var(--color-line-muted); padding: var(--space-xl); background-color: var(--color-bg-paper); margin-bottom: var(--space-md);">
+              <div class="flex justify-between align-center mb-xs" style="flex-wrap: wrap; gap: 8px;">
+                <span class="ref-stamp">{art.category}</span>
+                <span class="ref-stamp" style="font-family: monospace;">CODE: {art.refCode}</span>
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; margin-top: 5px; margin-bottom: var(--space-sm);">
+                <a href={`/tr/insights/${art.slug}/`} style="color: var(--color-text-ink); text-decoration: none;">{art.title}</a>
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+                {art.excerpt}
+              </p>
+              <div class="flex justify-between align-center" style="flex-wrap: wrap; gap: 10px; border-top: 1px dashed var(--color-line-muted); padding-top: var(--space-sm); font-size: 0.75rem; color: var(--color-text-muted);">
+                <span><strong>Tarih:</strong> {art.date} | <strong>Yazar:</strong> {art.author}</span>
+                <a href={`/tr/insights/${art.slug}/`} class="btn-link" style="font-weight: 600;">Brifingi İncele &rarr;</a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="double-rule" style="margin: 25px 0;"></div>
+
+        <div class="text-center" style="margin-top: 25px;">
+          <a href="/tr/advisory/" class="btn btn-primary">İLK DEĞERLENDİRME RANDEVUSU AL</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</Layout>

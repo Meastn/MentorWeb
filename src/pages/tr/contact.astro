@@ -1,0 +1,156 @@
+---
+/* REF: MG-2026-ASTRO-TR-CONTACT-01 */
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "İletişim / Genel İrtibat Masası";
+const pageDesc = "Mentor Group İstanbul ve Ankara ofisleri genel iletişim ve idari başvuru masası formu.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  
+  <section class="py-xl">
+    <div class="ledger-container">
+      
+      <div class="dossier-box">
+        <div class="dossier-header-bar">
+          <span class="ref-stamp">REF: MG-2026-TR-CONTACT</span>
+          <span class="classification-stamp">[ İRTİBAT MASASI / INQUIRY OFFICE ]</span>
+        </div>
+
+        <div class="hero-title-box">
+          <span class="sec-number">07. İRTİBAT MASASI</span>
+          <h1 class="hero-main-title">Resmi İrtibat ve İdari Başvuru Masası</h1>
+          <p class="hero-subtitle">Mevzuat, teşvik ve yatırım süreçlerinize dair genel sorularınız için aşağıdaki resmi iletişim protokolünü doldurunuz.</p>
+          <hr class="double-rule" />
+        </div>
+
+        <div class="ledger-row ledger-row-2col">
+          <!-- Form column -->
+          <div class="ledger-col ledger-col-split" style="padding-right: var(--space-xl);">
+            
+            <div id="contact-success-box" style="display: none; border: 1px solid var(--color-primary-green); padding: var(--space-lg); background-color: var(--color-bg-card); font-family: monospace; font-size: 0.85rem;">
+              <span class="ref-stamp" style="color: var(--color-primary-green);">BAŞVURU RESMEN ALINDI</span>
+              <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-top: 5px; color: var(--color-primary-green);">İNCELEME KAYDI OLUŞTURULDU</h4>
+              <div class="double-rule" style="margin: 10px 0;"></div>
+              <p style="margin-bottom: 10px;"><strong>Talep Ref:</strong> <span id="c-ref">MG-CNT-20260531-X</span></p>
+              <p style="margin-bottom: 10px;"><strong>İşlem Durumu:</strong> Kuyruğa Alındı (Mevzuat Uzmanı İncelemesinde)</p>
+              <p style="font-size: 0.72rem; color: var(--color-text-muted);">Giriş yaptığınız veriler KVKK ilkelerine uygun olarak kaydedilmiştir. İdari büromuz, en geç 24 iş saati içerisinde belirttiğiniz e-posta ve telefon koordinatları üzerinden sizinle irtibata geçecektir. Teşvik ve tescil başvurularını doğrudan planlamak için "İlk Değerlendirme Randevusu" almanızı tavsiye ederiz.</p>
+            </div>
+
+            <form id="contact-form" class="retro-form">
+              <div class="form-group">
+                <label class="form-label" for="c_name">Ad ve Soyad*</label>
+                <input type="text" id="c_name" class="form-control" placeholder="Örn: Melih Çalıkoğlu" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_email">E-Posta Adresi*</label>
+                <input type="email" id="c_email" class="form-control" placeholder="Örn: melih@sirketiniz.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_phone">Telefon / WhatsApp*</label>
+                <input type="text" id="c_phone" class="form-control" placeholder="Örn: +90 (532) 000 00 00" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_company">Firma Ünvanı</label>
+                <input type="text" id="c_company" class="form-control" placeholder="Örn: Mentor Group A.Ş." />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_country">Ülke*</label>
+                <input type="text" id="c_country" class="form-control" placeholder="Örn: Türkiye" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_lang">Tercih Edilen İletişim Dili*</label>
+                <select id="c_lang" class="form-control" required>
+                  <option value="tr">Türkçe</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_service">İlgi Duyulan Hizmet Grubu*</label>
+                <select id="c_service" class="form-control" required>
+                  <option value="incentives">Yatırım Teşvik Belgesi Danışmanlığı</option>
+                  <option value="relocate">Invest & Relocate (Yabancı Yatırımcı Girişi)</option>
+                  <option value="other">Diğer İdari ve Mevzuatsal Konular</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_msg">İleti / Mesajınız*</label>
+                <textarea id="c_msg" class="form-control" rows="4" placeholder="Danışmak istediğiniz idari süreci veya sorunuzu özetleyiniz..." required></textarea>
+              </div>
+
+              <div class="form-group mb-lg">
+                <label class="checkbox-label">
+                  <input type="checkbox" class="checkbox-input" required />
+                  <span>
+                    Mentor Group <a href="/tr/privacy/" target="_blank" style="text-decoration: underline; color: var(--color-primary-green);">KVKK Aydınlatma Metni</a>'ni okudum, genel irtibat verilerimin işlenmesini kabul ediyorum.*
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">TALEBİ İDARİ MERKEZE İLET</button>
+            </form>
+          </div>
+
+          <!-- Info column -->
+          <div class="ledger-col" style="background-color: var(--color-bg-card);">
+            <span class="sec-number">02. OFİS KOORDİNATLARI</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: var(--space-sm);">Resmi Adresler ve İletişim Hatları</h3>
+            
+            <div style="font-size: 0.82rem; color: var(--color-text-ink); line-height: 1.6; display: flex; flex-direction: column; gap: 15px; margin-top: var(--space-md);">
+              <div>
+                <strong>Ankara Merkez (Mevzuat Ofisi):</strong><br />
+                Mahall Ankara, Dumlupınar Bulvarı No:274, C Blok Kat:7 Daire:74, 06530 Çankaya/Ankara, Türkiye<br />
+                <strong>Telefon:</strong> +90 (312) 456 78 90<br />
+                <strong>E-Posta:</strong> ankara@mentor.group
+              </div>
+
+              <div style="border-top: 1px solid var(--color-line-muted); padding-top: 15px;">
+                <strong>İstanbul Temsilciliği (Pazar Girişi):</strong><br />
+                Levent Loft, Büyükdere Caddesi No:201, Kat:3 Loft:314, 34394 Beşiktaş/İstanbul, Türkiye<br />
+                <strong>Telefon:</strong> +90 (212) 345 67 89<br />
+                <strong>E-Posta:</strong> istanbul@mentor.group
+              </div>
+
+              <div style="border-top: 1px solid var(--color-line-muted); padding-top: 15px;">
+                <strong>E-Posta Koordinasyonu:</strong><br />
+                Genel ve resmi yazışmalarınız için: <strong>advisory@mentor.group</strong>
+              </div>
+            </div>
+            
+            <div class="boundaries-banner" style="margin-top: var(--space-xl);">
+              <span class="boundaries-stamp">[ RESMİ NOT ]</span>
+              <p class="boundaries-text">Dava dosyaları, yasal süre itirazları veya süre uzatım tebligatları gibi ivedi idari/hukuki yazışmaların doğrudan İstanbul ve Ankara merkez ofislerimize ıslak imzalı veya KEP (Kayıtlı Elektronik Posta) üzerinden ulaştırılması zorunludur. Elektronik form üzerinden yapılan bildirimler yasal tebligat yerine geçmez.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+
+</Layout>
+
+<script is:inline>
+  const cForm = document.getElementById('contact-form');
+  const cSuccessBox = document.getElementById('contact-success-box');
+  const cRef = document.getElementById('c-ref');
+
+  if (cForm && cSuccessBox) {
+    cForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      cForm.style.display = "none";
+      cSuccessBox.style.display = "block";
+      if (cRef) {
+        cRef.textContent = `MG-CNT-${Date.now().toString().slice(-6)}-X`;
+      }
+    });
+  }
+</script>

@@ -1,0 +1,409 @@
+---
+/* REF: MG-2026-ASTRO-ROUTEFINDER-01 */
+
+interface Props {
+  locale?: 'tr' | 'en';
+}
+
+const { locale = 'tr' } = Astro.props;
+const isEn = locale === 'en';
+
+const translations = {
+  sectionTitle: isEn ? 'ROUTE FINDER PROTOCOL' : 'YOL HARİTASI TESPİT PROTOKOLÜ',
+  refStamp: isEn ? 'FORM-REF: RF-2026-EN-09' : 'FORM-REF: YH-2026-TR-09',
+  introduction: isEn 
+    ? 'Answer three structural questions to determine your appropriate regulatory path and matching advisory support scope.'
+    : 'Yatırımınızın hukuki, mali ve teşviksel kapsamını belirlemek için aşağıdaki üç yapısal soruyu yanıtlayınız.',
+  
+  step1Title: isEn ? '01. Primary Objective / Ana İşlem Amacı' : '01. Birincil Faaliyet Hedefi / Ana İşlem Amacı',
+  step1Options: [
+    { value: 'incentives', label: isEn ? 'Investment Incentives & Government Supports in Türkiye' : 'Yatırım Teşvik Belgeleri ve Devlet Destekleri Başvuruları' },
+    { value: 'relocate', label: isEn ? 'Market Entry, Company Formation & Relocation to Türkiye' : 'Türkiye’ye Giriş, Şirket Kuruluşu ve Yerleşim Koordinasyonu' }
+  ],
+
+  step2Title: isEn ? '02. Investment Range / Planlanan Yatırım Hacmi' : '02. Tahmini Yatırım Bütçesi / Planlanan Yatırım Hacmi',
+  step2Options: [
+    { value: 'small', label: isEn ? 'Under €150,000 / 5,000,000 TRY' : '5.000.000 TL / 150.000 € Altı' },
+    { value: 'medium', label: isEn ? '€150,000 - €1,500,000 / 5,000,000 - 50,000,000 TRY' : '5.000.000 TL - 50.000.000 TL / 150.000 € - 1.500.000 € Arası' },
+    { value: 'large', label: isEn ? 'Over €1,500,000 / 50,000,000 TRY' : '50.000.000 TL / 1.500.000 € Üstü' }
+  ],
+
+  step3Title: isEn ? '03. Operational Timeline / Planlanan Başlangıç' : '03. Operasyonel Takvim / Planlanan Başlangıç',
+  step3Options: [
+    { value: 'immediate', label: isEn ? 'Immediate execution (0-3 Months)' : 'Derhal / Acil (0-3 Ay İçerisinde)' },
+    { value: 'medium_term', label: isEn ? 'Strategic preparation (3-6 Months)' : 'Hazırlık / Stratejik Planlama (3-6 Ay)' },
+    { value: 'feasibility', label: isEn ? 'Feasibility and scoping stage' : 'Fizibilite / Ön Araştırma Aşaması' }
+  ],
+
+  nextBtn: isEn ? 'PROCEED TO NEXT SECTION' : 'SONRAKİ BÖLÜME GEÇ',
+  prevBtn: isEn ? 'PREVIOUS SECTION' : 'ÖNCEKİ BÖLÜM',
+  evalBtn: isEn ? 'GENERATE STRATEGIC ROUTE REPORT' : 'STRATEJİK YOL HARİTASI RAPORUNU OLUŞTUR',
+  
+  resultTitle: isEn ? 'OFFICIAL ADVISORY ASSESSMENT REPORT' : 'STRATEJİK DEĞERLENDİRME VE SEVK RAPORU',
+  resultReset: isEn ? 'RESET PROTOCOL' : 'PROTOKOLÜ YENİDEN BAŞLAT',
+  
+  incentiveRecTitle: isEn ? 'PATHWAY A: INVESTMENT INCENTIVE DEPT' : 'ROTA A: YATIRIM TEŞVİK VE DESTEKLER DANIŞMANLIĞI',
+  incentiveRecDesc: isEn
+    ? 'Based on your response, your project meets the baseline structural requirements for the Turkish State Investment Incentive Certificate (Yatırım Teşvik Belgesi). We recommend exploring our specific Incentive Guide and scheduling the structured Initial Advisory Session for dossier formulation.'
+    : 'Yapmış olduğunuz beyana göre, planlanan faaliyetiniz Türkiye Cumhuriyeti Devlet Teşvik ve Yatırım Destekleri (Yatırım Teşvik Belgesi vb.) kapsamıyla eşleşmektedir. Size özel teşvik yönergemizi incelemenizi ve başvuru dosyasının hazırlanması için "İlk Değerlendirme Randevusu" oluşturmanızı tavsiye ederiz.',
+  
+  relocateRecTitle: isEn ? 'PATHWAY B: INVEST & RELOCATE DIRECTORY' : 'ROTA B: YABANCI SERMAYE YATIRIMI VE YERLEŞİM KOORDİNASYONU',
+  relocateRecDesc: isEn
+    ? 'Your file requires specialized commercial setup, tax coordination, and regulatory clearance in Türkiye. Our directory provides structured oversight for market entry, company formation, administrative Relocation clearance, and legal partner coordination.'
+    : 'Dosyanız, Türkiye pazarında resmi şirket kurulumu, vergilendirme planlaması, yerleşim/faaliyet izinleri ve akredite yerel ortakların eşgüdümünü gerektirmektedir. Mentor Group, pazar girişinizi koordine etmek üzere özel yol haritaları sunar. Başlamadan önce kapsamlı bir "İlk Değerlendirme Randevusu" almanızı öneririz.',
+
+  readGuideBtn: isEn ? 'VIEW DETAILED SERVICE GUIDE' : 'HİZMET YOL HARİTASINI İNCELE',
+  bookAdvisoryBtn: isEn ? 'BOOK INITIAL ADVISORY SESSION (€150)' : 'İLK DEĞERLENDİRME RANDEVUSU AL (150 €)',
+  
+  termsNotice: isEn 
+    ? 'This tool provides automated preliminary routing based on standard criteria and does not constitute a formal binding legal, tax, or investment guarantee.'
+    : 'Bu tespit aracı, standart kriterlere göre otomatik ön sevk sağlamakta olup hiçbir şekilde resmi hukuki, mali ya da vergi garantisi veya kesin onay taahhüdü teşkil etmez.'
+};
+---
+
+<div class="route-finder-card" data-locale={locale}>
+  <div class="card-header">
+    <span class="ref-stamp">{translations.refStamp}</span>
+    <span class="classification">[ {translations.sectionTitle} ]</span>
+  </div>
+
+  <div class="card-body">
+    <!-- Intro Stage -->
+    <div class="step-panel active" data-step="1">
+      <p class="step-intro">{translations.introduction}</p>
+      
+      <h4 class="step-question">{translations.step1Title}</h4>
+      <div class="radio-grid">
+        {translations.step1Options.map((opt, i) => (
+          <label class="radio-box">
+            <input type="radio" name="objective" value={opt.value} checked={i === 0} class="radio-input" />
+            <span class="radio-custom"></span>
+            <span class="radio-label">{opt.label}</span>
+          </label>
+        ))}
+      </div>
+      
+      <div class="step-actions">
+        <button type="button" class="btn btn-primary next-step-btn">{translations.nextBtn}</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-panel" data-step="2">
+      <h4 class="step-question">{translations.step2Title}</h4>
+      <div class="radio-grid">
+        {translations.step2Options.map((opt, i) => (
+          <label class="radio-box">
+            <input type="radio" name="budget" value={opt.value} checked={i === 1} class="radio-input" />
+            <span class="radio-custom"></span>
+            <span class="radio-label">{opt.label}</span>
+          </label>
+        ))}
+      </div>
+      
+      <div class="step-actions">
+        <button type="button" class="btn btn-secondary prev-step-btn">{translations.prevBtn}</button>
+        <button type="button" class="btn btn-primary next-step-btn">{translations.nextBtn}</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-panel" data-step="3">
+      <h4 class="step-question">{translations.step3Title}</h4>
+      <div class="radio-grid">
+        {translations.step3Options.map((opt, i) => (
+          <label class="radio-box">
+            <input type="radio" name="timeline" value={opt.value} checked={i === 0} class="radio-input" />
+            <span class="radio-custom"></span>
+            <span class="radio-label">{opt.label}</span>
+          </label>
+        ))}
+      </div>
+      
+      <div class="step-actions">
+        <button type="button" class="btn btn-secondary prev-step-btn">{translations.prevBtn}</button>
+        <button type="button" class="btn btn-burgundy evaluate-btn">{translations.evalBtn}</button>
+      </div>
+    </div>
+
+    <!-- Result panel -->
+    <div class="step-panel result-panel" data-step="result">
+      <div class="report-stamp">[ STRATEGIC ASSESSMENT REPORT ]</div>
+      <h3 class="result-title">{translations.resultTitle}</h3>
+      <div class="double-rule" style="margin: 15px 0;"></div>
+      
+      <!-- Dynamic Outcomes -->
+      <div class="outcome-box incentives-outcome active">
+        <h4 class="outcome-header">{translations.incentiveRecTitle}</h4>
+        <p class="outcome-text">{translations.incentiveRecDesc}</p>
+        <div class="outcome-actions">
+          <a href={`${isEn ? '/en' : '/tr'}/services/investment-incentives/`} class="btn btn-secondary">{translations.readGuideBtn}</a>
+          <a href={`${isEn ? '/en' : '/tr'}/advisory/`} class="btn btn-primary">{translations.bookAdvisoryBtn}</a>
+        </div>
+      </div>
+
+      <div class="outcome-box relocate-outcome">
+        <h4 class="outcome-header">{translations.relocateRecTitle}</h4>
+        <p class="outcome-text">{translations.relocateRecDesc}</p>
+        <div class="outcome-actions">
+          <a href={`${isEn ? '/en' : '/tr'}/services/invest-relocate/`} class="btn btn-secondary">{translations.readGuideBtn}</a>
+          <a href={`${isEn ? '/en' : '/tr'}/advisory/`} class="btn btn-primary">{translations.bookAdvisoryBtn}</a>
+        </div>
+      </div>
+
+      <p class="result-notice">{translations.termsNotice}</p>
+
+      <div class="step-actions text-center" style="margin-top: 20px;">
+        <button type="button" class="btn btn-secondary reset-btn" style="font-size: 0.75rem; padding: 6px 12px;">{translations.resultReset}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .route-finder-card {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    border-radius: var(--border-radius-sharp);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .card-header {
+    border-bottom: 1px solid var(--color-line-muted);
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-bg-card);
+  }
+
+  .classification {
+    font-family: var(--font-sans);
+    font-size: var(--size-meta);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .card-body {
+    padding: var(--space-xl);
+  }
+
+  .step-panel {
+    display: none;
+  }
+
+  .step-panel.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-intro {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--space-lg);
+  }
+
+  .step-question {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    color: var(--color-text-ink);
+  }
+
+  .radio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .radio-box {
+    display: flex;
+    align-items: flex-start;
+    padding: var(--space-md);
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-card);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+
+  .radio-box:hover {
+    border-color: var(--color-primary-green);
+    background-color: var(--color-bg-paper);
+  }
+
+  .radio-input {
+    margin-top: 3px;
+    margin-right: var(--space-md);
+    accent-color: var(--color-primary-green);
+  }
+
+  .radio-label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--color-text-ink);
+  }
+
+  .step-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: flex-end;
+  }
+
+  /* Result report styling */
+  .result-panel {
+    text-align: left;
+  }
+
+  .report-stamp {
+    font-family: monospace;
+    font-size: 0.65rem;
+    color: var(--color-burgundy);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .result-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  .outcome-box {
+    display: none;
+    border: 1px solid var(--color-line-muted);
+    padding: var(--space-lg);
+    background-color: var(--color-bg-card);
+    margin-bottom: var(--space-md);
+  }
+
+  .outcome-box.active {
+    display: block;
+  }
+
+  .outcome-header {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-primary-green);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .outcome-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-ink);
+    margin-bottom: var(--space-md);
+  }
+
+  .outcome-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .result-notice {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+    border-left: 2px solid var(--color-line-muted);
+    padding-left: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  @media (max-width: 600px) {
+    .step-actions {
+      flex-direction: column;
+    }
+    
+    .step-actions .btn {
+      width: 100%;
+    }
+
+    .outcome-actions {
+      flex-direction: column;
+    }
+
+    .outcome-actions .btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Simple multi-step script scoped to RouteFinder
+  const routeFinder = document.querySelector('.route-finder-card');
+  if (routeFinder) {
+    let currentStepIndex = 1;
+    const panels = routeFinder.querySelectorAll('.step-panel');
+    const nextBtns = routeFinder.querySelectorAll('.next-step-btn');
+    const prevBtns = routeFinder.querySelectorAll('.prev-step-btn');
+    const evalBtn = routeFinder.querySelector('.evaluate-btn');
+    const resetBtn = routeFinder.querySelector('.reset-btn');
+
+    const updateStep = (index: number | string) => {
+      panels.forEach(panel => {
+        const stepAttr = panel.getAttribute('data-step');
+        if (stepAttr === String(index)) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    };
+
+    nextBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentStepIndex++;
+        updateStep(currentStepIndex);
+      });
+    });
+
+    prevBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentStepIndex--;
+        updateStep(currentStepIndex);
+      });
+    });
+
+    if (evalBtn) {
+      evalBtn.addEventListener('click', () => {
+        // Collect choices
+        const objInput = routeFinder.querySelector('input[name="objective"]:checked') as HTMLInputElement;
+        const objective = objInput ? objInput.value : 'incentives';
+
+        // Select correct report box
+        const incentivesOutcome = routeFinder.querySelector('.incentives-outcome');
+        const relocateOutcome = routeFinder.querySelector('.relocate-outcome');
+
+        if (objective === 'incentives') {
+          incentivesOutcome?.classList.add('active');
+          relocateOutcome?.classList.remove('active');
+        } else {
+          incentivesOutcome?.classList.remove('active');
+          relocateOutcome?.classList.add('active');
+        }
+
+        // Navigate to result panel
+        updateStep('result');
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        currentStepIndex = 1;
+        updateStep(1);
+      });
+    }
+  }
+</script>

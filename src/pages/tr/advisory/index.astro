@@ -1,0 +1,926 @@
+---
+/* REF: MG-2026-ASTRO-TR-ADVISORY-01 */
+import Layout from '../../../layouts/Layout.astro';
+
+const pageTitle = "İlk Değerlendirme Randevusu";
+const pageDesc = "Türkiye’de yapacağınız yatırımlar ve teşvik başvuruları için resmi durum tespit görüşmesi kapsamı ve dosya giriş formu.";
+
+// Scope Table Content
+const scopeInclusions = [
+  'Mevcut durum analizi ve temel stratejik hedeflerinizin resmi kaydı',
+  'Yatırımınıza uygun idari teşvik ve mevzuat alanlarının tespiti',
+  'Eşgüdümlü yönetilmesi gereken idari süreçlerin listelenmesi',
+  'İlk aşamada ihtiyaç duyulacak resmî evrak ve bilgi listesinin çıkarılması',
+  'Mentor Group ile çalışabileceğiniz sonraki aşamaların yol haritası'
+];
+
+const scopeExclusions = [
+  'Nihai yasal uygunluk taahhüdü ve bağlayıcı vergi/vatandaşlık garantisi',
+  'Bakanlıkların teşvik onay kararları hakkında kesin taahhüt',
+  'Derinlemesine mali/teknik fizibilite raporu hazırlığı',
+  'Görüşme süresince resmi başvuru dosyalarının hazırlanması veya tescili',
+  'İlk seans dışındaki araştırma, dilekçe yazımı veya masa başı çalışmaları'
+];
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  
+  <section class="py-xl">
+    <div class="ledger-container">
+      
+      <!-- 01. OFFICIAL INTAKE DOSSIER HEADER -->
+      <div class="dossier-box">
+        <div class="dossier-header-bar">
+          <span class="ref-stamp">REF: MG-2026-TR-ADVISORY</span>
+          <span class="classification-stamp">[ CLASSIFICATION: MANDATORY / INTAKE ]</span>
+        </div>
+
+        <div class="hero-title-box">
+          <span class="sec-number">05. İLK DEĞERLENDİRME RANDEVUSU</span>
+          <h1 class="hero-main-title">Durum Tespit & İlk Değerlendirme</h1>
+          <p class="hero-subtitle">Türkiye’deki yatırım projeleriniz için 30 dakikalık resmi durum tespit görüşmesini başlatmadan önce, kapsamı incelemeniz ve dosya girişini tamamlamanız gerekmektedir.</p>
+          <hr class="double-rule" />
+        </div>
+
+        <!-- 02. INCLUSIONS & EXCLUSIONS TABLE MATRIX -->
+        <div class="matrix-box mb-xl">
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: var(--space-md);">Görüşme Kapsamı ve Sınırlandırmalar</h3>
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 50%;">01. KAPSAM DAHİLİNDE (INCLUDED)</th>
+                <th style="width: 50%;">02. KAPSAM DIŞINDA (EXCLUDED)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">
+                  <ul class="matrix-list inclusion-list">
+                    {scopeInclusions.map(item => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </td>
+                <td style="vertical-align: top;">
+                  <ul class="matrix-list exclusion-list">
+                    {scopeExclusions.map(item => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 03. CASE INTAKE MULTI-STEP FLOW -->
+        <div class="flow-wizard-container" id="advisory-flow-wizard">
+          
+          <!-- Wizard Steps Navigator -->
+          <div class="wizard-nav">
+            <div class="w-step active" data-nav="form">1. DETAYLI DURUM GİRİŞİ</div>
+            <div class="w-step-divider">&rarr;</div>
+            <div class="w-step" data-nav="summary">2. ANALİTİK RAPOR GÖRÜŞÜ</div>
+            <div class="w-step-divider">&rarr;</div>
+            <div class="w-step" data-nav="stripe">3. HARÇ ÖDEMESİ (150 €)</div>
+            <div class="w-step-divider">&rarr;</div>
+            <div class="w-step" data-nav="calendar">4. TAKVİM REZERVASYONU</div>
+          </div>
+
+          <div class="double-rule" style="margin: 15px 0;"></div>
+
+          <!-- STAGE 1: Intake Form -->
+          <div class="wizard-panel active" id="wizard-panel-form">
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: var(--space-md);">Resmi Yatırım Dosyası Giriş Formu</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-lg);">Görüşmenizin maksimum verimle geçmesi amacıyla aşağıdaki tüm alanları eksiksiz doldurunuz. Girilen veriler KVKK uyarınca Mentor Group güvencesindedir.</p>
+
+            <form id="intake-form" class="retro-form">
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Full name -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="full_name">Ad ve Soyad*</label>
+                  <input type="text" id="full_name" class="form-control" placeholder="Örn: Melih Çalıkoğlu" required />
+                </div>
+                <!-- Email -->
+                <div class="form-group">
+                  <label class="form-label" for="email">E-Posta Adresi*</label>
+                  <input type="email" id="email" class="form-control" placeholder="Örn: melih@sirketiniz.com" required />
+                </div>
+              </div>
+
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Phone -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="phone">Telefon / WhatsApp*</label>
+                  <input type="text" id="phone" class="form-control" placeholder="Örn: +90 (532) 000 00 00" required />
+                </div>
+                <!-- Country -->
+                <div class="form-group">
+                  <label class="form-label" for="country">Yaşadığınız Ülke*</label>
+                  <input type="text" id="country" class="form-control" placeholder="Örn: Türkiye" required />
+                </div>
+              </div>
+
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Company name -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="company_name">Şirket Ünvanı (Varsa)</label>
+                  <input type="text" id="company_name" class="form-control" placeholder="Örn: Mentor Group A.Ş." />
+                </div>
+                <!-- Company country -->
+                <div class="form-group">
+                  <label class="form-label" for="company_country">Şirket Merkez Ülkesi</label>
+                  <input type="text" id="company_country" class="form-control" placeholder="Örn: Türkiye" />
+                </div>
+              </div>
+
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Preferred lang -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="pref_lang">Tercih Edilen Görüşme Dili*</label>
+                  <select id="pref_lang" class="form-control" required>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+                <!-- Main topic -->
+                <div class="form-group">
+                  <label class="form-label" for="main_topic">Ana Danışmanlık Konusu*</label>
+                  <select id="main_topic" class="form-control" required>
+                    <option value="incentive">Yatırım Teşvik Belgesi ve Teşvik Danışmanlığı</option>
+                    <option value="formation">Türkiye’de Yeni Şirket Kurulumu</option>
+                    <option value="relocate">Invest & Relocate (Yabancı Yatırımcı Yerleşimi)</option>
+                    <option value="compliance">Mevzuat Uyumluluk Koordinasyonu</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Has company in TR -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="has_tr_company">Türkiye’de Mevcut Bir Şirketiniz Var mı?*</label>
+                  <select id="has_tr_company" class="form-control" required>
+                    <option value="no">Hayır, yeni bir girişim planlıyorum</option>
+                    <option value="yes">Evet, faal durumda şirketimiz mevcut</option>
+                  </select>
+                </div>
+                <!-- Investment type -->
+                <div class="form-group">
+                  <label class="form-label" for="investment_type">Yatırımın Türü*</label>
+                  <select id="investment_type" class="form-control" required>
+                    <option value="new">Sıfırdan (Greenfield) Yeni Bir Yatırım</option>
+                    <option value="expansion">Mevcut Tesis/Yatırımın Genişletilmesi</option>
+                    <option value="relocate_only">Sadece Şirket Taşıma / İdari Yapılanma</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Sector -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="sector">Yatırım Yapılacak Sektör*</label>
+                  <input type="text" id="sector" class="form-control" placeholder="Örn: İmalat, Yazılım, Enerji" required />
+                </div>
+                <!-- Budget -->
+                <div class="form-group">
+                  <label class="form-label" for="budget_range">Tahmini Yatırım Bütçesi (Avro / TL)*</label>
+                  <select id="budget_range" class="form-control" required>
+                    <option value="under5">5 Milyon TL Altı / < 150.000 €</option>
+                    <option value="5to50">5 - 50 Milyon TL / 150.000 € - 1.500.000 € Arası</option>
+                    <option value="over50">50 Milyon TL Üstü / > 1.500.000 €</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Timeline -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="timeline_range">Yatırım Hedeflenen Başlangıç Zamanı*</label>
+                  <select id="timeline_range" class="form-control" required>
+                    <option value="immediate">Derhal (0-3 Ay İçerisinde)</option>
+                    <option value="mid">Hazırlık Aşamasında (3-6 Ay)</option>
+                    <option value="feasibility">Sadece Fizibilite Aşaması</option>
+                  </select>
+                </div>
+                <!-- Official applications before -->
+                <div class="form-group">
+                  <label class="form-label" for="prev_app">Daha Önce Resmi Bir Teşvik/Hibe Başvurusu Yaptınız mı?*</label>
+                  <select id="prev_app" class="form-control" required>
+                    <option value="no">Hayır, ilk defa başvuru planlıyoruz</option>
+                    <option value="yes">Evet, daha önce başvurularımız oldu</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Describe in detail -->
+              <div class="form-group mb-md">
+                <label class="form-label" for="case_detail">Yatırımınızı ve Durumunuzu Detaylıca Anlatınız*</label>
+                <textarea id="case_detail" class="form-control" rows="5" placeholder="Yatırımın kapsamını, kurulacak tesisin niteliğini ve hedeflenen faaliyetleri detaylı açıklayın..." required></textarea>
+              </div>
+
+              <div class="ledger-row ledger-row-2col" style="margin-bottom: var(--space-md); border: none;">
+                <!-- Decision trying to make -->
+                <div class="form-group" style="padding-right: var(--space-md);">
+                  <label class="form-label" for="decision_making">Şu An Vermeye Çalıştığınız Karar Nedir?*</label>
+                  <input type="text" id="decision_making" class="form-control" placeholder="Örn: Yatırım yerinin seçimi, Teşvik mevzuatı uygunluğu" required />
+                </div>
+                <!-- Useful session goals -->
+                <div class="form-group">
+                  <label class="form-label" for="session_usefulness">Bu Görüşmenin Yararlı Olması İçin Ne Elde Etmek İstersiniz?*</label>
+                  <input type="text" id="session_usefulness" class="form-control" placeholder="Örn: Hangi teşviklerin kesin alınabileceğini öğrenmek" required />
+                </div>
+              </div>
+
+              <!-- File upload placeholder -->
+              <div class="form-group mb-md">
+                <label class="form-label">Yatırım Sunumu / Evrak Yükleme (Opsiyonel PDF)</label>
+                <div class="file-upload-box">
+                  <span class="file-icon">&#128196;</span>
+                  <span class="file-text">Mevzuat dosyası veya PDF eklemek için buraya sürükleyin ya da tıklayın</span>
+                  <input type="file" id="file_placeholder" class="file-input" accept=".pdf,.doc,.docx" />
+                </div>
+              </div>
+
+              <!-- Consent checkboxes -->
+              <div class="form-group mb-lg">
+                <label class="checkbox-label">
+                  <input type="checkbox" class="checkbox-input" required />
+                  <span>
+                    Mentor Group <a href="/tr/privacy/" target="_blank" style="text-decoration: underline; color: var(--color-primary-green);">KVKK Aydınlatma Metni</a>'ni okudum, yatırım verilerimin değerlendirme randevusu kapsamında işlenmesini ve resmi sunum hazırlıklarında kullanılmasını onaylıyorum.*
+                  </span>
+                </label>
+                <br /><br />
+                <label class="checkbox-label">
+                  <input type="checkbox" class="checkbox-input" required />
+                  <span>
+                    <a href="/tr/advisory/terms/" target="_blank" style="text-decoration: underline; color: var(--color-primary-green);">Değerlendirme Seansı Koşulları</a>'nı okudum ve kabul ediyorum. Seansın resmi bir hukuki/mali taahhüt sunmadığını onaylıyorum.*
+                  </span>
+                </label>
+              </div>
+
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary" style="font-size: 1rem; padding: 12px 32px;">RAPOR OLUŞTUR VE ÖDEMEYE GEÇ</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- STAGE 2: AI Summary Generation (Typewriter/ledger briefing) -->
+          <div class="wizard-panel" id="wizard-panel-summary">
+            <div class="ai-generation-box">
+              <span class="ref-stamp" style="color: var(--color-burgundy);">INTELLIGENT SCORING ACTIVE</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-top: 5px;">Yapay Zeka Analitik Durum Raporu</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">Case Intake Agent (Gemini) dosya verilerinizi inceleyerek kurumsal bir ön brifing raporu hazırlıyor...</p>
+              
+              <div class="ai-brief-dossier" id="ai-brief-output">
+                <!-- Dynamic AI Typing -->
+                <div class="typing-placeholder">RAPOR ÇIKARILIYOR...</div>
+              </div>
+
+              <div class="step-actions mt-lg" id="ai-next-actions" style="display: none;">
+                <button type="button" class="btn btn-burgundy" id="ai-to-stripe-btn">DOSYAYI KİLİTLE VE ÖDEME HARCINI YATIR (150 €)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 3: Stripe Mock checkout -->
+          <div class="wizard-panel" id="wizard-panel-stripe">
+            <div class="stripe-mock-box">
+              <div class="stripe-header">
+                <span>Stripe Secure Gateway</span>
+                <span class="secure-icon">&#128274;</span>
+              </div>
+              <div class="stripe-body">
+                <h4 style="font-family: var(--font-sans); text-transform: uppercase; font-size: 0.75rem; color: var(--color-text-muted);">ÖDEME ÖZETİ</h4>
+                <div class="stripe-price-line">
+                  <span class="stripe-item-name">Initial Advisory Intake Processing & 30-Min Session Fee</span>
+                  <span class="stripe-price">150,00 €</span>
+                </div>
+                
+                <hr class="double-rule" style="margin: 15px 0;" />
+                
+                <div class="stripe-card-inputs">
+                  <div class="form-group">
+                    <label class="form-label" style="font-size: 0.65rem;">KART NUMARASI</label>
+                    <input type="text" class="form-control" value="4242 4242 4242 4242" placeholder="4242 4242 4242 4242" disabled />
+                  </div>
+                  <div class="ledger-row ledger-row-2col" style="border: none; margin-bottom: 0;">
+                    <div class="form-group" style="padding-right: var(--space-md);">
+                      <label class="form-label" style="font-size: 0.65rem;">SKT (AA/YY)</label>
+                      <input type="text" class="form-control" value="12 / 29" placeholder="12/29" disabled />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" style="font-size: 0.65rem;">CVC</label>
+                      <input type="text" class="form-control" value="424" placeholder="424" disabled />
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-primary w-full" id="stripe-pay-btn" style="background-color: #635bff; border-color: #635bff; margin-top: 20px; font-weight: 600;">
+                  ÖDEMEYİ TAMAMLA (150,00 €)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 4: Google Calendar booking slots -->
+          <div class="wizard-panel" id="wizard-panel-calendar">
+            <div class="calendar-booking-box">
+              <span class="ref-stamp">[ STEP 4: SCHEDULE DOSSIER REVIEW ]</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-top: 5px;">Müşavir Görüşme Takvimi</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">Ödemeniz başarıyla doğrulandı. Lütfen başmüşavirimizin inceleme takviminden sizin için en uygun 30 dakikalık zaman dilimini seçerek Meet randevusunu kesinleştirin.</p>
+              
+              <div class="calendar-layout-grid">
+                <!-- Day Select -->
+                <div class="calendar-days-col">
+                  <span class="form-label">UYGUN TARİHLER</span>
+                  <div class="days-list">
+                    <button type="button" class="day-select-btn active" data-day="01 Haz 2026">Pazartesi, 01 Haz 2026</button>
+                    <button type="button" class="day-select-btn" data-day="02 Haz 2026">Salı, 02 Haz 2026</button>
+                    <button type="button" class="day-select-btn" data-day="03 Haz 2026">Çarşamba, 03 Haz 2026</button>
+                    <button type="button" class="day-select-btn" data-day="04 Haz 2026">Perşembe, 04 Haz 2026</button>
+                  </div>
+                </div>
+                <!-- Time slots -->
+                <div class="calendar-slots-col">
+                  <span class="form-label">UYGUN SAATLER (TR SAATİ)</span>
+                  <div class="slots-grid">
+                    <button type="button" class="slot-select-btn" data-time="10:00 - 10:30">10:00 - 10:30</button>
+                    <button type="button" class="slot-select-btn" data-time="11:30 - 12:00">11:30 - 12:00</button>
+                    <button type="button" class="slot-select-btn" data-time="14:00 - 14:30">14:00 - 14:30</button>
+                    <button type="button" class="slot-select-btn" data-time="16:00 - 16:30">16:00 - 16:30</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="double-rule" style="margin: 20px 0;"></div>
+
+              <div class="text-right">
+                <button type="button" class="btn btn-primary" id="confirm-booking-btn" style="display: none;">RANDEVUYU KESİNLEŞTİR VE MEET LİNKİNİ AL</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUCCESS PORTAL PAGE (RECEIPT PRINT OUT) -->
+          <div class="wizard-panel" id="wizard-panel-success">
+            <div class="success-receipt-box">
+              <div class="receipt-border-top"></div>
+              <div class="receipt-body">
+                <span class="ref-stamp" style="color: var(--color-primary-green);">DANIŞMANLIK REZERVASYON MAKBUZU</span>
+                <h2 style="font-family: var(--font-serif); font-size: 1.8rem; margin-top: 5px; color: var(--color-primary-green);">DOSYA BAŞARIYLA ONAYLANDI</h2>
+                <div class="double-rule" style="margin: 15px 0;"></div>
+                
+                <div class="receipt-grid">
+                  <div class="receipt-row-data"><strong>Danışan Adı:</strong> <span id="r-name">Melih Çalıkoğlu</span></div>
+                  <div class="receipt-row-data"><strong>Dossier Ref:</strong> <span id="r-ref">MG-REQ-20260531-A</span></div>
+                  <div class="receipt-row-data"><strong>Seans Tarihi:</strong> <span id="r-datetime">01 Haziran 2026 | 14:00 - 14:30 (TR Saati)</span></div>
+                  <div class="receipt-row-data"><strong>Müşavir Koordinatör:</strong> <span>Mentor Group Kıdemli Ortağı</span></div>
+                  <div class="receipt-row-data"><strong>Google Meet Bağlantısı:</strong> <a href="https://meet.google.com/abc-defg-hij" target="_blank" class="meet-link" style="color: var(--color-primary-green); text-decoration: underline;">meet.google.com/abc-defg-hij</a></div>
+                  <div class="receipt-row-data"><strong>İşlem Harcı:</strong> <span>150,00 € (Tahsil Edildi)</span></div>
+                </div>
+                
+                <div class="boundaries-banner" style="margin-top: 20px;">
+                  <span class="boundaries-stamp">[ İDARİ UYARI ]</span>
+                  <p class="boundaries-text" style="font-size: 0.72rem;">Yapay zeka tarafından hazırlanan analitik ön brifing raporunuz başmüşavirimiz tarafından onaylanmıştır. Belirttiğiniz e-posta adresine seans katılım linki, takvim kaydı ve resmi ödeme makbuzunuz gönderilmiştir. Lütfen görüşme saatinden en az 5 dakika önce Meet odasında hazır bulununuz.</p>
+                </div>
+
+                <div class="text-center" style="margin-top: 25px;">
+                  <a href="/tr/" class="btn btn-secondary">ANASAYFAYA DÖN</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .dossier-box {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    padding: var(--space-xl);
+  }
+
+  .dossier-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .classification-stamp {
+    font-family: monospace;
+    font-size: var(--size-meta);
+    color: var(--color-burgundy);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title-box {
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-main-title {
+    font-size: 2.8rem;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: var(--size-body-large);
+    color: var(--color-text-muted);
+    max-width: 800px;
+    line-height: 1.6;
+  }
+
+  /* Matrix Table Custom inclusions/exclusions */
+  .matrix-box {
+    border: 1px solid var(--color-line-muted);
+    padding: var(--space-lg);
+    background-color: var(--color-bg-card);
+  }
+
+  .matrix-list {
+    list-style: none;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .matrix-list li {
+    position: relative;
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+
+  .inclusion-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-green);
+    font-weight: bold;
+  }
+
+  .exclusion-list li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: var(--color-burgundy);
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  /* Wizard navigation bar */
+  .wizard-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .w-step {
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid transparent;
+  }
+
+  .w-step.active {
+    border-color: var(--color-primary-green);
+    color: var(--color-primary-green);
+    background-color: var(--color-bg-card);
+  }
+
+  .w-step-divider {
+    color: var(--color-line-muted);
+  }
+
+  .wizard-panel {
+    display: none;
+    padding: var(--space-lg) 0;
+  }
+
+  .wizard-panel.active {
+    display: block;
+  }
+
+  /* File upload stylized box */
+  .file-upload-box {
+    border: 1px dashed var(--color-line-muted);
+    background-color: var(--color-bg-card);
+    padding: var(--space-lg);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition-fast);
+  }
+
+  .file-upload-box:hover {
+    border-color: var(--color-primary-green);
+    background-color: var(--color-bg-paper);
+  }
+
+  .file-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .file-text {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* AI Output briefing styled ledger folder */
+  .ai-brief-dossier {
+    border: 1px solid var(--color-line-muted);
+    background-color: #1b1d1c;
+    color: #FAF7F2;
+    padding: var(--space-xl);
+    font-family: monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    min-height: 250px;
+    white-space: pre-line;
+  }
+
+  .typing-placeholder {
+    color: var(--color-gold);
+    text-align: center;
+    padding-top: 50px;
+    animation: flash 1s infinite alternate;
+  }
+
+  @keyframes flash {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+
+  /* Stripe box layout styling */
+  .stripe-mock-box {
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid #e6ebf1;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    background-color: #f8f9fa;
+  }
+
+  .stripe-header {
+    background-color: #635bff;
+    color: white;
+    padding: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .stripe-body {
+    padding: var(--space-xl);
+    background-color: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .stripe-price-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #32325d;
+    margin-top: 6px;
+  }
+
+  .stripe-item-name {
+    font-weight: 500;
+    max-width: 70%;
+  }
+
+  .stripe-price {
+    font-weight: bold;
+  }
+
+  .stripe-card-inputs {
+    border: 1px solid #e6ebf1;
+    padding: var(--space-md);
+    background-color: #fcfcfc;
+  }
+
+  /* Google Calendar scheduling grid setup */
+  .calendar-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-card);
+    padding: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .calendar-layout-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .days-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .day-select-btn {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    padding: var(--space-sm);
+    text-align: left;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+
+  .day-select-btn.active, .day-select-btn:hover {
+    border-color: var(--color-primary-green);
+    background-color: var(--color-bg-card);
+    font-weight: 600;
+  }
+
+  .slots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs);
+  }
+
+  .slot-select-btn {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    padding: var(--space-sm);
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+
+  .slot-select-btn.active, .slot-select-btn:hover {
+    background-color: var(--color-primary-green);
+    color: var(--color-bg-paper);
+    border-color: var(--color-primary-green);
+    font-weight: 600;
+  }
+
+  /* Print Out receipt styling */
+  .success-receipt-box {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+  }
+
+  .receipt-border-top {
+    height: 6px;
+    background-color: var(--color-primary-green);
+  }
+
+  .receipt-body {
+    padding: var(--space-xl);
+  }
+
+  .receipt-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    background-color: var(--color-bg-card);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-line-muted);
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
+
+  .receipt-row-data {
+    border-bottom: 1px dashed var(--color-line-muted);
+    padding-bottom: 6px;
+  }
+
+  .receipt-row-data:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .boundaries-banner {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-card);
+    padding: var(--space-md);
+    border-left: 3px solid var(--color-burgundy);
+  }
+
+  .boundaries-stamp {
+    font-family: monospace;
+    font-size: 0.65rem;
+    color: var(--color-burgundy);
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .boundaries-text {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+  }
+</style>
+
+<script is:inline>
+  // Complete client-side interactive wizard scripting
+  const wizard = document.getElementById('advisory-flow-wizard');
+  
+  if (wizard) {
+    const panels = wizard.querySelectorAll('.wizard-panel');
+    const steps = wizard.querySelectorAll('.w-step');
+    const form = wizard.querySelector('#intake-form');
+    
+    // Panel handles
+    const panelForm = wizard.querySelector('#wizard-panel-form');
+    const panelSummary = wizard.querySelector('#wizard-panel-summary');
+    const panelStripe = wizard.querySelector('#wizard-panel-stripe');
+    const panelCalendar = wizard.querySelector('#wizard-panel-calendar');
+    const panelSuccess = wizard.querySelector('#wizard-panel-success');
+    
+    // Flow values stored
+    let userName = "";
+    let selectedDay = "01 Haz 2026";
+    let selectedTime = "";
+
+    const setStepActive = (stepName) => {
+      steps.forEach(st => {
+        if (st.getAttribute('data-nav') === stepName) {
+          st.classList.add('active');
+        } else {
+          st.classList.remove('active');
+        }
+      });
+
+      panels.forEach(pn => {
+        pn.classList.remove('active');
+      });
+    };
+
+    // Stage 1: Form Submit
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Save user name
+        const nameInput = document.getElementById('full_name');
+        userName = nameInput ? nameInput.value : "Değerli Müşteri";
+        
+        // Move to Stage 2 (AI summary loading)
+        setStepActive('summary');
+        panelSummary.classList.add('active');
+        
+        // Execute simulated Case Intake Agent Typewriter summary
+        const aiBriefOutput = document.getElementById('ai-brief-output');
+        const nextActions = document.getElementById('ai-next-actions');
+        
+        if (aiBriefOutput) {
+          const mainTopic = document.getElementById('main_topic').value;
+          const sector = document.getElementById('sector').value;
+          const desc = document.getElementById('case_detail').value;
+          
+          let topicCategory = "YATIRIM TEŞVİK BELGESİ BAŞVURUSU";
+          let serviceFit = "Yatırım Teşvik Belgeleri Danışmanlık Departmanı";
+          
+          if (mainTopic === 'formation') {
+            topicCategory = "ŞİRKET TESCİLİ VE KURULUMU";
+            serviceFit = "Türkiye Pazar Giriş ve Kurulum Departmanı";
+          } else if (mainTopic === 'relocate') {
+            topicCategory = "YABANCI YATIRIM VE YERLEŞİM KOORDİNASYONU";
+            serviceFit = "Invest & Relocate Koordinasyon Grubu";
+          } else if (mainTopic === 'compliance') {
+            topicCategory = "MEVZUAT UYUMLULUK VE LİSANS DENETİMİ";
+            serviceFit = "Regülasyon ve Mevzuat Uyum Ekibi";
+          }
+
+          const summaryText = `[ CASE INTAKE ANALYTICAL DOSSIER BRIEF ]
+          REF-ID: MG-REQ-${Date.now().toString().slice(-6)}-A
+          --------------------------------------------------
+          01. MÜŞTERİ PROFİLİ: ${userName}
+          02. HEDEF SEKTÖR: ${sector.toUpperCase()}
+          03. KATEGORİ: ${topicCategory}
+          04. YATIRIM NİYETİ: ${desc.slice(0, 120)}...
+          05. UYGUN HİZMET MODELİ: ${serviceFit}
+          --------------------------------------------------
+          [ SUGGESTED MEETING AGENDA / GÖRÜŞME GÜNDEMİ ]
+          1. Yatırımcının yasal tescil ve asgari bütçe limitlerinin (YTB için 1.5M - 3M TL) değerlendirilmesi.
+          2. Teşvik Bölgeleri Haritası (1-6. Bölge) avantajlarının sektörel analizi.
+          3. Resmi başvuru öncesi gerekli evrak listesi ve bürokratik engellerin tespiti.
+          --------------------------------------------------
+          [ SECURITY RISK NOTES / RİSK NOTLARI ]
+          - İdari onaylar Sanayi Bakanlığı yetkisindedir; garantörlük verilemez.
+          - Yabancı ortaklıklarda banka blokaj ve MERSİS tescil süreleri dikkate alınmalıdır.
+          - Rapor kilitlendi. Uyum Görüşmesi için harç ödemesi bekleniyor.`;
+
+          let i = 0;
+          aiBriefOutput.innerHTML = "";
+          
+          const typeWriter = () => {
+            if (i < summaryText.length) {
+              aiBriefOutput.innerHTML += summaryText.charAt(i);
+              i++;
+              setTimeout(typeWriter, 5); // Fast typewriter speed
+            } else {
+              if (nextActions) nextActions.style.display = "block";
+            }
+          };
+          
+          setTimeout(typeWriter, 800);
+        }
+      });
+    }
+
+    // Stage 2: Proceed to Stripe Mock
+    const toStripeBtn = document.getElementById('ai-to-stripe-btn');
+    if (toStripeBtn) {
+      toStripeBtn.addEventListener('click', () => {
+        setStepActive('stripe');
+        panelStripe.classList.add('active');
+      });
+    }
+
+    // Stage 3: Stripe Pay Button
+    const payBtn = document.getElementById('stripe-pay-btn');
+    if (payBtn) {
+      payBtn.addEventListener('click', () => {
+        payBtn.innerHTML = "ÖDEME ONAYLANIYOR...";
+        payBtn.disabled = true;
+        
+        setTimeout(() => {
+          setStepActive('calendar');
+          panelCalendar.classList.add('active');
+        }, 1500);
+      });
+    }
+
+    // Stage 4: Google Calendar interactions
+    const dayBtns = wizard.querySelectorAll('.day-select-btn');
+    const slotBtns = wizard.querySelectorAll('.slot-select-btn');
+    const confirmBtn = document.getElementById('confirm-booking-btn');
+
+    dayBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        dayBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedDay = btn.getAttribute('data-day') || "01 Haz 2026";
+      });
+    });
+
+    slotBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        slotBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedTime = btn.getAttribute('data-time') || "";
+        if (confirmBtn) confirmBtn.style.display = "inline-block";
+      });
+    });
+
+    // Stage 5: Final Confirmation receipt printout
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        setStepActive('success');
+        panelCalendar.classList.remove('active');
+        panelSuccess.classList.add('active');
+        
+        // Update Receipt fields dynamically
+        const rName = document.getElementById('r-name');
+        const rRef = document.getElementById('r-ref');
+        const rDatetime = document.getElementById('r-datetime');
+        
+        if (rName) rName.textContent = userName;
+        if (rRef) rRef.textContent = `MG-REQ-${Date.now().toString().slice(-6)}-A`;
+        if (rDatetime) rDatetime.textContent = `${selectedDay} | ${selectedTime} (TR Saati)`;
+      });
+    }
+  }
+</script>

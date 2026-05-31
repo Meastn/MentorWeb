@@ -1,0 +1,99 @@
+---
+/* REF: MG-2026-ASTRO-EN-INSIGHTS-DETAIL-01 */
+import Layout from '../../../layouts/Layout.astro';
+import { insightsArticles } from '../../../data/insights';
+
+export async function getStaticPaths() {
+  const enArticles = insightsArticles.filter(art => art.locale === 'en');
+  return enArticles.map(art => ({
+    params: { slug: art.slug },
+    props: { article: art }
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<Layout title={article.title} description={article.excerpt}>
+  
+  <section class="py-xl">
+    <div class="ledger-container">
+      
+      <div class="dossier-box">
+        <div class="dossier-header-bar">
+          <span class="ref-stamp">REF: {article.refCode}</span>
+          <span class="classification-stamp">[ EXECUTIVE BRIEF / MEMO ]</span>
+        </div>
+
+        <div class="hero-title-box">
+          <span class="sec-number">{article.category}</span>
+          <h1 class="hero-main-title">{article.title}</h1>
+          
+          <div class="article-meta-row" style="font-size: 0.78rem; color: var(--color-text-muted); display: flex; gap: var(--space-md); margin-top: 10px; border-bottom: 1px solid var(--color-line-muted); padding-bottom: var(--space-sm);">
+            <span><strong>Date:</strong> {article.date}</span>
+            <span>|</span>
+            <span><strong>Author:</strong> {article.author}</span>
+          </div>
+        </div>
+
+        <!-- Editorial Content Area -->
+        <div class="editorial-content-layout">
+          <div class="main-editorial-body" set:html={article.contentHtml}></div>
+        </div>
+
+        <div class="double-rule" style="margin: 25px 0;"></div>
+
+        <!-- Back & CTA Block -->
+        <div class="flex justify-between align-center" style="flex-wrap: wrap; gap: 15px;">
+          <a href="/en/insights/" class="btn btn-secondary">&larr; RETURN TO DOSSIER INDEX</a>
+          <a href="/en/advisory/" class="btn btn-primary">BOOK INITIAL ADVISORY SESSION</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</Layout>
+
+<style is:global>
+  /* Local editorial styling overrides for injected HTML */
+  .main-editorial-body h4 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+    color: var(--color-primary-green);
+    border-bottom: 1px dashed var(--color-line-muted);
+    padding-bottom: 4px;
+  }
+
+  .main-editorial-body p {
+    font-size: 0.9rem;
+    color: var(--color-text-ink);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+    text-align: justify;
+  }
+
+  .main-editorial-body ul, .main-editorial-body ol {
+    margin-left: 20px;
+    margin-bottom: var(--space-md);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text-ink);
+  }
+
+  .main-editorial-body li {
+    margin-bottom: 6px;
+  }
+
+  .main-editorial-body strong {
+    color: var(--color-text-ink);
+  }
+
+  .main-editorial-body em {
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+</style>

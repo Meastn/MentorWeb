@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 01. GENERAL CONTACT ENTRIES
+    match /contactSubmissions/{document} {
+      allow create: if true; // Public submission allowed
+      allow read, update, delete: if false; // Private administrative lock
+    }
+    
+    // 02. STRATEJİK ADVISORY INTAKES
+    match /advisoryIntakes/{document} {
+      allow create: if true; // Client submission allowed
+      allow read, update: if false; // Internal/Cloud Function write access only
+      allow delete: if false; // Prevent database deletion
+    }
+  }
+}

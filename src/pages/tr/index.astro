@@ -1,0 +1,411 @@
+---
+/* REF: MG-2026-ASTRO-TR-HOME-01 */
+import Layout from '../../layouts/Layout.astro';
+import RouteFinder from '../../components/RouteFinder.astro';
+import AdvisoryAssistant from '../../components/AdvisoryAssistant.astro';
+
+const pageTitle = "Anasayfa";
+const pageDesc = "Türkiye’de devlet teşvikleri, yatırım teşvik belgesi, yabancı sermaye şirket kuruluşu ve regülasyon uyum süreçlerinde resmi ve ilkeli rehberiniz.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  
+  <!-- 01. BIFURCATED HERO DOSSIER -->
+  <section class="hero-section py-xl">
+    <div class="ledger-container">
+      <div class="hero-dossier-wrapper">
+        <div class="dossier-header-bar">
+          <span class="ref-stamp">DOSSIER-REF: MG-2026-TR-HOME</span>
+          <span class="classification-stamp">[ CLASSIFICATION: CONFIDENTIAL / STRATEGIC ]</span>
+        </div>
+
+        <div class="hero-title-box">
+          <span class="sec-number">01. STRATEJİK DANIŞMA</span>
+          <h1 class="hero-main-title">Yönetim Kurulu Seviyesinde Stratejik Danışmanlık.</h1>
+          <p class="hero-subtitle">Türkiye pazarında devlet teşvikleri, yatırım uyumu, resmi şirket kuruluşu ve regülasyon koordinasyonunda tam yetkin, resmi ve ilkeli rehberiniz.</p>
+          <hr class="double-rule" />
+        </div>
+
+        <!-- The Bifurcated Paths Grid -->
+        <div class="ledger-row ledger-row-2col">
+          <!-- Path 1: Turkish Corporates -->
+          <div class="ledger-col ledger-col-split path-column green-path">
+            <span class="sec-number">YATIRIMCI TÜRÜ A</span>
+            <h3 class="path-title">Türkiye’de Yatırım ve Teşvik Danışmanlığı</h3>
+            <p class="path-desc">Yatırım Teşvik Belgesi alımı, Ar-Ge yardımları, ihracat destekleri ve hibe başvuru dosyalarının hazırlanması konularında yerli firmalara uçtan uca stratejik rehberlik.</p>
+            <ul class="path-bullet-list">
+              <li>Yatırım Teşvik Belgesi (YTB) dosya hazırlığı</li>
+              <li>Devlet destekleri ve finansal fizibilite analizi</li>
+              <li>İdari süreç takibi ve revizyon işlemleri</li>
+            </ul>
+            <div style="margin-top: auto; padding-top: var(--space-md);">
+              <a href="/tr/services/investment-incentives/" class="btn btn-primary w-full">TEŞVİK KILAVUZUNU İNCELE</a>
+            </div>
+          </div>
+
+          <!-- Path 2: Foreign Investors -->
+          <div class="ledger-col path-column burgundy-path">
+            <span class="sec-number">YATIRIMCI TÜRÜ B</span>
+            <h3 class="path-title">Invest & Relocate to Türkiye</h3>
+            <p class="path-desc">Uluslararası yatırımcılar için Türkiye pazarına giriş, şirket kuruluşu, yabancı sermaye teşvikleri ve yerleşim süreçlerinin koordinasyonunda resmi temsil ve danışmanlık.</p>
+            <ul class="path-bullet-list">
+              <li>Türkiye pazar giriş stratejileri ve mevzuat analizi</li>
+              <li>%100 yabancı sermayeli şirket kuruluşu koordinasyonu</li>
+              <li>İdari yerleşim, ruhsat ve regülasyon uyumu</li>
+            </ul>
+            <div style="margin-top: auto; padding-top: var(--space-md);">
+              <a href="/tr/services/invest-relocate/" class="btn btn-burgundy w-full">INVESTOR ROADMAP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. INTERACTIVE ROUTE FINDER SECTION -->
+  <section class="section-divider-top py-xl" style="background-color: var(--color-bg-card);">
+    <div class="ledger-container">
+      <div class="section-header-box mb-lg">
+        <span class="sec-number">02. MEVZUAT TESPİTİ</span>
+        <h2>Yol Haritası Tespit Protokolü</h2>
+        <p class="section-subtitle">Yatırım projenizin niteliğine ve bütçesine göre doğru resmi sevk kanalını belirlemek için interaktif tespit protokolünü çalıştırın.</p>
+        <hr class="double-rule" style="margin-top: 10px;" />
+      </div>
+      
+      <RouteFinder locale="tr" />
+    </div>
+  </section>
+
+  <!-- 03. SERVICE PORTFOLIO OVERVIEW -->
+  <section class="py-xl">
+    <div class="ledger-container">
+      <div class="section-header-box mb-lg">
+        <span class="sec-number">03. FAALİYET ALANLARIMIZ</span>
+        <h2>Hizmet Kapsam ve Standartları</h2>
+        <p class="section-subtitle">Bürokratik süreçleri ve teşvik mevzuatını, firmanız lehine en yüksek uyum gücüyle yönetiyoruz.</p>
+        <hr class="double-rule" style="margin-top: 10px;" />
+      </div>
+
+      <div class="ledger-row ledger-row-2col">
+        <!-- Service Card 1 -->
+        <div class="ledger-col ledger-col-split service-card">
+          <span class="ref-stamp">SERVICE-ID: TR-YTB</span>
+          <h3 class="service-card-title">Yatırım Teşvik Belgesi Danışmanlığı</h3>
+          <p class="service-card-text">Bölgesel, öncelikli ve stratejik yatırımlar için vergi indirimleri, KDV istisnası, gümrük vergisi muafiyeti ve SGK prim desteklerini kapsayan Yatırım Teşvik Belgesi dosyasının Sanayi ve Teknoloji Bakanlığı nezdinde takibi.</p>
+          <a href="/tr/services/investment-incentives/" class="btn-link">Mevzuat Ayrıntılarını İncele &rarr;</a>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="ledger-col service-card">
+          <span class="ref-stamp">SERVICE-ID: TR-INV</span>
+          <h3 class="service-card-title">Yabancı Yatırım & Şirket Kurulumu</h3>
+          <p class="service-card-text">Türkiye pazarına girmek isteyen yabancı kurum ve fonlar için limited/anonim şirket tescilleri, banka koordinasyonları, vergi planlamaları, ticaret odası tescilleri ve akredite hukuk ortaklarımızın eşgüdümünde yürütülen oturum/yerleşim uyum süreçleri.</p>
+          <a href="/tr/services/invest-relocate/" class="btn-link">Explore Market Entry Services &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. METHODOLOGY & TIMELINE -->
+  <section class="py-xl" style="background-color: var(--color-bg-card);">
+    <div class="ledger-container">
+      <div class="section-header-box mb-lg">
+        <span class="sec-number">04. METODOLOJİ</span>
+        <h2>Disiplinli Çalışma Esaslarımız</h2>
+        <p class="section-subtitle">Bürokrasi ve regülasyon uyumunu tesadüflere bırakmıyor, dört aşamalı kurumsal protokolümüzle takip ediyoruz.</p>
+        <hr class="double-rule" style="margin-top: 10px;" />
+      </div>
+
+      <div class="timeline-ledger">
+        <div class="timeline-step">
+          <div class="timeline-num">01</div>
+          <div class="timeline-content">
+            <h4>Ön Değerlendirme & Durum Tespiti</h4>
+            <p>Paid Initial Advisory Session ile yatırımınızın kapsamını resmi olarak kayda alıyor, mevzuat engellerini ve uygun teşvik alanlarını ilk andan netleştiriyoruz.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-num">02</div>
+          <div class="timeline-content">
+            <h4>Dosyalama & Dosya Hazırlığı</h4>
+            <p>İlgili bakanlıklar ve resmî mercilerin talep ettiği tüm form, mali tablo ve teknik dosyaları, sıfır hata prensibi ve resmi standartlarda hazırlıyoruz.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-num">03</div>
+          <div class="timeline-content">
+            <h4>Resmi Başvuru & İdari Takip</h4>
+            <p>Bakanlıklar, Teşvik Uygulama Genel Müdürlüğü ve yerel idareler nezdindeki tüm süreçlerin idari takibini yaparak, ek belge taleplerine derhal yanıt üretiyoruz.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-num">04</div>
+          <div class="timeline-content">
+            <h4>Raporlama & Uyum Güvencesi</h4>
+            <p>Yatırım tescili sonrası, teşvik kapatma vizeleri, SGK bildirim koordinasyonları ve yıllık resmi raporlama yükümlülüklerinin takibiyle uyumu kalıcı hale getiriyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. ADVISORY ASSISTANT TERMINAL -->
+  <section class="py-xl">
+    <div class="ledger-container">
+      <div class="section-header-box mb-lg text-center">
+        <span class="sec-number">05. İNTERAKTİF DANIŞMANLIK</span>
+        <h2>Stratejik Uyum Terminali</h2>
+        <p class="section-subtitle" style="max-width: 700px; margin: 0 auto;">Resmi mevzuat veritabanımız üzerinden doğrulanmış ön bilgilere ve mevzuat sınırlandırmalarına erişin.</p>
+        <hr class="double-rule" style="margin-top: 10px;" />
+      </div>
+      
+      <AdvisoryAssistant locale="tr" />
+    </div>
+  </section>
+
+  <!-- 06. INITIAL ADVISORY CTA BLOCK -->
+  <section class="py-xl text-center" style="background-color: var(--color-primary-green); color: var(--color-bg-paper);">
+    <div class="ledger-container">
+      <div class="advisory-cta-panel">
+        <span class="ref-stamp" style="color: rgba(250,247,242,0.6);">REF: MG-BOOK-TR-2026</span>
+        <h2 style="color: var(--color-bg-paper); font-size: 2.2rem; margin-top: 10px;">Yatırım Dosyanızı Birlikte Hazırlayalım</h2>
+        <p style="max-width: 750px; margin: var(--space-md) auto var(--space-lg); font-size: var(--size-body-large); opacity: 0.9;">
+          Türkiye’de yapacağınız yatırımın hukuki, mali ve teşviksel kapsamını 30 dakikalık resmi "İlk Değerlendirme Randevusu" kapsamında netleştirelim. Görüşme öncesi kapsamlı dosya girişinizi yapmanız zorunludur.
+        </p>
+        <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+          <a href="/tr/advisory/" class="btn btn-burgundy" style="font-size: 0.95rem; font-weight: 600; padding: 12px 24px;">01. İLK DEĞERLENDİRME RANDEVUSU AL</a>
+          <a href="/tr/services/" class="btn btn-secondary" style="border-color: var(--color-bg-paper); color: var(--color-bg-paper); font-size: 0.95rem; padding: 12px 24px;">02. HİZMET DETAYLARI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. INSIGHTS PREVIEW -->
+  <section class="py-xl">
+    <div class="ledger-container">
+      <div class="section-header-box mb-lg">
+        <span class="sec-number">06. BİLGİ MERKEZİNDEN NOTLAR</span>
+        <h2>Kurumsal Bilgi Notları & Mevzuat Brifingleri</h2>
+        <p class="section-subtitle">Yatırımcılar için derlediğimiz güncel mevzuat notları, tescil rehberleri ve analizler.</p>
+        <hr class="double-rule" style="margin-top: 10px;" />
+      </div>
+
+      <div class="ledger-row ledger-row-2col">
+        <!-- Insight 1 -->
+        <div class="ledger-col ledger-col-split insight-preview-card">
+          <span class="ref-stamp">MEVZUAT BRİFİNGİ</span>
+          <h4 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; margin-top: 5px; margin-bottom: 10px;">
+            Yatırım Teşvik Belgesi Nedir ve Nasıl Alınır?
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--space-md);">
+            Türkiye'de yeni yatırım yapacak yerli ve yabancı şirketlerin vergi indirimlerinden ve SGK prim desteklerinden yararlanmak için alması gereken en temel resmi belgenin şartlarını inceliyoruz.
+          </p>
+          <a href="/tr/insights/yatirim-tesvik-belgesi-nedir/" class="btn-link" style="font-size: 0.8rem;">Brifingi Oku &rarr;</a>
+        </div>
+
+        <!-- Insight 2 -->
+        <div class="ledger-col insight-preview-card">
+          <span class="ref-stamp">PAZAR GİRİŞ NOTU</span>
+          <h4 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; margin-top: 5px; margin-bottom: 10px;">
+            Türkiye'de Şirket Kuruluşu İçin İlk Adımlar ve Maliyetler
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--space-md);">
+            Yabancı şirketler için Türkiye pazarında Limited Şirket (LTD) ve Anonim Şirket (AŞ) tescillerinin aşamaları, tescil süreleri ve asgari sermaye gereklilikleri.
+          </p>
+          <a href="/tr/insights/turkiyede-sirket-kurulusu-ilk-adimlar/" class="btn-link" style="font-size: 0.8rem;">Brifingi Oku &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-dossier-wrapper {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    padding: var(--space-xl);
+  }
+
+  .dossier-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .classification-stamp {
+    font-family: monospace;
+    font-size: var(--size-meta);
+    color: var(--color-burgundy);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title-box {
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-main-title {
+    font-size: 2.8rem;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: var(--size-body-large);
+    color: var(--color-text-muted);
+    max-width: 800px;
+    line-height: 1.6;
+  }
+
+  .path-column {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl);
+  }
+
+  .path-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .path-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .path-bullet-list {
+    list-style: none;
+    font-size: 0.85rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .path-bullet-list li {
+    position: relative;
+    padding-left: var(--space-md);
+    margin-bottom: 6px;
+    color: var(--color-text-ink);
+  }
+
+  .path-bullet-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-line-muted);
+  }
+
+  .green-path .path-title {
+    color: var(--color-primary-green);
+  }
+
+  .burgundy-path .path-title {
+    color: var(--color-burgundy);
+  }
+
+  .section-header-box h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+
+  .section-subtitle {
+    font-size: var(--size-body-large);
+    color: var(--color-text-muted);
+    max-width: 800px;
+  }
+
+  .service-card {
+    padding: var(--space-xl);
+  }
+
+  .service-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-card-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Timeline Styles */
+  .timeline-ledger {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+  }
+
+  .timeline-step {
+    display: flex;
+    border-bottom: 1px solid var(--color-line-muted);
+  }
+
+  .timeline-step:last-child {
+    border-bottom: none;
+  }
+
+  .timeline-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-card);
+  }
+
+  .timeline-content {
+    padding: var(--space-lg);
+    flex: 1;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .timeline-step {
+      flex-direction: column;
+    }
+    
+    .timeline-num {
+      width: 100%;
+      height: 50px;
+      border-right: none;
+      border-bottom: 1px solid var(--color-line-muted);
+    }
+  }
+</style>

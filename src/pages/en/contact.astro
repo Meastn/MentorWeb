@@ -1,0 +1,156 @@
+---
+/* REF: MG-2026-ASTRO-EN-CONTACT-01 */
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "Contact General Inquiries";
+const pageDesc = "Mentor Group Istanbul and Ankara headquarters general contact and corporate registry forms.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  
+  <section class="py-xl">
+    <div class="ledger-container">
+      
+      <div class="dossier-box">
+        <div class="dossier-header-bar">
+          <span class="ref-stamp">REF: MG-2026-EN-CONTACT</span>
+          <span class="classification-stamp">[ GENERAL INQUIRIES / OFFICIAL DESK ]</span>
+        </div>
+
+        <div class="hero-title-box">
+          <span class="sec-number">07. GENERAL INQUIRIES</span>
+          <h1 class="hero-main-title">Official Inquiries & Executive Desks</h1>
+          <p class="hero-subtitle">To submit general corporate inquiries or schedule coordination briefs, please fill out the administrative form below.</p>
+          <hr class="double-rule" />
+        </div>
+
+        <div class="ledger-row ledger-row-2col">
+          <!-- Form column -->
+          <div class="ledger-col ledger-col-split" style="padding-right: var(--space-xl);">
+            
+            <div id="contact-success-box" style="display: none; border: 1px solid var(--color-primary-green); padding: var(--space-lg); background-color: var(--color-bg-card); font-family: monospace; font-size: 0.85rem;">
+              <span class="ref-stamp" style="color: var(--color-primary-green);">INQUIRY COMMITTED SUCCESSFULLY</span>
+              <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-top: 5px; color: var(--color-primary-green);">EXECUTIVE RECORD CREATED</h4>
+              <div class="double-rule" style="margin: 10px 0;"></div>
+              <p style="margin-bottom: 10px;"><strong>Inquiry Ref:</strong> <span id="c-ref">MG-CNT-20260531-X</span></p>
+              <p style="margin-bottom: 10px;"><strong>Status:</strong> Queued (Under Regulatory Officer Audit)</p>
+              <p style="font-size: 0.72rem; color: var(--color-text-muted);">Your operational coordinates have been securely committed to our database under GDPR guidelines. A scoping officer will reach out via the provided email or phone coordinates within 24 business hours. For immediate project scoping or filing preparation, we advise booking our formal Initial Advisory Session.</p>
+            </div>
+
+            <form id="contact-form" class="retro-form">
+              <div class="form-group">
+                <label class="form-label" for="c_name">Full Name*</label>
+                <input type="text" id="c_name" class="form-control" placeholder="e.g. John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_email">Corporate Email Address*</label>
+                <input type="email" id="c_email" class="form-control" placeholder="e.g. john@yourfirm.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_phone">Phone / WhatsApp Coordinates*</label>
+                <input type="text" id="c_phone" class="form-control" placeholder="e.g. +1 (555) 019-2834" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_company">Company Name</label>
+                <input type="text" id="c_company" class="form-control" placeholder="e.g. Global Tech Ltd." />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_country">Country*</label>
+                <input type="text" id="c_country" class="form-control" placeholder="e.g. United Kingdom" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_lang">Preferred Communication Language*</label>
+                <select id="c_lang" class="form-control" required>
+                  <option value="en">English</option>
+                  <option value="tr">Türkçe</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_service">Focus Portfolio*</label>
+                <select id="c_service" class="form-control" required>
+                  <option value="relocate">Invest & Relocate (Market Entry Setup)</option>
+                  <option value="incentives">Investment Incentives Scoping</option>
+                  <option value="other">Other Regulatory Clearance Subjects</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c_msg">Message / Inquiry Details*</label>
+                <textarea id="c_msg" class="form-control" rows="4" placeholder="Describe your corporate objectives or specific regulatory questions..." required></textarea>
+              </div>
+
+              <div class="form-group mb-lg">
+                <label class="checkbox-label">
+                  <input type="checkbox" class="checkbox-input" required />
+                  <span>
+                    I confirm that I have reviewed the <a href="/en/privacy/" target="_blank" style="text-decoration: underline; color: var(--color-primary-green);">Privacy & GDPR Statement</a> and consent to the processing of my contact coordinates.*
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">SUBMIT DOSSIER INQUIRY</button>
+            </form>
+          </div>
+
+          <!-- Info column -->
+          <div class="ledger-col" style="background-color: var(--color-bg-card);">
+            <span class="sec-number">02. EXECUTIVE OFFICES</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: var(--space-sm);">Offices Coordinates & Inquiries</h3>
+            
+            <div style="font-size: 0.82rem; color: var(--color-text-ink); line-height: 1.6; display: flex; flex-direction: column; gap: 15px; margin-top: var(--space-md);">
+              <div>
+                <strong>Ankara Headquarters (Regulatory Liaison):</strong><br />
+                Mahall Ankara, Dumlupinar Bulvari No:274, C Block Fl:7 Loft:74, 06530 Cankaya/Ankara, Türkiye<br />
+                <strong>Phone:</strong> +90 (312) 456 78 90<br />
+                <strong>Email:</strong> ankara@mentor.group
+              </div>
+
+              <div style="border-top: 1px solid var(--color-line-muted); padding-top: 15px;">
+                <strong>Istanbul Office (Market Entry Liaison):</strong><br />
+                Levent Loft, Buyukdere Caddesi No:201, Fl:3 Loft:314, 34394 Besiktas/Istanbul, Türkiye<br />
+                <strong>Phone:</strong> +90 (212) 345 67 89<br />
+                <strong>Email:</strong> istanbul@mentor.group
+              </div>
+
+              <div style="border-top: 1px solid var(--color-line-muted); padding-top: 15px;">
+                <strong>Official Email Communication:</strong><br />
+                For general and formal dossier scoping: <strong>advisory@mentor.group</strong>
+              </div>
+            </div>
+            
+            <div class="boundaries-banner" style="margin-top: var(--space-xl);">
+              <span class="boundaries-stamp">[ OFFICIAL DIRECTION ]</span>
+              <p class="boundaries-text">Litigation documents, formal notification packages, or statutory notices must be delivered physical-copy via registered post or KEP (Registered Electronic Mail) directly to our headquarters. Electronic form entries do not constitute statutory serving of notices.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+
+</Layout>
+
+<script is:inline>
+  const cForm = document.getElementById('contact-form');
+  const cSuccessBox = document.getElementById('contact-success-box');
+  const cRef = document.getElementById('c-ref');
+
+  if (cForm && cSuccessBox) {
+    cForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      cForm.style.display = "none";
+      cSuccessBox.style.display = "block";
+      if (cRef) {
+        cRef.textContent = `MG-CNT-${Date.now().toString().slice(-6)}-X`;
+      }
+    });
+  }
+</script>

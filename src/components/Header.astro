@@ -1,0 +1,325 @@
+---
+/* REF: MG-2026-ASTRO-HEADER-01 */
+
+const currentPath = Astro.url.pathname;
+const isEn = currentPath.startsWith('/en');
+const locale = isEn ? 'en' : 'tr';
+const baseRoute = isEn ? '/en' : '/tr';
+
+// Create switching URL for language button
+let oppositeUrl = '/tr';
+if (currentPath === '/' || currentPath === '') {
+  oppositeUrl = '/en/';
+} else if (isEn) {
+  oppositeUrl = currentPath.replace('/en', '/tr');
+} else {
+  oppositeUrl = currentPath.replace('/tr', '/en');
+}
+
+// Ensure clean trailing slashes
+if (!oppositeUrl.endsWith('/')) {
+  oppositeUrl += '/';
+}
+
+const navItems = isEn 
+  ? [
+      { num: '01', label: 'Investment Incentives', href: `${baseRoute}/services/investment-incentives/` },
+      { num: '02', label: 'Invest & Relocate', href: `${baseRoute}/services/invest-relocate/` },
+      { num: '03', label: 'Corporate', href: `${baseRoute}/about/` },
+      { num: '04', label: 'Insights', href: `${baseRoute}/insights/` }
+    ]
+  : [
+      { num: '01', label: 'Yatırım Teşvikleri', href: `${baseRoute}/services/investment-incentives/` },
+      { num: '02', label: 'Yatırım & Yerleşim', href: `${baseRoute}/services/invest-relocate/` },
+      { num: '03', label: 'Kurumsal', href: `${baseRoute}/about/` },
+      { num: '04', label: 'Bilgi Merkezi', href: `${baseRoute}/insights/` }
+    ];
+
+const advisoryLabel = isEn ? '05. Initial Advisory' : '05. İlk Değerlendirme';
+const advisoryHref = `${baseRoute}/advisory/`;
+---
+
+<header class="document-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <a href={`${baseRoute}/`} class="logo-link">
+        <span class="logo-title">MENTOR GROUP</span>
+        <span class="logo-subtitle">BILINGUAL ADVISORY</span>
+      </a>
+    </div>
+
+    <!-- Mobile Navigation Toggle -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav class="nav-menu" id="nav-menu">
+      <ul class="nav-list">
+        {navItems.map(item => {
+          const isActive = currentPath === item.href || currentPath === item.href.slice(0, -1);
+          return (
+            <li class="nav-item">
+              <a href={item.href} class={`nav-link ${isActive ? 'active' : ''}`}>
+                <span class="nav-num">{item.num}.</span>
+                <span class="nav-label">{item.label}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      
+      <div class="nav-actions">
+        <!-- Language Selector Switcher -->
+        <div class="lang-switcher">
+          <a href={locale === 'tr' ? '#' : oppositeUrl} class={`lang-btn ${locale === 'tr' ? 'active' : ''}`} aria-disabled={locale === 'tr'}>TR</a>
+          <span class="lang-divider">|</span>
+          <a href={locale === 'en' ? '#' : oppositeUrl} class={`lang-btn ${locale === 'en' ? 'active' : ''}`} aria-disabled={locale === 'en'}>EN</a>
+        </div>
+
+        <!-- Initial Advisory Session Action Link -->
+        <a href={advisoryHref} class="advisory-cta-btn">
+          <span class="advisory-cta-num">05.</span> {advisoryLabel.replace('05. ', '')}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .document-header {
+    width: 100%;
+    background-color: var(--color-bg-paper);
+    border-bottom: 1px solid var(--color-line-muted);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-text-ink);
+    line-height: 1.1;
+  }
+
+  .logo-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.15em;
+    margin-top: 1px;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-ink);
+    padding: var(--space-xs) 0;
+    position: relative;
+  }
+
+  .nav-num {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary-green);
+    transition: var(--transition-fast);
+  }
+
+  .nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: var(--color-primary-green);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  /* Language Switcher styling */
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  .lang-btn {
+    color: var(--color-text-muted);
+    padding: 2px 4px;
+  }
+
+  .lang-btn.active {
+    color: var(--color-text-ink);
+    text-decoration: underline;
+    pointer-events: none;
+  }
+
+  .lang-divider {
+    color: var(--color-line-muted);
+    margin: 0 4px;
+  }
+
+  /* Compact editorial button */
+  .advisory-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-primary-green);
+    color: var(--color-bg-paper);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--color-primary-green);
+    border-radius: var(--border-radius-sharp);
+    transition: var(--transition-fast);
+  }
+
+  .advisory-cta-btn:hover {
+    background-color: var(--color-burgundy);
+    border-color: var(--color-burgundy);
+  }
+
+  .advisory-cta-num {
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle .bar {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-text-ink);
+    transition: var(--transition-fast);
+  }
+
+  @media (max-width: 900px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-bg-paper);
+      border-bottom: 1px solid var(--color-line-muted);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--space-lg) var(--space-xl);
+      gap: var(--space-lg);
+    }
+
+    .nav-menu.open {
+      display: flex;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: var(--space-sm);
+    }
+
+    .nav-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      border-top: 1px solid var(--color-line-muted);
+      padding-top: var(--space-md);
+      gap: var(--space-md);
+    }
+
+    .lang-switcher {
+      margin-left: 0;
+    }
+
+    .advisory-cta-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // Simple responsive menu toggler
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+  }
+</script>

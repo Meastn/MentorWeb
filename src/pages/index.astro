@@ -1,0 +1,39 @@
+---
+/* REF: MG-2026-ASTRO-INDEX-REDIRECT-01 */
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mentor Group Advisory</title>
+    <!-- Server/Static Redirect Fallback -->
+    <meta http-equiv="refresh" content="0;url=/tr/" />
+    <link rel="canonical" href="https://mentor.group/tr/" />
+    <meta name="robots" content="noindex, follow" />
+    
+    <script is:inline>
+      // 01. BROWSER PREFERENCE ROUTING
+      try {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang && userLang.toLowerCase().startsWith('en')) {
+          window.location.replace('/en/');
+        } else {
+          window.location.replace('/tr/');
+        }
+      } catch (e) {
+        window.location.replace('/tr/');
+      }
+    </script>
+  </head>
+  <body style="background-color: #FAF7F2; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; color: #1B1D1C;">
+    <div style="text-align: center; border: 1px solid #D1C9BC; padding: 2rem; background: #FAF7F2; border-radius: 0;">
+      <h2 style="font-family: serif; margin-bottom: 0.5rem; font-weight: normal;">MENTOR GROUP ADVISORY</h2>
+      <p style="font-size: 0.85rem; color: #626664; margin-bottom: 1rem;">Redirecting to localized portal / Yerel portala yönlendiriliyor...</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="/tr/" style="color: #1E3B2A; text-decoration: underline; font-size: 0.85rem; font-weight: bold;">TÜRKÇE</a>
+        <span style="color: #D1C9BC;">|</span>
+        <a href="/en/" style="color: #1E3B2A; text-decoration: underline; font-size: 0.85rem; font-weight: bold;">ENGLISH</a>
+      </div>
+    </div>
+  </body>
+</html>

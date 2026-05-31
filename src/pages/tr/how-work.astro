@@ -1,0 +1,90 @@
+---
+/* REF: MG-2026-ASTRO-TR-HOW-WORK-01 */
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "Nasıl Çalışırız / Metodoloji";
+const pageDesc = "Mentor Group’un resmi durum tespit, dosya hazırlama, bakanlık takipleri ve tescil sonrası uyum denetimi aşamalarını içeren kurumsal metodolojisi.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+  
+  <section class="py-xl">
+    <div class="ledger-container">
+      
+      <div class="dossier-box">
+        <div class="dossier-header-bar">
+          <span class="ref-stamp">REF: MG-2026-TR-HOWWORK</span>
+          <span class="classification-stamp">[ FAALİYET EL KİTABI / WORK PROCESS ]</span>
+        </div>
+
+        <div class="hero-title-box">
+          <span class="sec-number">04. METODOLOJİ VE İLKELER</span>
+          <h1 class="hero-main-title">Nasıl Çalışırız? Resmi Çalışma Metodolojisi</h1>
+          <p class="hero-subtitle">Bürokrasi ve teşvik süreçleri tesadüflere yer bırakmayan birer idari disiplindir. Dosyanızı resmi standartlarda hazırlar ve takip ederiz.</p>
+          <hr class="double-rule" />
+        </div>
+
+        <!-- 4 Steps detailed list in printed card style -->
+        <div class="process-timeline-wrapper">
+          
+          <!-- Stage 1 -->
+          <div class="timeline-card" style="border: 1px solid var(--color-line-muted); padding: var(--space-lg); background-color: var(--color-bg-card); margin-bottom: var(--space-md);">
+            <div class="flex justify-between align-center mb-xs">
+              <span class="sec-number" style="color: var(--color-primary-green); font-weight: bold; font-size: 1.1rem;">AŞAMA 01</span>
+              <span class="ref-stamp">KABUL VE TEŞHİS</span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 6px;">İlk Değerlendirme Randevusu ve Kapsam Analizi</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 0;">
+              İş birliğimizin ilk adımı, ücretli "İlk Değerlendirme Randevusu"dur. Bu görüşmede, sisteme girmiş olduğunuz detaylı dosya verileri başmüşavirimiz tarafından analiz edilir. Yatırımınızın bütçesel uygunluğu (YTB asgari yatırım sınırları vb.), hukuki ve mali engelleri ile Mentor Group’un sürece dahil olabileceği resmi alanlar net olarak tespit edilerek rapora bağlanır.
+            </p>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="timeline-card" style="border: 1px solid var(--color-line-muted); padding: var(--space-lg); background-color: var(--color-bg-card); margin-bottom: var(--space-md);">
+            <div class="flex justify-between align-center mb-xs">
+              <span class="sec-number" style="color: var(--color-primary-green); font-weight: bold; font-size: 1.1rem;">AŞAMA 02</span>
+              <span class="ref-stamp">DOSYALAMA VE HATA DENETİMİ</span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 6px;">Dosya Hazırlığı ve Mevzuat Kontrolü</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 0;">
+              Seans sonrası anlaşmaya varılmasıyla birlikte, ilgili bakanlıkların (örneğin Sanayi Bakanlığı Teşvik Uygulama Genel Müdürlüğü) talep ettiği tüm teknik, finansal ve hukuki dosyaları hazırlıyoruz. ÇED raporu onayları, kapasite projeksiyonları, makine listelerinin kod eşleşmeleri gibi tüm kritik parametreler sıfır idari hata prensibiyle denetlenir.
+            </p>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="timeline-card" style="border: 1px solid var(--color-line-muted); padding: var(--space-lg); background-color: var(--color-bg-card); margin-bottom: var(--space-md);">
+            <div class="flex justify-between align-center mb-xs">
+              <span class="sec-number" style="color: var(--color-primary-green); font-weight: bold; font-size: 1.1rem;">AŞAMA 03</span>
+              <span class="ref-stamp">İDARİ SEVK VE TAKİP</span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 6px;">Bürokratik Koordinasyon ve Başvuru Takibi</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 0;">
+              Hazırlanan dosya E-TUYS veya ilgili resmî idari kanallar üzerinden tescil edilerek Sanayi Bakanlığı onayına sunulur. Başvurunun onay aşamasına kadar Ankara ofisimiz nezdinde tüm idari adımları bizzat takip ediyoruz. Bakanlığın ek bilgi taleplerine veya revizyon çağrılarına, yasal süre sınırları içerisinde anında ve doğru mevzuat yanıtlarıyla karşılık veriyoruz.
+            </p>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="timeline-card" style="border: 1px solid var(--color-line-muted); padding: var(--space-lg); background-color: var(--color-bg-card); margin-bottom: var(--space-md);">
+            <div class="flex justify-between align-center mb-xs">
+              <span class="sec-number" style="color: var(--color-primary-green); font-weight: bold; font-size: 1.1rem;">AŞAMA 04</span>
+              <span class="ref-stamp">KAPAMA VE YILLIK UYUM DENETİMİ</span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 6px;">Tescil Sonrası Kapatma Vizeleri ve Raporlama Uyum Denetimi</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 0;">
+              İlgili Yatırım Teşvik Belgesi tescil edilip yatırım dönemi sona erdiğinde süreç tamamlanmış sayılmaz. Sabit yatırımlarınızın gerçekleşen değerleri ile onaylı listenizin uyum analizini yapıyor, Sanayi Bakanlığı uzman heyetinin yerinde denetim süreçlerini yönetiyor ve belgenin "Kapatma Vizesi" (Tamamlama Vizesi) onayını alıyoruz. Ayrıca yıllık idari raporlamalarınızı koordine ederek yasal uyumu sürekli kılıyoruz.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="double-rule" style="margin: 25px 0;"></div>
+
+        <div class="text-center" style="margin-top: 25px;">
+          <a href="/tr/advisory/" class="btn btn-primary">İLK DEĞERLENDİRME RANDEVUSU AL</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,214 @@
+---
+/* REF: MG-2026-ASTRO-FOOTER-01 */
+
+const currentPath = Astro.url.pathname;
+const isEn = currentPath.startsWith('/en');
+const locale = isEn ? 'en' : 'tr';
+const baseRoute = isEn ? '/en' : '/tr';
+
+const copyrightYear = new Date().getFullYear();
+
+// Translation mappings
+const content = {
+  aboutTitle: isEn ? '01. CORPORATE POSITION' : '01. KURUMSAL POZİSYON',
+  aboutDesc: isEn 
+    ? 'Mentor Group provides official advisory services for investment incentives, company formation, relocation-related administrative processes, and regulatory coordination in Türkiye.'
+    : 'Mentor Group; Türkiye’de yatırım teşvikleri, şirket kuruluşu, yabancı sermaye yerleşimi ve regülasyon uyum koordinasyonunda resmi kurul seviyesinde stratejik danışmanlık sağlar.',
+  
+  servicesTitle: isEn ? '02. SERVICE AREAS' : '02. FAALİYET ALANLARI',
+  services: isEn 
+    ? [
+        { label: 'Investment Incentives in Türkiye', href: `${baseRoute}/services/investment-incentives/` },
+        { label: 'Invest & Relocate to Türkiye', href: `${baseRoute}/services/invest-relocate/` },
+        { label: 'Initial Advisory Session', href: `${baseRoute}/advisory/` }
+      ]
+    : [
+        { label: 'Türkiye’de Yatırım ve Teşvik', href: `${baseRoute}/services/investment-incentives/` },
+        { label: 'Yatırım & Yerleşim Danışmanlığı', href: `${baseRoute}/services/invest-relocate/` },
+        { label: 'İlk Değerlendirme Randevusu', href: `${baseRoute}/advisory/` }
+      ],
+
+  resourcesTitle: isEn ? '03. DOCUMENT INDEX' : '03. BELGE DİZİNİ',
+  resources: isEn
+    ? [
+        { label: 'Knowledge Center / Insights', href: `${baseRoute}/insights/` },
+        { label: 'Initial Advisory Terms', href: `${baseRoute}/advisory/terms/` },
+        { label: 'KVKK / GDPR Privacy Statement', href: `${baseRoute}/privacy/` }
+      ]
+    : [
+        { label: 'Bilgi Merkezi / Insights', href: `${baseRoute}/insights/` },
+        { label: 'Değerlendirme Koşulları', href: `${baseRoute}/advisory/terms/` },
+        { label: 'KVKK Aydınlatma Metni', href: `${baseRoute}/privacy/` }
+      ],
+
+  contactTitle: isEn ? '04. INQUIRIES & OFFICES' : '04. İLETİŞİM VE OFİSLER',
+  addressIst: 'Istanbul: Levent Loft, Büyükdere Cd. No:201, 34394 Beşiktaş/İstanbul',
+  addressAnk: 'Ankara: Mahall Ankara, Dumlupınar Blv. No:274, 06530 Çankaya/Ankara',
+  email: 'advisory@mentor.group',
+  phone: '+90 (212) 345 67 89'
+};
+---
+
+<footer class="document-footer">
+  <div class="ledger-container">
+    
+    <!-- Fine Ledger Separator -->
+    <hr class="double-rule" />
+
+    <div class="footer-grid">
+      <!-- Col 1: Brand / positioning -->
+      <div class="footer-col">
+        <h4 class="footer-title">{content.aboutTitle}</h4>
+        <p class="footer-desc">{content.aboutDesc}</p>
+        <span class="ref-stamp">REF: MG-2026-DOSSIER-V1</span>
+      </div>
+
+      <!-- Col 2: Services list -->
+      <div class="footer-col">
+        <h4 class="footer-title">{content.servicesTitle}</h4>
+        <ul class="footer-links">
+          {content.services.map(item => (
+            <li><a href={item.href} class="footer-link">{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 3: Resources list -->
+      <div class="footer-col">
+        <h4 class="footer-title">{content.resourcesTitle}</h4>
+        <ul class="footer-links">
+          {content.resources.map(item => (
+            <li><a href={item.href} class="footer-link">{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact points -->
+      <div class="footer-col">
+        <h4 class="footer-title">{content.contactTitle}</h4>
+        <div class="contact-info">
+          <p class="contact-line"><strong>Email:</strong> {content.email}</p>
+          <p class="contact-line"><strong>Phone:</strong> {content.phone}</p>
+          <p class="contact-address">{content.addressIst}</p>
+          <p class="contact-address">{content.addressAnk}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Double Rule Bottom Line -->
+    <hr class="section-divider" />
+
+    <div class="footer-bottom">
+      <div class="copyright-info">
+        &copy; {copyrightYear} MENTOR GROUP DANIŞMANLIK A.Ş. ALL RIGHTS RESERVED.
+      </div>
+      <div class="classification-info">
+        <span class="ref-stamp">[ CLASSIFICATION: CONFIDENTIAL / STRATEGIC ]</span>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+<style>
+  .document-footer {
+    background-color: var(--color-bg-paper);
+    padding-bottom: var(--space-xl);
+    font-family: var(--font-sans);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+    }
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-title {
+    font-size: var(--size-meta);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-sans);
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .footer-link {
+    font-size: 0.85rem;
+    color: var(--color-text-ink);
+  }
+
+  .footer-link:hover {
+    color: var(--color-primary-green);
+    text-decoration: underline;
+  }
+
+  .contact-info {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .contact-line {
+    margin-bottom: 4px;
+  }
+
+  .contact-address {
+    margin-top: 8px;
+    border-left: 1px solid var(--color-line-muted);
+    padding-left: 8px;
+    font-style: normal;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+</style>

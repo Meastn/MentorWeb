@@ -1,0 +1,12 @@
+# REF: MG-2026-ROBOTS-01
+# 01. GENERAL ROBOTS PROTOCOLS
+User-agent: *
+Allow: /
+
+# 02. RESTRICT ADMINISTRATIVE CHANNELS
+Disallow: /api/
+Disallow: /advisory/success/
+Disallow: /admin/
+
+# 03. SITEMAP INDEX LINK
+Sitemap: https://mentor.group/sitemap-index.xml

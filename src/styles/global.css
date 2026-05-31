@@ -1,0 +1,311 @@
+/* REF: MG-2026-CSS-GLOBAL-01 */
+
+@import './variables.css';
+
+/* 01. BASE RESET & INITIALIZATION */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-paper);
+  color: var(--color-text-ink);
+  font-family: var(--font-sans);
+  font-size: var(--size-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+  /* Soft background texture pattern fallback */
+  background-image: radial-gradient(var(--color-line-muted) 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+}
+
+/* 02. TYPOGRAPHY RULES */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text-ink);
+}
+
+h1 {
+  font-size: var(--size-display);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--size-h2);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: var(--size-h3);
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+/* Monospaced reference stamps and uppercase labeling */
+.ref-stamp {
+  font-family: monospace;
+  font-size: var(--size-meta);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Section indices */
+.sec-number {
+  font-family: var(--font-sans);
+  font-size: var(--size-meta);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* 03. PRINT/LEDGER DESIGN ELEMENTS */
+.ledger-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--color-line-muted);
+  margin-bottom: var(--space-xl);
+  background-color: var(--color-bg-paper);
+}
+
+.ledger-col {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--color-line-muted);
+}
+
+.ledger-col:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {
+  .ledger-row-2col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ledger-col-split {
+    border-bottom: none;
+    border-right: 1px solid var(--color-line-muted);
+  }
+  .ledger-col-split:last-child {
+    border-right: none;
+  }
+}
+
+/* Double horizontal ruler styles */
+.double-rule {
+  border: none;
+  border-bottom: 3px double var(--color-line-muted);
+  margin: var(--space-xl) 0;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-line-muted);
+  margin: var(--space-xxl) 0;
+}
+
+/* 04. BUTTONS & ACTIONS (Crisp & Unrounded) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: var(--size-body);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: var(--border-radius-sharp);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-green);
+  color: var(--color-bg-paper);
+  border: 1px solid var(--color-primary-green);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-burgundy);
+  border-color: var(--color-burgundy);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-ink);
+  border: 1px solid var(--color-text-ink);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg-card);
+}
+
+.btn-burgundy {
+  background-color: var(--color-burgundy);
+  color: var(--color-bg-paper);
+  border: 1px solid var(--color-burgundy);
+}
+
+.btn-burgundy:hover {
+  background-color: var(--color-primary-green);
+  border-color: var(--color-primary-green);
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.btn-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: var(--transition-fast);
+}
+
+.btn-link:hover::after {
+  width: 100%;
+}
+
+/* 05. TEXT FIELDS & FORMS */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.form-control {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-sans);
+  font-size: var(--size-body);
+  background-color: var(--color-bg-paper);
+  color: var(--color-text-ink);
+  border: 1px solid var(--color-line-muted);
+  border-radius: var(--border-radius-sharp);
+  transition: var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary-green);
+  background-color: var(--color-bg-card);
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-input {
+  margin-top: 3px;
+  margin-right: var(--space-sm);
+  border-radius: var(--border-radius-sharp);
+  accent-color: var(--color-primary-green);
+}
+
+/* 06. COMPARATIVE SCHEDULING MATRIX TABLES */
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-line-muted);
+}
+
+.matrix-table th, .matrix-table td {
+  padding: var(--space-md);
+  border: 1px solid var(--color-line-muted);
+  text-align: left;
+}
+
+.matrix-table th {
+  background-color: var(--color-bg-card);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+/* 07. UTILITIES */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: var(--color-text-muted); }
+.text-burgundy { color: var(--color-burgundy); }
+.text-green { color: var(--color-primary-green); }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.align-center { align-items: center; }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+.py-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+.py-xxl { padding-top: var(--space-xxl); padding-bottom: var(--space-xxl); }
+
+/* Accessible outline standard */
+.form-control:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 2px;
+}
