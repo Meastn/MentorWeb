@@ -1,9 +1,9 @@
 ---
-/* REF: MG-2026-ASTRO-EN-SERVICES-01 */
+/* REF: MG-2026-ASTRO-EN-SERVICES-NAVIGATOR */
 import Layout from '../../../layouts/Layout.astro';
 
-const pageTitle = "Our Service Directories";
-const pageDesc = "Strategic directories for State Investment Incentives, foreign corporate setup, relocations, and regulatory clearance in Türkiye.";
+const pageTitle = "Service Portfolio & Selection Gateway";
+const pageDesc = "Mentor Group services are structured around two investor profiles: international investors seeking market entry into Türkiye and established companies seeking to leverage state investment incentives.";
 ---
 
 <Layout title={pageTitle} description={pageDesc}>
@@ -13,75 +13,73 @@ const pageDesc = "Strategic directories for State Investment Incentives, foreign
       
       <div class="dossier-box">
         <div class="dossier-header-bar">
-          <span class="ref-stamp">REF: MG-2026-EN-SERVICES</span>
-          <span class="classification-stamp">[ SERVICE DIRECTORY / ARCHIVE ]</span>
+          <span class="ref-stamp">REF: MG-2026-EN-SERVICES-NAV</span>
+          <span class="classification-stamp">[ SERVICE DIRECTORY / SELECTION PROTOCOL ]</span>
         </div>
 
         <div class="hero-title-box">
-          <span class="sec-number">02. ACTIVE DIRECTORIES</span>
-          <h1 class="hero-main-title">Professional Advisory Scope & Portfolios</h1>
-          <p class="hero-subtitle">Mentor Group provides board-level oversight across two core operational tracks, de-risking your investment entry in the Turkish jurisdiction.</p>
+          <span class="sec-number">02. SERVICES GATEWAY</span>
+          <h1 class="hero-main-title">Investor Profile Navigator</h1>
+          <p class="hero-subtitle" style="font-size: var(--size-body-large); color: var(--color-text-ink); font-weight: 500; line-height: 1.6;">
+            Mentor Group services are structured around two investor profiles: international investors seeking market entry into Türkiye and established companies seeking to leverage state investment incentives.
+          </p>
           <hr class="double-rule" />
         </div>
 
-        <!-- Two Main Service Lines detailed -->
-        <div class="services-list-wrapper">
+        <!-- Two Column Profiles Grid -->
+        <div class="ledger-row ledger-row-2col navigator-grid">
           
-          <!-- Service Area 1 -->
-          <div class="service-area-block mb-xl" style="border: 1px solid var(--color-line-muted); padding: var(--space-xl); background-color: var(--color-bg-paper);">
-            <div class="flex justify-between align-center mb-md" style="flex-wrap: wrap; gap: 10px;">
-              <span class="sec-number">DIRECTORY A</span>
-              <span class="ref-stamp">DEPT: INCENTIVES-EN</span>
+          <!-- Profile 1: International Investors -->
+          <div class="ledger-col ledger-col-split profile-column relocate-profile">
+            <div class="profile-header">
+              <span class="sec-number">PROFILE 01</span>
+              <span class="ref-stamp">DEPT: RELOCATE-EN</span>
             </div>
-            <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-primary-green); margin-bottom: var(--space-sm);">Investment Incentives in Türkiye</h2>
-            <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
-              Formal administrative representation and dossier structuring to secure VAT exclusions, Customs Duty exemptions, corporate tax reductions, and social security premium subsidies from the Ministry of Industry and Technology.
+            <h2 class="profile-title">International Investors Entering Türkiye</h2>
+            <p class="profile-desc">
+              Structured advisory, entity establishment, commercial land acquisition, and administrative compliance coordination for foreign direct investments (FDI) in Türkiye.
             </p>
             
             <div class="double-rule" style="margin: 15px 0;"></div>
             
-            <div class="ledger-row ledger-row-2col" style="border: none; margin-bottom: 0;">
-              <div class="ledger-col ledger-col-split" style="padding: 0 var(--space-md) 0 0;">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">Incentive Certificate (YTB) Filing</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">End-to-end dossier formulation, aligning capital projections and technical scoping with state incentive regions (1-6 scale) for optimal grant matching.</p>
-              </div>
-              <div class="ledger-col" style="padding: 0 0 0 var(--space-md);">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">Strategic & Project-Based Grants</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">Oversight for high-capital investments (exceeding 50M TRY), advanced R&D projects, and capital-intensive technology setups.</p>
-              </div>
-            </div>
+            <ul class="profile-bullet-list">
+              <li>Türkiye market-entry roadmap & regulatory screening</li>
+              <li>LLC & Joint Stock (JSC) corporate constitution</li>
+              <li>Industrial land allocation, OIZ, free zone, & permit coordination</li>
+              <li>Work permit, residency, and relocations partner coordination</li>
+              <li>Fiscal, accounting, and legal compliance coordination</li>
+              <li>Preliminary eligibility screening for state aid schemes</li>
+            </ul>
             
-            <div class="text-right" style="margin-top: var(--space-md);">
-              <a href="/en/services/investment-incentives/" class="btn btn-primary">VIEW INCENTIVES DIRECTORY</a>
+            <div class="profile-action">
+              <a href="/en/services/invest-relocate/" class="btn btn-burgundy w-full">Explore Investor Services</a>
             </div>
           </div>
 
-          <!-- Service Area 2 -->
-          <div class="service-area-block" style="border: 1px solid var(--color-line-muted); padding: var(--space-xl); background-color: var(--color-bg-paper);">
-            <div class="flex justify-between align-center mb-md" style="flex-wrap: wrap; gap: 10px;">
-              <span class="sec-number">DIRECTORY B</span>
-              <span class="ref-stamp">DEPT: RELOCATE-EN</span>
+          <!-- Profile 2: Established Corporates -->
+          <div class="ledger-col profile-column incentives-profile">
+            <div class="profile-header">
+              <span class="sec-number">PROFILE 02</span>
+              <span class="ref-stamp">DEPT: INCENTIVES-EN</span>
             </div>
-            <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-burgundy); margin-bottom: var(--space-sm);">Invest & Relocate to Türkiye</h2>
-            <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
-              A comprehensive entry pathway for global businesses, investment funds, and high-net-worth executives establishing a formal presence, securing operations, and de-risking bureaucracy in Türkiye.
+            <h2 class="profile-title">Türkiye-Based Companies Seeking Investment Incentives</h2>
+            <p class="profile-desc">
+              End-to-end preparation, YTB registration, and administrative process coordination under Decree 9903 and the 2026 incentives framework.
             </p>
             
             <div class="double-rule" style="margin: 15px 0;"></div>
             
-            <div class="ledger-row ledger-row-2col" style="border: none; margin-bottom: 0;">
-              <div class="ledger-col ledger-col-split" style="padding: 0 var(--space-md) 0 0;">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">Entity Formation & Onboarding</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">Statutory registration of 100% foreign-owned LLC or Joint Stock corporations, bank account setup, tax ID constitution, and Trade Registry clearance.</p>
-              </div>
-              <div class="ledger-col" style="padding: 0 0 0 var(--space-md);">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">Administrative Relocation Coordination</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">Oversight of operational licenses, executive work permits, and cross-border commercial compliance in coordination with accredited partner networks.</p>
-              </div>
-            </div>
+            <ul class="profile-bullet-list">
+              <li>Investment Incentive Certificate (YTB) filings</li>
+              <li>Compliance auditing for the new Decree 9903 schemes</li>
+              <li>Ministry E-TUYS portal registration and authorization</li>
+              <li>Feasibility formulations, fixed capital projections, & equipment scoping</li>
+              <li>Certificate revisions, extensions, and close-out audits</li>
+              <li>VAT exclusions, Customs Duty exemptions, tax credits, & social subsidies</li>
+            </ul>
             
-            <div class="text-right" style="margin-top: var(--space-md);">
-              <a href="/en/services/invest-relocate/" class="btn btn-burgundy">EXPLORE RELOCATION DOSSIER</a>
+            <div class="profile-action">
+              <a href="/en/services/investment-incentives/" class="btn btn-primary w-full">Explore Incentives Directory</a>
             </div>
           </div>
 
@@ -89,8 +87,8 @@ const pageDesc = "Strategic directories for State Investment Incentives, foreign
 
         <div class="double-rule" style="margin: 25px 0;"></div>
 
-        <div class="text-center" style="margin-top: 25px;">
-          <a href="/en/advisory/" class="btn btn-secondary">BOOK INITIAL ADVISORY SESSION</a>
+        <div style="border-left: 2px solid var(--color-burgundy); padding-left: 15px; font-style: italic; font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 25px;">
+          * In all administrative tescil and filing procedures, Mentor Group acts strictly as an independent strategic advisor and process coordinator, and does not claim official representation or public-sector authority.
         </div>
       </div>
       
@@ -98,3 +96,96 @@ const pageDesc = "Strategic directories for State Investment Incentives, foreign
   </section>
 
 </Layout>
+
+<style>
+  .dossier-box {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    padding: var(--space-xl);
+  }
+
+  .dossier-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .navigator-grid {
+    background-color: var(--color-bg-paper);
+    border: 1px solid var(--color-line-muted);
+  }
+
+  .profile-column {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl);
+    background-color: var(--color-bg-paper);
+  }
+
+  .relocate-profile {
+    background-color: var(--color-bg-paper);
+  }
+
+  .incentives-profile {
+    background-color: var(--color-bg-paper);
+  }
+
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .profile-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-text-ink);
+    margin-bottom: var(--space-sm);
+    line-height: 1.25;
+  }
+
+  .profile-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    min-height: 80px;
+  }
+
+  .profile-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--space-xl);
+  }
+
+  .profile-bullet-list li {
+    font-size: 0.85rem;
+    color: var(--color-text-ink);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 8px;
+  }
+
+  .profile-bullet-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+    font-weight: bold;
+  }
+
+  .profile-action {
+    margin-top: auto;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+</style>

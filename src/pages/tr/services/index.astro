@@ -1,9 +1,9 @@
 ---
-/* REF: MG-2026-ASTRO-TR-SERVICES-01 */
+/* REF: MG-2026-ASTRO-TR-SERVICES-NAVIGATOR */
 import Layout from '../../../layouts/Layout.astro';
 
-const pageTitle = "Hizmetlerimiz / Faaliyet Alanları";
-const pageDesc = "Türkiye’de Yatırım Teşvik Belgesi, devlet destekleri ve yabancı yatırım yerleşim koordinasyonunda sunduğumuz resmi hizmetler dizini.";
+const pageTitle = "Hizmet Portföyü / Yatırımcı Kapısı";
+const pageDesc = "Mentor Group hizmetleri iki yatırımcı profiline göre yapılandırılmıştır: Türkiye’ye giriş yapmak isteyen uluslararası yatırımcılar ve Türkiye’de yatırım teşviklerinden yararlanmak isteyen şirketler.";
 ---
 
 <Layout title={pageTitle} description={pageDesc}>
@@ -13,75 +13,73 @@ const pageDesc = "Türkiye’de Yatırım Teşvik Belgesi, devlet destekleri ve 
       
       <div class="dossier-box">
         <div class="dossier-header-bar">
-          <span class="ref-stamp">REF: MG-2026-TR-SERVICES</span>
-          <span class="classification-stamp">[ FAALİYET DİZİNİ / SERVICES INDEX ]</span>
+          <span class="ref-stamp">REF: MG-2026-TR-SERVICES-NAV</span>
+          <span class="classification-stamp">[ FAALİYET KAPSAMI VE YATIRIMCI SEVK PROTOKOLÜ ]</span>
         </div>
 
         <div class="hero-title-box">
-          <span class="sec-number">02. FAALİYET ALANLARIMIZ</span>
-          <h1 class="hero-main-title">Resmi Hizmet Kapsamı ve Danışmanlık Direktörlüğü</h1>
-          <p class="hero-subtitle">Mentor Group, Türkiye’deki en kapsamlı iki uzmanlık alanında, devlet destekleri ve kurumsal yerleşim uyum koordinasyonunu yönetmektedir.</p>
+          <span class="sec-number">02. HİZMET ALANLARIMIZ</span>
+          <h1 class="hero-main-title">Yatırımcı Profiline Göre Karar Ekranı</h1>
+          <p class="hero-subtitle" style="font-size: var(--size-body-large); color: var(--color-text-ink); font-weight: 500; line-height: 1.6;">
+            Mentor Group hizmetleri iki yatırımcı profiline göre yapılandırılmıştır: Türkiye’ye giriş yapmak isteyen uluslararası yatırımcılar ve Türkiye’de yatırım teşviklerinden yararlanmak isteyen şirketler.
+          </p>
           <hr class="double-rule" />
         </div>
 
-        <!-- Two Main Service Lines detailed -->
-        <div class="services-list-wrapper">
+        <!-- Two Column Profiles Grid -->
+        <div class="ledger-row ledger-row-2col navigator-grid">
           
-          <!-- Service Area 1 -->
-          <div class="service-area-block mb-xl" style="border: 1px solid var(--color-line-muted); padding: var(--space-xl); background-color: var(--color-bg-paper);">
-            <div class="flex justify-between align-center mb-md" style="flex-wrap: wrap; gap: 10px;">
-              <span class="sec-number">DİREKTÖRLÜK A</span>
-              <span class="ref-stamp">DEPT: INCENTIVES-TR</span>
+          <!-- Profile 1: International Investors -->
+          <div class="ledger-col ledger-col-split profile-column relocate-profile">
+            <div class="profile-header">
+              <span class="sec-number">PROFİL 01</span>
+              <span class="ref-stamp">DEPT: RELOCATE-TR</span>
             </div>
-            <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-primary-green); margin-bottom: var(--space-sm);">Türkiye’de Yatırım ve Teşvik Danışmanlığı</h2>
-            <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
-              T.C. Sanayi ve Teknoloji Bakanlığı nezdindeki Yatırım Teşvik Belgesi (YTB) başvurularının scoping, fizibilite, evrak hazırlanması, başvuru tescili ve kapatma vizelerine kadar tüm idari takibi.
+            <h2 class="profile-title">Uluslararası Yatırımcılar İçin Türkiye’ye Giriş</h2>
+            <p class="profile-desc">
+              Türkiye’de şirket kurmak, yatırım yapmak, teşviklerden yararlanmak, yatırım yeri belirlemek ve idari uyum süreçlerini planlamak isteyen yabancı yatırımcılar için yapılandırılmış danışmanlık.
             </p>
             
             <div class="double-rule" style="margin: 15px 0;"></div>
             
-            <div class="ledger-row ledger-row-2col" style="border: none; margin-bottom: 0;">
-              <div class="ledger-col ledger-col-split" style="padding: 0 var(--space-md) 0 0;">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">Yatırım Teşvik Belgesi (YTB)</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">KDV istisnası, gümrük vergisi muafiyeti, vergi indirimi ve SGK prim desteklerini kapsayan başvuru dosyalarının hazırlanması ve idari onay süreçlerinin takibi.</p>
-              </div>
-              <div class="ledger-col" style="padding: 0 0 0 var(--space-md);">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">Proje Bazlı & Stratejik Teşvikler</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">Büyük ölçekli, stratejik veya 50 Milyon TL üzerindeki Ar-Ge/teknoloji yatırımları için devlet yardımları, finansal hibe destekleri ve bölge analizleri.</p>
-              </div>
-            </div>
+            <ul class="profile-bullet-list">
+              <li>Türkiye pazarına giriş yol haritası</li>
+              <li>Şirket kuruluşu ve ticari altyapı</li>
+              <li>Yatırım yeri, OSB, serbest bölge, ruhsat ve lisans koordinasyonu</li>
+              <li>Çalışma izni, oturum ve vatandaşlık süreçlerinde partner koordinasyonu</li>
+              <li>Vergi, muhasebe ve hukuki uyum koordinasyonu</li>
+              <li>Yatırım teşvik uygunluğu ön değerlendirmesi</li>
+            </ul>
             
-            <div class="text-right" style="margin-top: var(--space-md);">
-              <a href="/tr/services/investment-incentives/" class="btn btn-primary">DETAYLI TEŞVİK REHBERİNE GEÇ</a>
+            <div class="profile-action">
+              <a href="/tr/services/invest-relocate/" class="btn btn-burgundy w-full">Yabancı Yatırımcı Hizmetlerini İncele</a>
             </div>
           </div>
 
-          <!-- Service Area 2 -->
-          <div class="service-area-block" style="border: 1px solid var(--color-line-muted); padding: var(--space-xl); background-color: var(--color-bg-paper);">
-            <div class="flex justify-between align-center mb-md" style="flex-wrap: wrap; gap: 10px;">
-              <span class="sec-number">DİREKTÖRLÜK B</span>
-              <span class="ref-stamp">DEPT: RELOCATE-EN</span>
+          <!-- Profile 2: Turkish Corporates -->
+          <div class="ledger-col profile-column incentives-profile">
+            <div class="profile-header">
+              <span class="sec-number">PROFİL 02</span>
+              <span class="ref-stamp">DEPT: INCENTIVES-TR</span>
             </div>
-            <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-burgundy); margin-bottom: var(--space-sm);">Invest & Relocate to Türkiye</h2>
-            <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
-              Türkiye pazarına girmek, doğrudan yatırım yapmak veya şirketini taşımak isteyen uluslararası yatırımcılar, fonlar ve yabancı uyruklu yöneticiler için resmi kuruluş ve yerleşim koordinasyonu.
+            <h2 class="profile-title">Türkiye’de Faaliyet Gösteren Şirketler İçin Yatırım Teşvikleri</h2>
+            <p class="profile-desc">
+              Türkiye’de yatırım planlayan veya mevcut yatırımını genişletmek isteyen şirketler için Yatırım Teşvik Belgesi, 9903 sayılı yeni teşvik sistemi, E-TUYS başvuru hazırlığı ve süreç takibi.
             </p>
             
             <div class="double-rule" style="margin: 15px 0;"></div>
             
-            <div class="ledger-row ledger-row-2col" style="border: none; margin-bottom: 0;">
-              <div class="ledger-col ledger-col-split" style="padding: 0 var(--space-md) 0 0;">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">Şirket Kuruluşu & Pazar Girişi</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">%100 yabancı sermayeli limited (LTD) veya anonim (AŞ) şirket tescilleri, banka hesabı blokaj tescilleri, vergi kimlik numarası tescili ve ticaret odası işlemleri.</p>
-              </div>
-              <div class="ledger-col" style="padding: 0 0 0 var(--space-md);">
-                <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: var(--space-xs);">İdari ve Yasal Uyum Koordinasyonu</h4>
-                <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5;">Akredite yasal, mali ve hukuk ortaklarımız vasıtasıyla oturum/çalışma izinleri, vergilendirme planlaması, KVKK ve ticari tescil uyumluluklarının denetimi.</p>
-              </div>
-            </div>
+            <ul class="profile-bullet-list">
+              <li>Yatırım Teşvik Belgesi</li>
+              <li>9903 sayılı yeni teşvik sistemi değerlendirmesi</li>
+              <li>E-TUYS başvuru hazırlığı</li>
+              <li>Fizibilite, sabit yatırım ve makine/teçhizat listeleri</li>
+              <li>Revizyon, süre uzatımı, tamamlama vizesi</li>
+              <li>KDV istisnası, gümrük muafiyeti, vergi indirimi, SGK destekleri</li>
+            </ul>
             
-            <div class="text-right" style="margin-top: var(--space-md);">
-              <a href="/tr/services/invest-relocate/" class="btn btn-burgundy">DETAYLI YATIRIMCI REHBERİNE GEÇ</a>
+            <div class="profile-action">
+              <a href="/tr/services/investment-incentives/" class="btn btn-primary w-full">Yatırım Teşvik Hizmetlerini İncele</a>
             </div>
           </div>
 
@@ -89,8 +87,8 @@ const pageDesc = "Türkiye’de Yatırım Teşvik Belgesi, devlet destekleri ve 
 
         <div class="double-rule" style="margin: 25px 0;"></div>
 
-        <div class="text-center" style="margin-top: 25px;">
-          <a href="/tr/advisory/" class="btn btn-secondary">İLK DEĞERLENDİRME RANDEVUSU AL</a>
+        <div style="border-left: 2px solid var(--color-burgundy); padding-left: 15px; font-style: italic; font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 25px;">
+          * Bürokratik tescil ve teşvik süreçlerinde, kurumumuz resmi daireler nezdinde doğrudan aracı veya temsilci sıfatıyla hareket etmeyip, yasal uyumluluk dosya koordinasyonu alanında bağımsız danışmanlık sağlar.
         </div>
       </div>
       
@@ -98,3 +96,96 @@ const pageDesc = "Türkiye’de Yatırım Teşvik Belgesi, devlet destekleri ve 
   </section>
 
 </Layout>
+
+<style>
+  .dossier-box {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    padding: var(--space-xl);
+  }
+
+  .dossier-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .navigator-grid {
+    background-color: var(--color-bg-paper);
+    border: 1px solid var(--color-line-muted);
+  }
+
+  .profile-column {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl);
+    background-color: var(--color-bg-paper);
+  }
+
+  .relocate-profile {
+    background-color: var(--color-bg-paper);
+  }
+
+  .incentives-profile {
+    background-color: var(--color-bg-paper);
+  }
+
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .profile-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-text-ink);
+    margin-bottom: var(--space-sm);
+    line-height: 1.25;
+  }
+
+  .profile-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    min-height: 80px;
+  }
+
+  .profile-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--space-xl);
+  }
+
+  .profile-bullet-list li {
+    font-size: 0.85rem;
+    color: var(--color-text-ink);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 8px;
+  }
+
+  .profile-bullet-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+    font-weight: bold;
+  }
+
+  .profile-action {
+    margin-top: auto;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+</style>

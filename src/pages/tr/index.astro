@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import RouteFinder from '../../components/RouteFinder.astro';
 import AdvisoryAssistant from '../../components/AdvisoryAssistant.astro';
+import ClientLogos from '../../components/ClientLogos.astro';
 
 const pageTitle = "Anasayfa";
 const pageDesc = "Yatırım, teşvik ve şirketleşme süreçlerinde karar vericiler için sakin, disiplinli ve uygulanabilir danışmanlık.";
@@ -21,30 +22,25 @@ const pageDesc = "Yatırım, teşvik ve şirketleşme süreçlerinde karar veric
 
         <div class="hero-title-box">
           <span class="sec-number">01. KURUMSAL DANIŞMANLIK</span>
-          <h1 class="hero-main-title">Yönetim Kurulu Seviyesinde Sakin ve Disiplinli Danışmanlık.</h1>
-          <p class="hero-subtitle">Yatırım, teşvik ve şirketleşme süreçlerinde karar vericiler için sakin, disiplinli ve uygulanabilir danışmanlık.</p>
+          <h1 class="hero-main-title">Yatırım, Teşvik, Şirketleşme ve İdari Süreç Koordinasyonu</h1>
+          <p class="hero-subtitle">Uluslararası yatırımcılar ve Türkiye’de yatırım planlayan şirketler için sakin, disiplinli ve uygulanabilir danışmanlık.</p>
+          
+          <div class="hero-cta-row" style="display: flex; gap: var(--space-md); margin-top: var(--space-md); margin-bottom: var(--space-md); flex-wrap: wrap;">
+            <a href="/tr/advisory/" class="btn btn-burgundy">01. İlk Değerlendirme Randevusu Al</a>
+            <a href="/tr/services/" class="btn btn-secondary" style="border-color: var(--color-text-ink); color: var(--color-text-ink);">02. Hizmet Kapsamını İncele</a>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 15px; margin-bottom: 5px; font-style: italic; border-left: 2px solid var(--color-burgundy); padding-left: 10px;">
+            "Mentor Group, yatırım, teşvik, şirketleşme ve büyüme kararlarını; finansal dayanıklılık, operasyonel verimlilik ve stratejik uyum perspektifiyle ele alır."
+          </p>
+          
           <hr class="double-rule" />
         </div>
 
         <!-- The Bifurcated Paths Grid -->
         <div class="ledger-row ledger-row-2col">
-          <!-- Path 1: Turkish Corporates -->
-          <div class="ledger-col ledger-col-split path-column green-path">
-            <span class="sec-number">TÜRKİYE’DE FAALİYET GÖSTEREN ŞİRKETLER</span>
-            <h3 class="path-title">Türkiye’de Yatırım ve Teşvik Danışmanlığı</h3>
-            <p class="path-desc">Yatırım Teşvik Belgesi alımı, Ar-Ge yardımları, ihracat destekleri ve hibe başvuru dosyalarının hazırlanması konularında yerli firmalara uçtan uca yapılandırılmış rehberlik.</p>
-            <ul class="path-bullet-list">
-              <li>Yatırım Teşvik Belgesi (YTB) dosya hazırlığı</li>
-              <li>Devlet destekleri ve finansal fizibilite analizi</li>
-              <li>İdari süreç takibi ve revizyon işlemleri</li>
-            </ul>
-            <div style="margin-top: auto; padding-top: var(--space-md);">
-              <a href="/tr/services/investment-incentives/" class="btn btn-primary w-full">TEŞVİK KILAVUZUNU İNCELE</a>
-            </div>
-          </div>
-
-          <!-- Path 2: Foreign Investors -->
-          <div class="ledger-col path-column burgundy-path">
+          <!-- Path 1: International Investors -->
+          <div class="ledger-col ledger-col-split path-column burgundy-path">
             <span class="sec-number">ULUSLARARASI YATIRIMCILAR</span>
             <h3 class="path-title">Invest & Relocate to Türkiye</h3>
             <p class="path-desc">Uluslararası yatırımcılar için Türkiye pazarına giriş, şirket kuruluşu, yabancı sermaye teşvikleri ve yerleşim süreçlerinin koordinasyonunda sakin ve disiplinli danışmanlık.</p>
@@ -55,6 +51,21 @@ const pageDesc = "Yatırım, teşvik ve şirketleşme süreçlerinde karar veric
             </ul>
             <div style="margin-top: auto; padding-top: var(--space-md);">
               <a href="/tr/services/invest-relocate/" class="btn btn-burgundy w-full">INVESTOR ROADMAP</a>
+            </div>
+          </div>
+
+          <!-- Path 2: Turkish Corporates -->
+          <div class="ledger-col path-column green-path">
+            <span class="sec-number">TÜRKİYE’DE FAALİYET GÖSTEREN ŞİRKETLER</span>
+            <h3 class="path-title">Türkiye’de Yatırım ve Teşvik Danışmanlığı</h3>
+            <p class="path-desc">Yatırım Teşvik Belgesi alımı, Ar-Ge yardımları, ihracat destekleri ve hibe başvuru dosyalarının hazırlanması konularında yerli firmalara uçtan uca yapılandırılmış rehberlik.</p>
+            <ul class="path-bullet-list">
+              <li>Yatırım Teşvik Belgesi (YTB) dosya hazırlığı</li>
+              <li>Devlet destekleri ve finansal fizibilite analizi</li>
+              <li>İdari süreç takibi ve revizyon işlemleri</li>
+            </ul>
+            <div style="margin-top: auto; padding-top: var(--space-md);">
+              <a href="/tr/services/investment-incentives/" class="btn btn-primary w-full">TEŞVİK KILAVUZUNU İNCELE</a>
             </div>
           </div>
         </div>
@@ -89,22 +100,28 @@ const pageDesc = "Yatırım, teşvik ve şirketleşme süreçlerinde karar veric
       <div class="ledger-row ledger-row-2col">
         <!-- Service Card 1 -->
         <div class="ledger-col ledger-col-split service-card">
+          <span class="ref-stamp">SERVICE-ID: TR-INV</span>
+          <h3 class="service-card-title">Yabancı Yatırım & Şirket Kurulumu</h3>
+          <p class="service-card-text">Türkiye pazarına girmek isteyen yabancı kurum ve fonlar için limited/anonim şirket tescilleri, banka koordinasyonları, vergi planlamaları, ticaret odası tescilleri ve kayıtlı hukuk partnerlerimizin eşgüdümünde yürütülen oturum/yerleşim uyum süreçleri.</p>
+          <a href="/tr/services/invest-relocate/" class="btn-link">Uluslararası Giriş Süreçlerini İncele &rarr;</a>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="ledger-col service-card">
           <span class="ref-stamp">SERVICE-ID: TR-YTB</span>
           <h3 class="service-card-title">Yatırım Teşvik Belgesi Danışmanlığı</h3>
           <p class="service-card-text">Bölgesel, öncelikli ve stratejik yatırımlar için vergi indirimleri, KDV istisnası, gümrük vergisi muafiyeti ve SGK prim desteklerini kapsayan Yatırım Teşvik Belgesi dosyasının Sanayi ve Teknoloji Bakanlığı nezdinde takibi.</p>
           <a href="/tr/services/investment-incentives/" class="btn-link">Mevzuat Ayrıntılarını İncele &rarr;</a>
         </div>
+      </div>
 
-        <!-- Service Card 2 -->
-        <div class="ledger-col service-card">
-          <span class="ref-stamp">SERVICE-ID: TR-INV</span>
-          <h3 class="service-card-title">Yabancı Yatırım & Şirket Kurulumu</h3>
-          <p class="service-card-text">Türkiye pazarına girmek isteyen yabancı kurum ve fonlar için limited/anonim şirket tescilleri, banka koordinasyonları, vergi planlamaları, ticaret odası tescilleri ve akredite hukuk ortaklarımızın eşgüdümünde yürütülen oturum/yerleşim uyum süreçleri.</p>
-          <a href="/tr/services/invest-relocate/" class="btn-link">Explore Market Entry Services &rarr;</a>
-        </div>
+      <div style="margin-top: 25px; border-left: 2px solid var(--color-burgundy); padding-left: 15px; font-style: italic; font-size: 0.82rem; color: var(--color-text-muted);">
+        * Güncel teşvik eşikleri ve yatırım sınıflandırmaları Bilgi Merkezi’nde düzenli olarak güncellenir.
       </div>
     </div>
   </section>
+
+  <ClientLogos locale="tr" />
 
   <!-- 04. METHODOLOGY & TIMELINE -->
   <section class="py-xl" style="background-color: var(--color-bg-card);">
@@ -129,7 +146,7 @@ const pageDesc = "Yatırım, teşvik ve şirketleşme süreçlerinde karar veric
           <div class="timeline-num">02</div>
           <div class="timeline-content">
             <h4>Dosyalama & Dosya Hazırlığı</h4>
-            <p>İlgili bakanlıklar ve resmî mercilerin talep ettiği tüm form, mali tablo ve teknik dosyaları, sıfır hata prensibi ve resmi standartlarda hazırlıyoruz.</p>
+            <p>İlgili bakanlıklar ve resmî mercilerin talep ettiği tüm form, mali tablo ve teknik dosyaları, mevzuata uygun dosya hazırlığı hedefi ve resmi standartlarda hazırlıyoruz.</p>
           </div>
         </div>
 

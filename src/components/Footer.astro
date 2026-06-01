@@ -18,13 +18,13 @@ const content = {
   servicesTitle: isEn ? '02. SERVICE AREAS' : '02. FAALİYET ALANLARI',
   services: isEn 
     ? [
-        { label: 'Investment Incentives in Türkiye', href: `${baseRoute}/services/investment-incentives/` },
-        { label: 'Invest & Relocate to Türkiye', href: `${baseRoute}/services/invest-relocate/` },
+        { label: 'Foreign Investor Services', href: `${baseRoute}/services/invest-relocate/` },
+        { label: 'YTB & Incentives Advisory', href: `${baseRoute}/services/investment-incentives/` },
         { label: 'Initial Review Appointment', href: `${baseRoute}/advisory/` }
       ]
     : [
-        { label: 'Türkiye’de Yatırım ve Teşvik', href: `${baseRoute}/services/investment-incentives/` },
-        { label: 'Yatırım & Yerleşim Danışmanlığı', href: `${baseRoute}/services/invest-relocate/` },
+        { label: 'Yabancı Yatırımcı Hizmetleri', href: `${baseRoute}/services/invest-relocate/` },
+        { label: 'YTB & Teşvik Danışmanlığı', href: `${baseRoute}/services/investment-incentives/` },
         { label: 'İlk Değerlendirme Randevusu', href: `${baseRoute}/advisory/` }
       ],
 
@@ -44,8 +44,7 @@ const content = {
   contactTitle: isEn ? '04. INQUIRIES & OFFICES' : '04. İLETİŞİM VE OFİSLER',
   addressIst: 'Istanbul: Levent Loft, Büyükdere Cd. No:201, 34394 Beşiktaş/İstanbul',
   addressAnk: 'Ankara: Mahall Ankara, Dumlupınar Blv. No:274, 06530 Çankaya/Ankara',
-  email: 'advisory@mentorgroup.com.tr',
-  phone: '+90 (212) 345 67 89'
+  email: 'info@mentorgroup.com.tr'
 };
 ---
 
@@ -88,7 +87,6 @@ const content = {
         <h4 class="footer-title">{content.contactTitle}</h4>
         <div class="contact-info">
           <p class="contact-line"><strong>Email:</strong> {content.email}</p>
-          <p class="contact-line"><strong>Phone:</strong> {content.phone}</p>
           <p class="contact-address">{content.addressIst}</p>
           <p class="contact-address">{content.addressAnk}</p>
         </div>

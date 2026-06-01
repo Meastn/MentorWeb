@@ -1,9 +1,10 @@
 ---
 /* REF: MG-2026-ASTRO-EN-ABOUT-01 */
 import Layout from '../../layouts/Layout.astro';
+import ClientLogos from '../../components/ClientLogos.astro';
 
-const pageTitle = "Corporate Dossier / About Us";
-const pageDesc = "Mentor Group’s institutional structure, board-level strategic advisory credentials, and regulatory clearance capacity in Türkiye.";
+const pageTitle = "Corporate Advisory / About Us";
+const pageDesc = "Mentor Group supports sustainable corporate growth through the integrated management of financial resilience, operational efficiency, investment feasibility, and strategic alignment.";
 ---
 
 <Layout title={pageTitle} description={pageDesc}>
@@ -19,37 +20,82 @@ const pageDesc = "Mentor Group’s institutional structure, board-level strategi
 
         <div class="hero-title-box">
           <span class="sec-number">03. CORPORATE IDENTITY</span>
-          <h1 class="hero-main-title">Refined Strategic Oversight & Regulatory Competence</h1>
-          <p class="hero-subtitle">Mentor Group provides structured administrative oversight for foreign direct investments, company establishment, and state incentive alignment in the Republic of Türkiye.</p>
+          <h1 class="hero-main-title">Corporate Advisory for Financial Resilience and Strategic Alignment</h1>
+          <p class="hero-subtitle">Mentor Group supports sustainable corporate growth through the integrated management of financial resilience, operational efficiency, investment feasibility, and strategic alignment.</p>
+          
+          <div class="mentor-meaning-callout" style="margin-top: var(--space-md); padding: var(--space-md); border-left: 3px solid var(--color-burgundy); background-color: var(--color-bg-card); font-style: italic; font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
+            <strong>Mythological Origin & Meaning:</strong> In Homer's ancient epic, the <em>Odyssey</em>, Mentor (Μέντωρ) was the trusted friend to whom King Odysseus entrusted his household and the guidance of his son, Telemachus, before departing for the Trojan War. The goddess of wisdom, Athena, assumed Mentor's form to act as a calm, prudent, and trusted advisor to Telemachus on his journey. Beyond a modern coach, the name represents an elite, seasoned counselor who safeguards critical pathways. Mentor Group embeds this calm, structured, and deep-seated guardianship in its B2B advisory ethos.
+          </div>
+          
           <hr class="double-rule" />
         </div>
 
-        <!-- Corporate Grid Section -->
-        <div class="ledger-row ledger-row-2col">
-          <div class="ledger-col ledger-col-split">
-            <span class="sec-number">01. EXECUTIVE INTENT</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: var(--space-sm);">Sovereign Regulatory Clearance</h3>
-            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
-              Navigating bureaucratic corridors and licensing structures in an emerging market demands absolute procedural precision and legal diligence.
-            </p>
-            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
-              At Mentor Group, we operate as a highly disciplined gateway for global businesses entering the Turkish commercial ecosystem. We ensure that your entity establishment, capital structure, and licensing applications strictly satisfy all regulatory matrices, preventing costly compliance friction and maximizing structural efficiency from day one.
+        <!-- 5 Core Sections Grid -->
+        <div class="about-grid">
+          
+          <!-- Section 1 -->
+          <div class="about-card">
+            <div class="card-meta">
+              <span class="sec-number">SECTION 01</span>
+              <span class="ref-stamp">DEPT: GROWTH-EN</span>
+            </div>
+            <h3 class="card-title">Our Corporate Growth Approach</h3>
+            <p class="card-text">
+              Cash flow optimization, capital efficiency, and performance frameworks are fundamental pillars that determine not only a company's current stability but its long-term competitive edge. Mentor Group evaluates these areas through an integrated investment, financial, and operational perspective.
             </p>
           </div>
 
-          <div class="ledger-col">
-            <span class="sec-number">02. COMPLIANCE ASSURANCE</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: var(--space-sm);">Bespoke Advisory Governance</h3>
-            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
-              We maintain absolute confidentiality and B2B operational integrity, representing elite corporations, private equity funds, and international investors.
-            </p>
-            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
-              By operating in close coordination with our accredited legal, accounting, and fiscal partner networks, we provide a unified strategic oversight. We do not make loose guarantees; instead, we map out clear operational milestones, enabling board-level decisions to be executed with confidence.
+          <!-- Section 2 -->
+          <div class="about-card">
+            <div class="card-meta">
+              <span class="sec-number">SECTION 02</span>
+              <span class="ref-stamp">DEPT: RISK-EN</span>
+            </div>
+            <h3 class="card-title">Decision Support in Dynamic Global Environments</h3>
+            <p class="card-text">
+              Macroeconomic uncertainties, geopolitical risks, and escalating cost pressures are reshaping corporate decision-making. Consequently, data-driven governance, early risk detection, and holistic business intelligence have become paramount for sound investment and growth strategies.
             </p>
           </div>
+
+          <!-- Section 3 -->
+          <div class="about-card">
+            <div class="card-meta">
+              <span class="sec-number">SECTION 03</span>
+              <span class="ref-stamp">DEPT: CAPEX-EN</span>
+            </div>
+            <h3 class="card-title">Investment & Incentives Scoping</h3>
+            <p class="card-text">
+              For capital-intensive undertakings, we provide structured investment feasibility scoping and state incentive advisory, enhancing financial efficiency and ensuring optimal alignment with public support frameworks.
+            </p>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="about-card">
+            <div class="card-meta">
+              <span class="sec-number">SECTION 04</span>
+              <span class="ref-stamp">DEPT: GLOBAL-EN</span>
+            </div>
+            <h3 class="card-title">Global Networks & Market Access</h3>
+            <p class="card-text">
+              Expanding international networks and accessing new jurisdictions are crucial for scalable growth and revenue diversification. Mentor Group offers structured coordination for both international investors entering Türkiye and established firms scaling globally.
+            </p>
+          </div>
+
+          <!-- Section 5 -->
+          <div class="about-card about-card-full">
+            <div class="card-meta">
+              <span class="sec-number">SECTION 05</span>
+              <span class="ref-stamp">DEPT: UNIFIED-EN</span>
+            </div>
+            <h3 class="card-title">Unified Advisory Architecture</h3>
+            <p class="card-text">
+              Our methodology unifies strategy, finance, operations, and cross-border capabilities into a single cohesive framework. Through this approach, we contribute to positioning organizations for greater resilience, scalability, and long-term competitiveness.
+            </p>
+          </div>
+
         </div>
 
-        <div class="double-rule" style="margin: 25px 0;"></div>
+        <ClientLogos locale="en" />
 
         <!-- Ankara & Istanbul offices details -->
         <div class="offices-box" style="margin-top: var(--space-lg);">
@@ -62,7 +108,7 @@ const pageDesc = "Mentor Group’s institutional structure, board-level strategi
               <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 0;">
                 Positioned in Istanbul's primary financial corridor, our liaison office coordinates foreign capital registrations, bank onboarding, and strategic market-entry scoping.<br /><br />
                 <strong>Address:</strong> Levent Loft, Buyukdere Cd. No:201, 34394 Besiktas/Istanbul, Turkey<br />
-                <strong>Email:</strong> istanbul@mentorgroup.com.tr
+                <strong>Email:</strong> info@mentorgroup.com.tr
               </p>
             </div>
             
@@ -71,7 +117,7 @@ const pageDesc = "Mentor Group’s institutional structure, board-level strategi
               <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 0;">
                 Located near the sovereign ministries, our capital office handles direct submissions, Ministry of Industry licensing audits, and official incentive file revisions.<br /><br />
                 <strong>Address:</strong> Mahall Ankara, Dumlupinar Blv. No:274, 06530 Cankaya/Ankara, Turkey<br />
-                <strong>Email:</strong> ankara@mentorgroup.com.tr
+                <strong>Email:</strong> info@mentorgroup.com.tr
               </p>
             </div>
           </div>
@@ -86,3 +132,71 @@ const pageDesc = "Mentor Group’s institutional structure, board-level strategi
   </section>
 
 </Layout>
+
+<style>
+  .dossier-box {
+    border: 1px solid var(--color-line-muted);
+    background-color: var(--color-bg-paper);
+    padding: var(--space-xl);
+  }
+
+  .dossier-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .about-card {
+    border: 1px solid var(--color-line-muted);
+    padding: var(--space-lg);
+    background-color: var(--color-bg-paper);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .about-card-full {
+      grid-column: span 2;
+    }
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-line-muted);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--color-text-ink);
+    margin-bottom: var(--space-sm);
+    line-height: 1.3;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+</style>

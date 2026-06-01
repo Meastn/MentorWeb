@@ -1,4 +1,4 @@
-/* REF: MG-2026-DATA-INSIGHTS-01 */
+/* REF: MG-2026-DATA-INSIGHTS-02 */
 
 export interface Article {
   slug: string;
@@ -25,25 +25,26 @@ export const insightsArticles: Article[] = [
     author: 'Mentor Group Teşvik Departmanı Başmüşaviri',
     contentHtml: `<p>Türkiye’de sanayi, bilişim, enerji ve imalat sektörlerinde faaliyet gösteren firmaların, yatırımlarını finanse ederken yararlanabileceği en güçlü resmi mekanizma <strong>Yatırım Teşvik Belgesi (YTB)</strong>’dir. T.C. Sanayi ve Teknoloji Bakanlığı tarafından tescil edilen bu belge, yatırımcılara vergi indirimlerinden SGK prim desteklerine kadar çok geniş muafiyetler tanır.</p>
     
-    <h4>1. Asgari Yatırım Şartları ve Limitleri</h4>
-    <p>Yatırım Teşvik Belgesi düzenlenebilmesi için mevzuatça belirlenmiş yasal asgari sabit yatırım limitleri bulunmaktadır. Bu limitler yatırımın gerçekleştirileceği ile ve sektöre göre belirlenir:</p>
+    <h4>1. Asgari Yatırım Şartları ve Limitleri (2026)</h4>
+    <p>Yatırım Teşvik Belgesi düzenlenebilmesi için mevzuatça belirlenmiş yasal asgari sabit yatırım limitleri bulunmaktadır. 2026 yılı itibarıyla güncellenen tutarlar şu şekildedir:</p>
     <ul>
-      <li><strong>1. ve 2. Bölgeler (Gelişmiş Bölgeler):</strong> Asgari 3 Milyon Türk Lirası sabit yatırım.</li>
-      <li><strong>3., 4., 5. ve 6. Bölgeler (Gelişmekte Olan Bölgeler):</strong> Asgari 1.5 Milyon Türk Lirası sabit yatırım.</li>
-      <li><strong>Stratejik Yatırımlar:</strong> Asgari 50 Milyon Türk Lirası sabit yatırım (bölge farkı gözetilmez).</li>
+      <li><strong>1. ve 2. Bölgeler (Gelişmiş Bölgeler):</strong> Asgari 15.100.000 Türk Lirası sabit yatırım.</li>
+      <li><strong>3., 4., 5. ve 6. Bölgeler (Gelişmekte Olan Bölgeler):</strong> Asgari 7.500.000 Türk Lirası sabit yatırım.</li>
+      <li><strong>Finansal Kiralama (Leasing) Kapsamı:</strong> Makine/teçhizat asgari toplam tutarı 3.800.000 TL’dir.</li>
+      <li><strong>Stratejik / Yüksek Teknoloji Yatırımları:</strong> Yatırım konusuna ve büyüklüğüne göre asgari 125.000.000 TL ile 251.000.000 TL sınırları uygulanır.</li>
     </ul>
 
     <h4>2. Teşvik Belgesinin Sağladığı Temel Avantajlar</h4>
     <p>Belge tescil edildiği andan itibaren yatırımcıya şu yasal hakları kazandırır:</p>
     <ul>
-      <li><strong>KDV İstisnası:</strong> Yatırım kapsamında yurt içinden veya dışından satın alınacak makine-teçhizat için %20 (veya güncel oranlı) KDV ödenmez.</li>
+      <li><strong>KDV İstisnası:</strong> Yatırım kapsamında yurt içinden veya dışından satın alınacak makine-teçhizat için KDV ödenmez.</li>
       <li><strong>Gümrük Vergisi Muafiyeti:</strong> İthal edilecek makineler için gümrük vergisi ödenmeksizin ithalat tescili yapılır.</li>
       <li><strong>Vergi İndirimi:</strong> Kurumlar vergisi, belirlenen yatırım katkı oranına ulaşıncaya kadar büyük indirimlerle (%50-%90 arası) uygulanır.</li>
       <li><strong>SGK Prim Desteği:</strong> İstihdam edilecek ilave personelin sigorta prim işveren hissesi devlet tarafından karşılanır (bölgeye göre 3-12 yıl arası).</li>
     </ul>
 
-    <h4>3. Başvuru Süreci: E-TUYS Sistemi</h4>
-    <p>Tüm başvurular artık Sanayi ve Teknoloji Bakanlığı’nın elektronik portalı olan <strong>E-TUYS</strong> üzerinden yürütülmektedir. E-TUYS üzerinde firma yetkilendirmesi yapıldıktan sonra, yatırımın finansal projeksiyonları, makine teçhizat listeleri ve teknik raporları girilir. Hata payı barındıran başvurular doğrudan reddedildiği için, dosyanın profesyonel mevzuat analistlerince hazırlanması idari gecikmeleri önlemektedir.</p>
+    <h4>3. Başvuru Süreci ve E-TUYS Yetkilendirmesi</h4>
+    <p>Tüm başvurular artık Sanayi ve Teknoloji Bakanlığı’nın elektronik portalı olan <strong>E-TUYS</strong> üzerinden yürütülmektedir. E-TUYS üzerinde firma yetkilendirmesi yapıldıktan sonra, yatırımın finansal projeksiyonları, makine teçhizat listeleri ve teknik raporları girilir. Hata payı barındıran başvurular gecikmelere sebep olabildiğinden, dosyaların profesyonel mevzuat analistlerince hazırlanması önem arz etmektedir.</p>
     <p><em>Yatırım projenizin teşvik haritasındaki yerini ve uygun destek limitlerini belirlemek üzere bizimle bir İlk Değerlendirme Randevusu planlayabilirsiniz.</em></p>`
   },
   {
@@ -57,11 +58,12 @@ export const insightsArticles: Article[] = [
     author: 'Yabancı Sermaye Koordinasyon Direktörlüğü',
     contentHtml: `<p>Doğrudan Yabancı Yatırımlar Kanunu uyarınca, yabancı yatırımcılar Türkiye Cumhuriyeti sınırları içerisinde yerli yatırımcılarla tamamen eşit haklara sahiptir. Yabancı sermaye grupları, %100 kendi mülkiyetlerinde olmak üzere Limited Şirket (LTD) veya Anonim Şirket (A.Ş.) tescil edebilirler.</p>
     
-    <h4>1. Limited (LTD) ve Anonim (A.Ş.) Arasındaki Yapısal Farklar</h4>
-    <p>Türkiye’de en çok tescil edilen iki şirket modeli arasındaki temel yasal farklar şunlardır:</p>
+    <h4>1. Limited (LTD) ve Anonim (A.Ş.) Asgari Sermaye Limitleri (2026)</h4>
+    <p>Türkiye’de en çok tercih edilen şirket modelleri için uygulanan güncel asgari sermaye sınırları şunlardır:</p>
     <ul>
-      <li><strong>Limited Şirket (LTD):</strong> En az 1 ortakla kurulabilir. Asgari sermaye tabanı 10.000 TL’dir (ancak ticari kredibilite için en az 100.000 TL önerilir). Ortakların kamu borçlarından sorumluluğu sermaye hisseleri oranındadır.</li>
-      <li><strong>Anonim Şirket (A.Ş.):</strong> En az 1 ortakla kurulabilir. Asgari sermaye tabanı 50.000 TL’dir. Hissedarların borç sorumluluğu yalnızca taahhüt ettikleri sermaye ile sınırlıdır. Hisse devirleri LTD’ye göre çok daha kolay olup, genel kurul kararı ve noter onayı gerektirmez.</li>
+      <li><strong>Limited Şirket (LTD):</strong> Asgari yasal sermaye tabanı <strong>50.000 TL</strong>’dir (ancak ticari itibar ve operasyonel kolaylık için en az 150.000 TL önerilir).</li>
+      <li><strong>Anonim Şirket (A.Ş.):</strong> Asgari yasal sermaye tabanı <strong>250.000 TL</strong>’dir. Hissedarların sorumluluğu taahhüt ettikleri sermaye ile sınırlıdır.</li>
+      <li><strong>Kayıtlı Sermaye Sistemli A.Ş.:</strong> Halka açık olmayan ve bu sistemi kabul eden şirketler için asgari sermaye <strong>500.000 TL</strong>’dir.</li>
     </ul>
 
     <h4>2. Adım Adım Kurulum Aşamaları</h4>
@@ -72,7 +74,7 @@ export const insightsArticles: Article[] = [
       <li><strong>Sermaye Blokaj İşlemi:</strong> A.Ş. kuruluşlarında sermayenin en az %25'inin tescil öncesi bir banka hesabında bloke edilmesi (LTD'lerde kuruluş sonrası tescil edilebilir).</li>
       <li><strong>Sicil Tescili ve İmza Sirküleri:</strong> Ticaret Odası Sicil Müdürlüğü nezdinde tescil, imza sirkülerinin noterden çıkarılması ve resmi defterlerin tasdiki.</li>
     </ol>
-    <p><em>Mentor Group, yabancı sermaye şirket tescil dosyalarının hazırlanmasını ve vergi/banka onboarding süreçlerini, akredite hukuk ve mali müşavirlik partnerlerimizle birlikte koordine etmektedir.</em></p>`
+    <p><em>Mentor Group, yabancı sermaye şirket tescil dosyalarının hazırlanmasını ve vergi/banka onboarding süreçlerini, kayıtlı hukuk ve mali müşavirlik partnerlerimizle birlikte koordine etmektedir.</em></p>`
   },
   {
     slug: 'turkiyeye-yatirim-yapmadan-once-dikkat-edilmesi-gerekenler',
@@ -87,13 +89,142 @@ export const insightsArticles: Article[] = [
     
     <h4>1. Çifte Vergilendirmeyi Önleme Anlaşmaları (DTAA)</h4>
     <p>Türkiye'nin 80'den fazla ülke ile Çifte Vergilendirmeyi Önleme Anlaşması mevcuttur. Yatırım yapacak holding yapısının hangi ülkede kurulacağı (Örn: Hollanda, İngiltere veya doğrudan merkez ülke), kar payı (temettü) dağıtımlarında ödenecek stopaj vergisi oranlarını belirler. Doğru bir holding piramidi oluşturulması, küresel vergi optimizasyonu için elzemdir.</p>
-
+    
     <h4>2. Sanayi Bölgesi ve Arazi Tahsisleri</h4>
-    <p>Büyük ölçekli yatırımlar için Organize Sanayi Bölgeleri (OSB) nezdinde indirimli arazi tahsisleri veya Çevre Şehircilik Bakanlığı'nca sağlanan 49 yıllık irtifak hakları mevcuttur. Ancak sanayi imar durumları, çevre lisansları ve ÇED (Çevresel Etki Değerlendirmesi) izin süreçleri resmi onay aşamasında ciddi süreler alabilmektedir.</p>
-
+    <p>Büyük ölçekli yatırımlar için Organize Sanayi Bölgeleri (OSB) nezdinde indirimli arazi tahsisleri veya Çevre Şehircilik Bakanlığı'nca sağlanan 49 yıllık irtifak hakları mevcuttur. Ancak sanayi imar durumları, çevre lisansları ve ÇED izin süreçleri resmi onay aşamasında ciddi süreler alabilmektedir.</p>
+    
     <h4>3. Yerleşim ve Kilit Personel Çalışma İzinleri</h4>
-    <p>Yabancı uyruklu yöneticilerin ve kilit teknik kadroların Türkiye'de resmi çalışabilmesi için Çalışma ve Sosyal Güvenlik Bakanlığı'ndan çalışma izni alınmalıdır. Yasal sınırlandırma gereği, tescil edilen şirkette her 1 yabancı personel için 5 Türk vatandaşının istihdam edilmesi şartı aranmaktadır (ilk kurulumda ve kilit personel tescilinde özel istisnalar mevcuttur).</p>
-    <p><em>Yatırım öncesi tüm bu regülasyon engellerini ve riskleri temizlemek amacıyla, dosyanızı başmüşavirimizle resmen scoping edeceğimiz "İlk Değerlendirme Randevusu" oluşturabilirsiniz.</em></p>`
+    <p>Yabancı uyruklu yöneticilerin ve kilit teknik kadroların Türkiye'de resmi çalışabilmesi için Çalışma ve Sosyal Güvenlik Bakanlığı'nden çalışma izni alınmalıdır. Yasal sınırlandırma gereği, tescil edilen şirkette her 1 yabancı personel için 5 Türk vatandaşının istihdam edilmesi şartı aranmaktadır (ilk kurulumda ve kilit personel tescilinde özel istisnalar mevcuttur).</p>
+    <p><em>Yatırım öncesi tüm bu regülasyon engellerini ve riskleri incelemek amacıyla, dosyanızı başmüşavirimizle resmen scoping edeceğimiz "İlk Değerlendirme Randevusu" oluşturabilirsiniz.</em></p>`
+  },
+  {
+    slug: '7582-sayili-kanun-yabanci-yatirim-vergi-tesvikleri',
+    locale: 'tr',
+    title: '7582 Sayılı Kanun ile Yabancı Yatırım, Nitelikli Hizmet Merkezi ve Vergi Teşvikleri',
+    excerpt: 'Kabul edilen 7582 Sayılı Kanun; Nitelikli Hizmet Merkezleri vergi muafiyeti, ihracatçılara kurumlar vergisi indirimi, transit ticarete %100\'e varan istisnalar ve teknogirişim destekleri getiriyor.',
+    category: 'MEVZUAT BRİFİNGİ',
+    date: '2026-05-31',
+    refCode: 'INTEL-TR-REG-04',
+    author: 'Mentor Group Mevzuat ve Regülasyon Departmanı',
+    contentHtml: `<p>Türkiye Büyük Millet Meclisi (TBMM) tarafından <strong>21 Mayıs 2026</strong> tarihinde kabul edilen ve yasalaşan <strong>7582 Sayılı Kanun</strong> (Eski Kanun Teklifi No: 2/3669), Türkiye’nin yatırım iklimini kökten değiştirecek tarihi teşvik ve vergi reformları içermektedir. Yasalaşan paketin öne çıkan başlıklarını sizler için derledik.</p>
+    
+    <h4>1. Nitelikli Hizmet Merkezleri (QSC) Kurulması ve Vergi İstisnaları</h4>
+    <p>Nitelikli hizmet ihracatını artırmak ve uluslararası şirketler için bölgesel bir merkez oluşturmak amacıyla yeni teşvikler tanımlanmıştır:</p>
+    <ul>
+      <li><strong>Şirket Tanımı:</strong> En az üç farklı ülkede aktif olarak faaliyet gösteren uluslararası ilişkili şirket veya şirketler topluluğuna finans, strateji, hukuk, İK, R&D veya teknik destek gibi yönetim hizmetleri sunan ve yıllık brüt gelirinin en az %80'ini yurt dışından elde eden sermaye şirketleri <strong>"Nitelikli Hizmet Merkezi"</strong> olarak tescil edilecektir.</li>
+      <li><strong>Kurumlar Vergisi İndirimi:</strong> Bu merkezlerin münhasıran bu faaliyetlerinden elde edeceği kazançlarına <strong>%95 oranında kazanç indirimi</strong> (İstanbul Finans Merkezi'nde faaliyet göstermeleri halinde <strong>%100 kazanç indirimi</strong>) uygulanacaktır.</li>
+      <li><strong>Personel Ücret İstisnası:</strong> Bu merkezlerde istihdam edilen nitelikli personelin ücretlerinin brüt asgari ücretin 3 katına kadar (İFM'de faaliyet gösterenler için 5 katına kadar) olan kısmı <strong>gelir ve damga vergisinden müstesna</strong> tutulacaktır.</li>
+    </ul>
+
+    <h4>2. Üretici ve İhracatçılara Kurumlar Vergisi İndirimi</h4>
+    <p>Üretim ve ihracatı desteklemek amacıyla Kurumlar Vergisi Kanunu'nda çok önemli oran indirimleri yapılmıştır:</p>
+    <ul>
+      <li><strong>İmalatçı İhracatçılar:</strong> Kendi ürettikleri malları ihraç eden imalatçıların bu ihracat işlemlerinden elde ettikleri kazançlarına kurumlar vergisi oranı 16 puan indirimli olarak <strong>%9</strong> (standart oran %25) olarak uygulanacaktır.</li>
+      <li><strong>İhracatçı Kurumlar:</strong> Münhasıran ihracattan elde edilen kazançlarda vergi oranı 11 puan indirimli olarak <strong>%14</strong> olarak uygulanacaktır. Bu indirimli oranlar aracı ihracatçı üzerinden yapılan ihracatlarda imalatçı/tedarikçiler için de geçerlidir.</li>
+    </ul>
+
+    <h4>3. Transit Ticarete %95-%100 Kazanç İstisnası</h4>
+    <p>Yurt dışından satın alınan malların Türkiye'ye getirilmeden doğrudan yurt dışına satılması veya bu işlemlere aracılık edilmesinden (transit ticaret) elde edilen kurum kazançlarına uygulanan indirim oranı <strong>%95'e</strong> (İstanbul Finans Merkezi katılımcıları için <strong>%100'e</strong>) yükseltilmiştir. Bu teşvik, kazancın beyanname tarihine kadar Türkiye'ye transfer edilmesi şartına bağlanmıştır.</p>
+
+    <h4>4. Yabancı Gerçek Kişilerin Yurt Dışı Kazançlarına 20 Yıl Muafiyet</h4>
+    <p>Yurt dışındaki nitelikli yatırımcıları ve fon yöneticilerini Türkiye'ye çekmek amacıyla yeni bir gelir vergisi istisnası yürürlüğe girmiştir:</p>
+    <ul>
+      <li><strong>20 Yıl İstisna:</strong> Türkiye'de yerleşmiş sayılan gerçek kişilerin, yerleşmeden önceki son 3 takvim yılında Türkiye'de ikametgahının ve vergi mükellefiyetinin bulunmaması şartıyla, Türkiye dışında elde ettikleri tüm kazanç ve iratlar <strong>20 yıl boyunca gelir vergisinden müstesnadır</strong>.</li>
+      <li><strong>Veraset Kolaylığı:</strong> Bu istisnadan yararlanan kişilerin mezkur süre içerisinde Türkiye'deki veraset yoluyla mal intikallerinde vergi oranı <strong>%1</strong> gibi sembolik bir oranda uygulanacaktır.</li>
+    </ul>
+
+    <h4>5. Teknogirişim ve Teknoloji Girişimciliği Destekleri</h4>
+    <p>Teknoloji startup ekosistemini güçlendirmek amacıyla çok kritik yasal enstrümanlar tanımlanmıştır:</p>
+    <ul>
+      <li><strong>Çalışan Pay Senedi Teşviği:</strong> Teknogirişim çalışanlarına bedelsiz veya indirimli verilen pay senetlerindeki yıllık vergi muafiyeti üst sınırı brüt ücretin <strong>2 katına</strong> çıkarılmış; bu payların elde tutulması gereken süreler kısaltılarak (2 ila 6 yıl arası kademelendirilerek) çalışanların hisselerini likide etmeleri kolaylaştırılmıştır.</li>
+      <li><strong>Paya Dönüştürülebilir Borç Sözleşmesi (Convertible Debt):</strong> Sanayi ve Teknoloji Bakanlığı’nca <em>"Teknogirişim Rozeti"</em> verilen halka açık olmayan şirketlerin paya dönüştürülebilir borç sözleşmeleri ile yatırım almalarını kolaylaştırmak amacıyla, Türk Ticaret Kanunu'nun (TTK) şarta bağlı sermaye artırımına ilişkin katı sınırlamalarından muaf tutulmaları düzenlenmiştir.</li>
+    </ul>
+    <p><em>Not: Kanun TBMM'de kabul edilmiş olup, Resmî Gazete yayım tarihi ve idari yönetmeliklerin yürürlük süreçleri ayrıca takip edilmektedir. Firmanızın yatırım fizibilitesine, vergi planlamasına ve teknoloji yatırımlarına etkilerini başmüşavirimizle değerlendirmek üzere bir İlk Değerlendirme Randevusu planlayabilirsiniz.</em></p>`
+  },
+  {
+    slug: '9903-sayili-karar-yeni-yatirim-tesvik-sistemi-2026-rehber',
+    locale: 'tr',
+    title: '9903 Sayılı Karar ile Yeni Yatırım Teşvik Sistemi: 2026 Güncel Rehber',
+    excerpt: 'Eski 2012/3305 sayılı Karar’ın yürürlükten kalkmasıyla başlayan yeni teşvik mimarisi: Kalkınma Hamleleri, Sektörel/Bölgesel Öncelikler ve Yeşil Dönüşüm kriterleri.',
+    category: 'MEVZUAT BRİFİNGİ',
+    date: '2026-05-31',
+    refCode: 'INTEL-TR-YTB-05',
+    author: 'Mentor Group Regülasyon ve Süreç Departmanı',
+    contentHtml: `<p>Türkiye'nin sanayi dönüşümünü hızlandırmak ve yüksek katma değerli yatırımları desteklemek amacıyla yürürlüğe giren <strong>9903 Sayılı Karar</strong>, teşvik sistemini tamamen baştan kurgulamıştır. Bu rehberimizde, yeni sistemin esaslarını, kalkınma hamlelerini ve asgari yatırım tutarlarını detaylıca inceliyoruz.</p>
+    
+    <h4>1. Yürürlükten Kaldırılan Eski Mevzuatlar</h4>
+    <p>Yeni 9903 Sayılı Karar’ın yürürlüğe girmesiyle birlikte, uzun yıllardır uygulanan 15/6/2012 tarihli ve <strong>2012/3305 Sayılı Bakanlar Kurulu Kararı</strong> ile 2018/11201 sayılı Cazibe Merkezleri Programı Kararı resmi olarak yürürlükten kaldırılmıştır. Aynı şekilde, 2012/1 sayılı uygulama tebliği yerini 2025/1 sayılı yeni tebliğe bırakmıştır. Mevcut yatırımlar ve açık teşvik belgeleri ancak tamamlama vizesi, belge kapatma ve geçiş dönemi revizyonları bağlamında eski kurallara tabidir.</p>
+    
+    <h4>2. Türkiye Yüzyılı Kalkınma Hamlesi Programları</h4>
+    <p>Yeni sistemin omurgasını, Sanayi ve Teknoloji Bakanlığı tarafından yürütülecek Kalkınma Hamlesi programları oluşturmaktadır:</p>
+    <ul>
+      <li><strong>Teknoloji Hamlesi Programı:</strong> Orta-yüksek ve yüksek teknoloji seviyesindeki ürünlerin üretimine yönelik, AR-GE aşamasından ticarileşmeye kadar olan tüm süreçleri kapsayan programdır. Asgari yatırım tutarı <strong>125.000.000 TL</strong>’dir.</li>
+      <li><strong>Yerel Kalkınma Hamlesi Programı:</strong> Bölgesel kalkınma farklılıklarını azaltmayı hedefleyen, az gelişmiş ilçelerde istihdam ve yerel tedarik zinciri odaklı yatırımlardır.</li>
+      <li><strong>Stratejik Hamle Programı:</strong> Ülkenin stratejik bağımsızlığı için kritik önem taşıyan, büyük ölçekli ve yüksek sermaye yoğunluklu yatırımları kapsar. Asgari yatırım tutarı <strong>251.000.000 TL</strong>’dir.</li>
+    </ul>
+
+    <h4>3. Sektörel ve Bölgesel Öncelikli Alanlar</h4>
+    <p>Bölgesel teşvik sisteminin yerini alan Sektörel ve Bölgesel Teşvik modelinde iki ana grup öne çıkmaktadır:</p>
+    <ul>
+      <li><strong>Öncelikli Yatırımlar:</strong> Savunma sanayisi, havacılık, test ve kalibrasyon merkezleri, yüksek teknolojili biyoteknolojik ilaç yatırımları bölge farkı olmaksızın en üst düzey bölgesel teşviklerden faydalanır.</li>
+      <li><strong>Hedef Yatırımlar (Yeşil ve Dijital Dönüşüm):</strong> Sürdürülebilirlik odaklı yatırımlar, dijitalleşme ve yeşil dönüşüm yatırımları (Asgari sabit yatırım eşiği <strong>62.700.000 TL</strong>) ile veri merkezleri bu gruptadır.</li>
+    </ul>
+    
+    <h4>4. Yatırımcılara Süreç Önerileri</h4>
+    <p>9903 Sayılı Karar kapsamında başvuru hazırlığı yapacak firmaların, E-TUYS veri girişlerinde güncel 2025/1 Tebliği standartlarına ve 2026 asgari limitlerine (15.1M / 7.5M TL) tam uyumlu fizibiliteler hazırlaması gerekmektedir. Mentor Group, dosya hazırlık süreçlerinizi yasal riskleri bertaraf ederek koordine etmektedir.</p>
+    <p><em>Yeni teşvik mimarisine uyum sağlamak ve projenizin teşvik haritasını çıkarmak için "İlk Değerlendirme Randevusu" oluşturabilirsiniz.</em></p>`
+  },
+  {
+    slug: 'yabanci-yatirimcilar-sirket-kurulusu-2026-asgari-sermaye',
+    locale: 'tr',
+    title: 'Yabancı Yatırımcılar İçin Türkiye’de Şirket Kuruluşu: 2026 Güncel Sermaye Tutarları',
+    excerpt: '2026 yılı itibarıyla güncellenen yasal asgari sermaye tutarları, Limited (LTD) ve Anonim (A.Ş.) şirket kurulum prosedürleri ve bankacılık onboarding kuralları.',
+    category: 'PAZAR GİRİŞ NOTU',
+    date: '2026-05-31',
+    refCode: 'INTEL-TR-CORP-05',
+    author: 'Mentor Group Şirketleşme Departmanı',
+    contentHtml: `<p>Uluslararası sermaye sahipleri ve çok uluslu şirketlerin Türkiye pazarında yasal olarak faaliyet gösterebilmesi için şirket kurulum süreçlerini güncel mevzuat limitlerine göre yürütmesi gerekmektedir. Bu yazımızda, 2026 yılı itibarıyla yürürlüğe giren güncel asgari sermaye tutarlarını ve tescil prosedürlerini inceliyoruz.</p>
+    
+    <h4>1. Yasal Asgari Sermaye Tutarları (2026)</h4>
+    <p>Türk Ticaret Kanunu (TTK) kapsamında yapılan son düzenlemeler neticesinde, şirket kuruluşlarındaki asgari sermaye limitleri ciddi oranda artırılmıştır:</p>
+    <table class="matrix-table" style="font-size: 0.8rem; margin-bottom: 20px;">
+      <thead>
+        <tr>
+          <th>ŞİRKET TÜRÜ</th>
+          <th>ESKİ ASGARİ SERMAYE</th>
+          <th>2026 YENİ ASGARİ SERMAYE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Limited Şirket (LTD)</strong></td>
+          <td>10.000 TL</td>
+          <td><strong>50.000 TL</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Anonim Şirket (A.Ş.)</strong></td>
+          <td>50.000 TL</td>
+          <td><strong>250.000 TL</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Kayıtlı Sermaye Sistemli A.Ş.</strong></td>
+          <td>100.000 TL</td>
+          <td><strong>500.000 TL</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Önemli Not: Her ne kadar yasal sınırlar bu şekilde belirlenmiş olsa da, yabancı ortaklı şirketlerin bankacılık onboarding süreçlerinden, çalışma izni tescillerine ve lisans başvurularına kadar sorunsuz ilerleyebilmesi için Limited Şirketler için en az 150.000 TL, Anonim Şirketler için ise en az 500.000 TL sermaye tabanıyla tescil yapılması tavsiye edilmektedir.</p>
+    
+    <h4>2. Kuruluş Sürecinde Sermaye Blokaj Kuralları</h4>
+    <p>Şirket kurulum modeline göre sermayenin banka hesaplarına bloke edilmesi kuralları farklılık gösterir:</p>
+    <ul>
+      <li><strong>Anonim Şirket (A.Ş.):</strong> Tescil işleminden önce, asgari sermayenin en az %25’inin (250.000 TL için 62.500 TL) Türkiye’deki bir bankada açılacak geçici hesapta bloke edilmesi ve buna dair banka mektubunun Ticaret Siciline sunulması zorunludur. Kalan %75'lik kısım ise tescili takip eden 24 ay içinde ödenir.</li>
+      <li><strong>Limited Şirket (LTD):</strong> Limited şirketlerde kuruluş öncesi sermaye blokaj zorunluluğu bulunmamaktadır. Ortaklar, taahhüt ettikleri sermayenin tamamını şirketin resmi tescil tarihinden itibaren 24 ay içerisinde şirketin banka hesabına yatırabilirler.</li>
+    </ul>
+
+    <h4>3. Onboarding ve Ticari Sicil Süreçleri</h4>
+    <p>Kuruluş işlemleri sırasıyla; MERSİS portalı üzerinden ana sözleşme hazırlığı, potansiyel vergi numarası alımı, ortakların imza beyannamelerinin noter tescili ve Ticaret Sicili tescili aşamalarını izler. Sürecin yasal partnerler eşgüdümünde yürütülmesi, banka hesaplarının açılmasında ve vergi dairesi yoklamalarında idari gecikmeleri engeller.</p>
+    <p><em>Şirket kurulum planlarınızı ve yasal altyapınızı netleştirmek üzere "İlk Değerlendirme Randevusu" oluşturabilirsiniz.</em></p>`
   },
 
   // ==================== ENGLISH ARTICLES ====================
@@ -120,7 +251,7 @@ export const insightsArticles: Article[] = [
     <p>International corporate contracts should explicitly incorporate bilateral dispute channels. Foreign enterprises registered in Türkiye can utilize domestic courts or choose international commercial arbitration (such as ISTAC or ICC coordinates), ensuring clear contractual enforcement and legal predictability.</p>
 
     <h4>3. Local Employment & Work Permit Matrices</h4>
-    <p>To secure a statutory work permit for a foreign national manager or technical expert, the Ministry of Labor generally mandates the employment of 5 local Turkish citizens. However, key direct investments exceeding specific capital thresholds are eligible for special exemptions and kilit personel (key personnel) status, easing early-stage executive deployment.</p>
+    <p>To secure a statutory work permit for a foreign national manager or technical expert, the Ministry of Labor generally mandates the employment of 5 local Turkish citizens. However, key direct investments exceeding specific capital thresholds under 2026 rules are eligible for special exemptions and kilit personel (key personnel) status, easing early-stage executive deployment.</p>
     <p><em>To establish a customized legal and operational blueprint for your Turkish entry, schedule a structured Initial Advisory Session.</em></p>`
   },
   {
@@ -134,7 +265,7 @@ export const insightsArticles: Article[] = [
     author: 'Corporate Setup & Compliance Scoping Specialist',
     contentHtml: `<p>Establishing a formal commercial vehicle in Türkiye is a streamlined administrative process, typically completed within 3 to 5 business days. The choice between a Limited Liability Company (LTD) and a Joint Stock Company (A.Ş.) has significant implications for executive liability, corporate governance, and tax efficiency.</p>
     
-    <h4>1. Comparative Structural Analysis</h4>
+    <h4>1. Comparative Structural Analysis (2026 Updates)</h4>
     <table class="matrix-table" style="font-size: 0.8rem; margin-bottom: 20px;">
       <thead>
         <tr>
@@ -146,8 +277,8 @@ export const insightsArticles: Article[] = [
       <tbody>
         <tr>
           <td><strong>Minimum Capital</strong></td>
-          <td>10,000 TRY statutory base (100k recommended).</td>
-          <td>50,000 TRY statutory base.</td>
+          <td>50,000 TRY statutory base (150k recommended).</td>
+          <td>250,000 TRY statutory base (500k for registered capital system).</td>
         </tr>
         <tr>
           <td><strong>Public Debt Liability</strong></td>
@@ -156,7 +287,7 @@ export const insightsArticles: Article[] = [
         </tr>
         <tr>
           <td><strong>Share Transfer Ease</strong></td>
-          <td>Demands notary approval and Ticaret Sicil tescil registration.</td>
+          <td>Demands notary approval and Ticaret Sicil registration.</td>
           <td>Executed via simple private share endorsement; zero notary costs.</td>
         </tr>
         <tr>
@@ -175,7 +306,7 @@ export const insightsArticles: Article[] = [
       <li><strong>Capital Blockage:</strong> For Joint Stock setups, 25% of the statutory capital must be deposited in a temporary blockage bank account prior to chamber registration.</li>
       <li><strong>Registry Clearance:</strong> Securing the final registration decree from the Chamber of Commerce, and issuing official signature circulars.</li>
     </ol>
-    <p><em>We structure entity setups in direct coordination with our accredited local legal, tax, and accounting networks.</em></p>`
+    <p><em>We coordinate entity setups in direct coordination with our registered local legal, tax, and accounting networks.</em></p>`
   },
   {
     slug: 'investment-incentives-preliminary-guide',
@@ -186,17 +317,18 @@ export const insightsArticles: Article[] = [
     date: '2026-05-29',
     refCode: 'INTEL-EN-YTB-03',
     author: 'Managing Director, Sovereign Incentives Scoping',
-    contentHtml: `<p>The Republic of Türkiye provides massive B2B subsidies through the <strong>Investment Incentive Certificate (Yatırım Teşvik Belgesi)</strong> program. This sovereign framework is designed to de-risk high-capital setups, advanced manufacturing plants, R&D centers, and energy infrastructure installations.</p>
+    contentHtml: `<p>The Republic of Türkiye provides massive B2B subsidies through the <strong>Investment Incentive Certificate (Yatırım Teşvik Belgesi)</strong> program. This framework is designed to de-risk high-capital setups, advanced manufacturing plants, R&D centers, and energy infrastructure installations under the active 9903 Decree.</p>
     
     <h4>1. Scoping the Regional Map</h4>
     <p>Turkish provinces are mapped into 6 distinct incentive regions. Region 1 encompasses highly developed zones (such as Istanbul and Izmir), while Region 6 contains the least developed provinces. The subsidy rates increase dramatically as you move down the scale. For instance, a Region 5 setup may yield corporate tax reductions covering up to 50% of the entire fixed asset expenditure, alongside 10 years of employer-share social security premium waivers.</p>
 
-    <h4>2. Eligible Industries & Thresholds</h4>
-    <p>The standard baseline Fixed Capital thresholds to apply for a YTB are:</p>
+    <h4>2. Eligible Industries & Thresholds (2026)</h4>
+    <p>The standard baseline Fixed Capital thresholds to apply for a YTB in 2026 are:</p>
     <ul>
-      <li><strong>Regions 1 & 2:</strong> Minimum 3 Million TRY fixed capital setup.</li>
-      <li><strong>Regions 3 to 6:</strong> Minimum 1.5 Million TRY fixed capital setup.</li>
-      <li><strong>Stratejik / Advanced Tech:</strong> Minimum 50 Million TRY fixed capital (Regions 1-6).</li>
+      <li><strong>Regions 1 & 2:</strong> Minimum 15,100,000 TRY fixed capital setup.</li>
+      <li><strong>Regions 3 to 6:</strong> Minimum 7,500,000 TRY fixed capital setup.</li>
+      <li><strong>Financial Leasing:</strong> Minimum 3,800,000 TRY total machinery volume.</li>
+      <li><strong>Strategic / Advanced Tech (Hamle):</strong> Minimum 125,000,000 TRY to 251,000,000 TRY fixed capital setup.</li>
     </ul>
 
     <h4>3. Key Subsidy Advantages</h4>
@@ -206,118 +338,135 @@ export const insightsArticles: Article[] = [
       <li><strong>Customs tariff clearance:</strong> Exemption from import customs tariffs on foreign machinery imports.</li>
       <li><strong>Interest Subsidy:</strong> State coverage of commercial capital loan interest rates (up to 7 percentage points for foreign-currency credit).</li>
     </ul>
-    <p><em>To evaluate the statutory grant potential of your industrial tech setup, book a structured 30-minute Initial Review.</em></p>`
-  },
-  // ==================== NEW REFORM ARTICLES (MAY 2026) ====================
-  {
-    slug: 'tbmm-yeni-yatirim-tesvik-kanun-teklifi',
-    locale: 'tr',
-    title: 'TBMM’de Yeni Yatırım Teşvik ve Vergi Reformu Kanun Teklifi (Mayıs 2026)',
-    excerpt: 'TBMM’ye sunulan yeni kanun teklifi; Nitelikli Hizmet Merkezleri vergi muafiyeti, ihracatçılara kurumlar vergisi indirimi, transit ticarete %100\'e varan istisnalar ve teknogirişim destekleri getiriyor.',
-    category: 'MEVZUAT BRİFİNGİ',
-    date: '2026-05-31',
-    refCode: 'INTEL-TR-REG-04',
-    author: 'Mentor Group Mevzuat ve Regülasyon Departmanı',
-    contentHtml: `<p>Türkiye Büyük Millet Meclisi (TBMM) Başkanlığı’na <strong>5 Mayıs 2026</strong> tarihinde sunulan <em>"Bazı Kanunlarda Değişiklik Yapılmasına Dair Kanun Teklifi"</em> (Esas No: 2/3669), Türkiye’nin yatırım iklimini kökten değiştirecek ve küresel sermaye için ülkeyi çekim merkezi yapacak tarihi teşvik ve vergi reformları içermektedir. Bu kapsamlı kanun teklifinin öne çıkan ve yatırımcıları doğrudan ilgilendiren maddelerini sizler için derledik.</p>
-    
-    <h4>1. Nitelikli Hizmet Merkezleri (QSC) Kurulması ve Vergi İstisnaları</h4>
-    <p>Ülkemizin nitelikli hizmet ihracatını artırmak ve uluslararası şirketler için bölgesel bir merkez haline getirmek amacıyla yeni teşvikler getirilmektedir (Madde 5 ve 6):</p>
-    <ul>
-      <li><strong>Şirket Tanımı:</strong> En az üç farklı ülkede aktif olarak faaliyet gösteren uluslararası ilişkili şirket veya şirketler topluluğuna finans, strateji, hukuk, İK, R&D veya teknik destek gibi yönetim hizmetleri sunan ve yıllık brüt gelirinin en az %80'ini yurt dışından elde eden sermaye şirketleri <strong>"Nitelikli Hizmet Merkezi"</strong> olarak tescil edilecektir.</li>
-      <li><strong>Kurumlar Vergisi İndirimi:</strong> Bu merkezlerin münhasıran bu faaliyetlerinden elde edeceği kazançlarına <strong>%95 oranında kazanç indirimi</strong> (İstanbul Finans Merkezi'nde faaliyet göstermeleri halinde <strong>%100 kazanç indirimi</strong>) uygulanacaktır (Madde 7).</li>
-      <li><strong>Personel Ücret İstisnası:</strong> Bu merkezlerde istihdam edilen nitelikli personelin ücretlerinin brüt asgari ücretin 3 katına kadar (İFM'de faaliyet gösterenler için 5 katına kadar) olan kısmı <strong>gelir ve damga vergisinden müstesna</strong> tutulacaktır.</li>
-    </ul>
-
-    <h4>2. Üretici ve İhracatçılara Dev Kurumlar Vergisi İndirimi</h4>
-    <p>Üretim ve ihracatı desteklemek amacıyla Kurumlar Vergisi Kanunu'nda çok önemli oran indirimleri yapılmaktadır (Madde 8):</p>
-    <ul>
-      <li><strong>İmalatçı İhracatçılar:</strong> Kendi ürettikleri malları ihraç eden imalatçıların bu ihracat işlemlerinden elde ettikleri kazançlarına kurumlar vergisi oranı 16 puan indirimli olarak <strong>%9</strong> (standart oran %25) olarak uygulanacaktır.</li>
-      <li><strong>İhracatçı Kurumlar:</strong> Münhasıran ihracattan elde edilen kazançlarda vergi oranı 11 puan indirimli olarak <strong>%14</strong> olarak uygulanacaktır. Bu indirimli oranlar aracı ihracatçı (dış ticaret şirketleri) üzerinden yapılan ihracatlarda imalatçı/tedarikçiler için de geçerlidir.</li>
-    </ul>
-
-    <h4>3. Transit Ticarete %95-%100 Kazanç İstisnası</h4>
-    <p>Yurt dışından satın alınan malların Türkiye'ye getirilmeden doğrudan yurt dışına satılması veya bu işlemlere aracılık edilmesinden (transit ticaret) elde edilen kurum kazançlarına uygulanan indirim oranı <strong>%95'e</strong> (İstanbul Finans Merkezi katılımcıları için <strong>%100'e</strong>) yükseltilmektedir (Madde 7). Bu teşvik, kazancın beyanname tarihine kadar Türkiye'ye transfer edilmesi şartına bağlanmıştır.</p>
-
-    <h4>4. Yabancı Gerçek Kişilerin Yurt Dışı Kazançlarına 20 Yıl Muafiyet</h4>
-    <p>Yurt dışındaki nitelikli yatırımcıları ve fon yöneticilerini Türkiye'ye çekmek amacıyla yeni bir gelir vergisi istisnası getirilmektedir (Madde 2 ve 4):</p>
-    <ul>
-      <li><strong>20 Yıl İstisna:</strong> Türkiye'de yerleşmiş sayılan gerçek kişilerin, yerleşmeden önceki son 3 takvim yılında Türkiye'de ikametgahının ve vergi mükellefiyetinin bulunmaması şartıyla, Türkiye dışında elde ettikleri tüm kazanç ve iratlar <strong>20 yıl boyunca gelir vergisinden müstesnadır</strong>.</li>
-      <li><strong>Veraset Kolaylığı:</strong> Bu istisnadan yararlanan kişilerin mezkur süre içerisinde Türkiye'deki veraset yoluyla mal intikallerinde vergi oranı <strong>%1</strong> gibi sembolik bir oranda uygulanacaktır.</li>
-    </ul>
-
-    <h4>5. Teknogirişim ve Teknoloji Girişimciliği Destekleri</h4>
-    <p>Teknoloji startup ekosistemini güçlendirmek amacıyla çok kritik yasal enstrümanlar tanımlanmaktadır (Madde 3 ve 11):</p>
-    <ul>
-      <li><strong>Çalışan Pay Senedi Teşviği:</strong> Teknogirişim çalışanlarına bedelsiz veya indirimli verilen pay senetlerindeki yıllık vergi muafiyeti üst sınırı brüt ücretin 1 katından <strong>2 katına</strong> çıkarılmış; bu payların elde tutulması gereken süreler kısaltılarak (2 ila 6 yıl arası kademelendirilerek) çalışanların hisselerini likide etmeleri kolaylaştırılmıştır.</li>
-      <li><strong>Paya Dönüştürülebilir Borç Sözleşmesi (Convertible Debt):</strong> Sanayi ve Teknoloji Bakanlığı’nca <em>"Teknogirişim Rozeti"</em> verilen halka açık olmayan şirketlerin paya dönüştürülebilir borç sözleşmeleri ile yatırım almalarını kolaylaştırmak amacıyla, Türk Ticaret Kanunu'nun (TTK) şarta bağlı sermaye artırımına ilişkin katı sınırlamalarından muaf tutulmaları düzenlenmektedir.</li>
-      <li><strong>Dijital Şirket Muafiyetleri:</strong> Kuluçka aşamasındaki teknogirişimlerin kuracağı ve Bakanlıkça belirlenecek "Dijital Şirket" tanımına uyan firmalar, kuruluşlarında oda kayıt ücretinden ve işletme döneminde 3 yıla kadar oda yıllık aidatlarından muaf tutulacaktır.</li>
-    </ul>
-
-    <h4>6. İstanbul Finans Merkezi (İFM) Teşviklerinin Süresinin Uzatılması</h4>
-    <p>İFM bünyesindeki finansal kuruluşlara ve katılımcılara yönelik vergi indirimleri ile muafiyet süreleri ciddi şekilde uzatılmaktadır (Madde 12 ve 13):</p>
-    <ul>
-      <li><strong>Vergi İndirimi:</strong> Katılımcı belgesi alarak İFM bünyesinde faaliyette bulunan kuruluşların finansal faaliyet kazançlarına uygulanan %100 kurumlar vergisi indirimi <strong>2047 yılına kadar</strong> uzatılmaktadır.</li>
-      <li><strong>Harç Muafiyeti:</strong> Bu kuruluşlara kuruluş ve faaliyet izinleri kapsamında sağlanan 5 yıllık harç muafiyeti süresi <strong>20 yıla</strong> çıkarılmaktadır.</li>
-    </ul>
-
-    <h4>7. Kamu Alacaklarında Deferral (Tecil) Kolaylığı</h4>
-    <p>Vergi mükelleflerinin gönüllü uyumunu ve likidite yönetimini desteklemek amacıyla 6183 sayılı Kanun kapsamında yapılacak borç tecillerinde azami taksit süresi 36 aydan <strong>72 aya</strong> çıkarılmakta ve teminatsız borç tecil limiti 50.000 TL'den <strong>1 Milyon TL'ye</strong> yükseltilmektedir (Madde 1).</p>
-    <p><em>Bu tarihi kanun teklifinin firmanızın yatırım fizibilitesine, vergi planlamasına ve teknoloji yatırımlarına etkilerini başmüşavirimizle değerlendirmek üzere bir İlk Değerlendirme Randevusu planlayabilirsiniz.</em></p>`
+    <p><em>To evaluate the statutory grant potential of your industrial tech setup, book a structured Initial Review.</em></p>`
   },
   {
-    slug: 'new-turkish-investment-incentives-law-proposal-2026',
+    slug: 'law-7582-turkish-investment-incentives-tax-reforms',
     locale: 'en',
-    title: 'Major Turkish Investment Incentives & Tax Reform Law Proposal (May 2026)',
-    excerpt: 'A new bill submitted to the Turkish Grand National Assembly (TBMM) proposes establishing Qualified Service Centers, massive corporate tax cuts for exporters, transit trade tax exemptions, and structural benefits for tech startups.',
+    title: 'Law No. 7582: Turkish Foreign Investment, Qualified Service Centers, and Tax Reforms',
+    excerpt: 'The newly enacted Law No. 7582 establishes Qualified Service Centers, massive corporate tax cuts for exporters, transit trade tax exemptions, and structural benefits for tech startups.',
     category: 'EXECUTIVE BRIEFING',
     date: '2026-05-31',
     refCode: 'INTEL-EN-REG-04',
     author: 'Mentor Group Regulatory & Compliance Division',
-    contentHtml: `<p>On <strong>May 5, 2026</strong>, a milestone legislative bill titled <em>"Proposal on Amending Certain Laws"</em> (Draft No: 2/3669) was formally submitted to the Presidency of the Grand National Assembly of Türkiye (TBMM). This highly anticipated reform packages massive tax exemptions, startup funding vehicles, and corporate tax cuts designed to attract high-value multinational headquarters, direct investors, and technology founders. Below, we examine the primary structural provisions of the bill.</p>
+    contentHtml: `<p>Enacted by the Grand National Assembly of Türkiye (TBMM) on <strong>May 21, 2026</strong>, <strong>Law No. 7582</strong> (formerly Draft Bill No. 2/3669) marks a milestone reform package. It introduces massive tax exemptions, startup funding vehicles, and corporate tax cuts designed to attract high-value multinational headquarters, direct investors, and technology founders. Below, we examine the primary structural provisions of the enacted law.</p>
     
     <h4>1. Qualified Service Centers (QSCs) & Landmark Tax Holidays</h4>
-    <p>To incentivize the relocation of regional headquarters and shared service centers to Türkiye, the bill creates a brand-new statutory category (Articles 5 & 6):</p>
+    <p>To incentivize the relocation of regional headquarters and shared service centers to Türkiye, the law creates a brand-new statutory category:</p>
     <ul>
       <li><strong>Definition:</strong> Capital corporations established in Türkiye to provide management services (such as financial consulting, strategic management, legal advice, HR, R&D, or tech consulting) to associated multinational entities operating actively in at least three different countries, and generating at least 80% of their gross annual revenue from abroad, will be tescil-certified as <strong>"Qualified Service Centers"</strong>.</li>
-      <li><strong>95% to 100% Tax Deduction:</strong> Qualified Service Centers will enjoy a <strong>95% corporate tax deduction</strong> on their earnings (rising to a **100% tax holiday** if the entity operates within the Istanbul Financial Center (IFC) zone) (Article 7).</li>
+      <li><strong>95% to 100% Tax Deduction:</strong> Qualified Service Centers will enjoy a <strong>95% corporate tax deduction</strong> on their earnings (rising to a **100% tax holiday** if the entity operates within the Istanbul Financial Center (IFC) zone).</li>
       <li><strong>Qualified Salaries Waiver:</strong> The monthly salaries of qualified service personnel employed in these centers will be **exempt from income and stamp taxes** up to 3 times the gross monthly minimum wage (up to 5 times for centers active inside the IFC).</li>
     </ul>
 
     <h4>2. Broad Corporate Tax Reductions for Manufacturers & Exporters</h4>
-    <p>To boost export capacity, the standard 25% corporate tax rate is being dramatically lowered on eligible foreign revenues (Article 8):</p>
+    <p>To boost export capacity, the standard 25% corporate tax rate is lowered on eligible foreign revenues:</p>
     <ul>
       <li><strong>Manufacturing Exporters:</strong> Eligible corporate earnings derived directly from the export of self-manufactured goods will qualify for a 16-point rate reduction, resulting in an effective corporate tax rate of **9%** (down from 25%).</li>
       <li><strong>General Exporters:</strong> Corporate earnings exclusively derived from general export operations will qualify for an 11-point reduction, resulting in an effective rate of **14%**. This benefit extends to manufacturers executing exports via licensed Foreign Trade Capital Companies (Dış Ticaret Sermaye Şirketleri).</li>
     </ul>
 
     <h4>3. Transit Trade Profits Tax Deductions</h4>
-    <p>The corporate tax deduction rate for earnings generated from transit trade (buying goods from abroad and selling them directly to third countries without entering Turkish customs) is raised to **95%** (and **100%** for participants licensed inside the Istanbul Financial Center) (Article 7). The deduction requires profits to be transferred to Türkiye prior to the corporate tax filing date.</p>
+    <p>The corporate tax deduction rate for earnings generated from transit trade (buying goods from abroad and selling them directly to third countries without entering Turkish customs) is raised to **95%** (and **100%** for participants licensed inside the Istanbul Financial Center). The deduction requires profits to be transferred to Türkiye prior to the corporate tax filing date.</p>
 
     <h4>4. 20-Year Foreign Income Tax Exemption for Non-Residents</h4>
-    <p>To attract high-net-worth investors, family offices, and cross-border executives, the bill introduces a highly competitive tax residency package (Articles 2 & 4):</p>
+    <p>To attract high-net-worth investors, family offices, and cross-border executives, the law introduces a highly competitive tax residency package:</p>
     <ul>
       <li><strong>20-Year Tax Holiday:</strong> Real persons who establish tax residency in Türkiye, provided they had no domicile or tax liability in Türkiye during the last three calendar years preceding their arrival, will have their foreign-sourced earnings and investments **exempt from income tax for 20 years**.</li>
       <li><strong>Inheritance Tax Holiday:</strong> Assets inherited by or transferred to such individuals during this 20-year window will be subject to a symbolic **1% inheritance tax rate**.</li>
     </ul>
 
     <h4>5. Disruptive Structural Incentives for Tech Startups & VC Funding</h4>
-    <p>The bill introduces progressive legal instruments to secure Türkiye's status as a global technology hub (Articles 3 & 11):</p>
+    <p>The law introduces progressive legal instruments to secure Türkiye's status as a global technology hub:</p>
     <ul>
       <li><strong>Employee Stock Option Exemption:</strong> The annual income tax exemption cap for shares or options granted to employees of certified technology startups (Teknogirişim) is doubled from 1 to **2 times the gross annual salary**, and vesting hold periods are shortened to facilitate faster liquidity (ranging between 2 to 6 years).</li>
-      <li><strong>Paya Dönüştürülebilir Borç (Convertible Debt Contracts):</strong> Non-public startups awarded a official *"Techno-startup Badge"* by the Ministry of Industry and Technology will be able to raise seed and venture capital via convertible debt instruments under a simplified conditional capital increase framework, bypassing strict Turkish Commercial Code (TTK) restrictions.</li>
-      <li><strong>Digital Companies Support:</strong> Incubator startups qualified as *"Digital Companies"* will be exempt from chamber registration fees and annual membership dues for up to 3 years, significantly lowering early-stage operational friction.</li>
+      <li><strong>Paya Dönüştürülebilir Borç (Convertible Debt Contracts):</strong> Non-public startups awarded an official *"Techno-startup Badge"* by the Ministry of Industry and Technology will be able to raise seed and venture capital via convertible debt instruments under a simplified conditional capital increase framework, bypassing strict Turkish Commercial Code (TTK) restrictions.</li>
     </ul>
-
-    <h4>6. Extension of Istanbul Financial Center (IFC) Incentives</h4>
-    <p>Tax holidays and fee exemptions targeting financial institutions inside the IFC are extended significantly to ensure long-term visibility (Articles 12 & 13):</p>
+    <p><em>Disclaimer: The law has been formally approved by parliament and is subject to active administrative implementation rules. To analyze the impact of this historic reform on your corporate structure, relocation plans, or investment incentives, schedule a structured Initial Review with our managing partner.</em></p>`
+  },
+  {
+    slug: '9903-decree-new-turkish-investment-incentives-2026-guide',
+    locale: 'en',
+    title: '9903 Decree: New Turkish Investment Incentives 2026 Guide',
+    excerpt: 'Following the repeal of the legacy Decree 2012/3305, the new state incentive structure focuses on Development Hamle programs, Green & Digital transformation, and priority sectors.',
+    category: 'MEVZUAT BRİFİNGİ',
+    date: '2026-05-31',
+    refCode: 'INTEL-EN-YTB-05',
+    author: 'Mentor Group Regulatory & Scoping Division',
+    contentHtml: `<p>To accelerate Türkiye's industrial transition and support high-value production, <strong>Decree No. 9903</strong> has completely re-engineered the national investment incentive architecture. This comprehensive briefing analyzes the core pillars and 2026 thresholds of the new system.</p>
+    
+    <h4>1. Repeal of Legacy 2012 Frameworks</h4>
+    <p>The enactment of Decree No. 9903 formally repeals the long-standing <strong>Decree No. 2012/3305</strong> and the 2018/11201 Attraction Centers program. In addition, the 2012/1 Communiqué has been fully replaced by the 2025/1 Communiqué. Active certificates issued under the older framework are strictly governed by transitional rules for close-out completion visas and YMM audit filings.</p>
+    
+    <h4>2. The Türkiye Century Development Hamle Streams</h4>
+    <p>The spine of the new regime is composed of strategic development programs managed by the Ministry of Industry and Technology:</p>
     <ul>
-      <li><strong>Exemption Extended to 2047:</strong> The 100% corporate tax holiday on financial service export earnings is extended **until the year 2047**.</li>
-      <li><strong>20-Year Harç Waiver:</strong> The exemption from municipal and financial activity fees for IFC participants is extended from 5 to **20 years**.</li>
+      <li><strong>Technology Hamle Program:</strong> Dedicated to medium-high and high-tech manufacturing, R&D commercialization, and software setups. The statutory minimum investment threshold is **125,000,000 TRY**.</li>
+      <li><strong>Regional Development Hamle Program:</strong> Focuses on employment-driven manufacturing and supply-chain clusters in less developed counties.</li>
+      <li><strong>Strategic Hamle Program:</strong> Covers large-scale and high capital-intensive infrastructure and raw material production setups. The statutory threshold is **251,000,000 TRY**.</li>
     </ul>
 
-    <h4>7. Relaxed Public Debt Installments (Deferrals)</h4>
-    <p>To support corporate cash flow under Law No. 6183, the maximum tax deferral installment period is extended from 36 to **72 months**, and the collateral-free deferral threshold is increased from 50,000 TRY to **1 Million TRY** (Article 1).</p>
-    <p><em>To analyze the impact of this historic reform bill on your corporate structure, relocation plans, or investment incentives, schedule a structured Initial Review with our managing partner.</em></p>`
+    <h4>3. Sectoral Priorities & Target Investments</h4>
+    <p>Replacing standard geography-based regional support, the new framework highlights two key priority categories:</p>
+    <ul>
+      <li><strong>Priority Investments:</strong> Defense, aerospace, test laboratories, and high-tech biotech pharmaceuticals receive maximum-level subsidies regardless of location.</li>
+      <li><strong>Target Investments (Green & Digital):</strong> Sustainability-focused setups, digitalization, green transition programs (Statutory threshold: **62,700,000 TRY**), data centers, and advanced logistics.</li>
+    </ul>
+    
+    <h4>4. Guidelines for Corporate Applications</h4>
+    <p>Firms preparing filing dossiers under E-TUYS must satisfy 2026 threshold baselines (**15,100,000 TRY** for Regions 1-2; **7,500,000 TRY** for Regions 3-6) and align their budgets with the 2025/1 Communiqué directives. Mentor Group provides structured liaison services to organize your dossier in full statutory compliance.</p>
+    <p><em>To align your project with the new 9903 incentive architecture, book a structured Initial Review session.</em></p>`
+  },
+  {
+    slug: 'foreign-investors-company-formation-turkiye-2026-minimum-capital',
+    locale: 'en',
+    title: 'Foreign Investors Company Formation in Türkiye: 2026 Minimum Capital',
+    excerpt: 'Detailed guide on the newly increased statutory minimum capital rules, step-by-step tescil procedures, bank onboarding blockages, and kilit personel permits.',
+    category: 'MARKET ENTRY NOTE',
+    date: '2026-05-31',
+    refCode: 'INTEL-EN-CORP-05',
+    author: 'Mentor Group Market Entry Department',
+    contentHtml: `<p>Establishing a commercial presence in Türkiye requires international direct investors to align their capital structures with the latest statutory limits under the Turkish Commercial Code (TCC). This briefing analyzes the minimum capital rules implemented as of 2026 and standard chamber tescil timelines.</p>
+    
+    <h4>1. Statutory Minimum Capital Scales (2026)</h4>
+    <p>Recent amendments to the TCC have significantly scaled up the statutory capitalization baselines:</p>
+    <table class="matrix-table" style="font-size: 0.8rem; margin-bottom: 20px;">
+      <thead>
+        <tr>
+          <th>ENTITY TYPE</th>
+          <th>LEGACY CAPITAL MINIMUM</th>
+          <th>2026 STATUTORY MINIMUM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Limited Liability Company (LLC)</strong></td>
+          <td>10,000 TRY</td>
+          <td><strong>50,000 TRY</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Joint Stock Company (JSC)</strong></td>
+          <td>50,000 TRY</td>
+          <td><strong>250,000 TRY</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Registered-Capital JSC (Non-Public)</strong></td>
+          <td>100,000 TRY</td>
+          <td><strong>500,000 TRY</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Advisory Notice: While these represent the bare legal minimums, foreign-owned vehicles aiming for smooth banking onboarding, executive work permits, and license approvals are advised to tescil with at least 150,000 TRY for LLCs and 500,000 TRY for JSCs to ensure operational credibility.</p>
+    
+    <h4>2. Capital Blockage Regulations</h4>
+    <p>The timing and rules for depositing capital vary by corporate entity type:</p>
+    <ul>
+      <li><strong>Joint Stock Company (JSC):</strong> Prior to executing the Ticaret Sicili registration, the entity must deposit at least 25% of its statutory capital (62,500 TRY for the 250,000 TRY minimum) in a temporary bank blockage account. The remaining 75% must be paid within 24 months post-registration.</li>
+      <li><strong>Limited Liability Company (LLC):</strong> Pre-incorporation capital blockage is not required for LLCs. Shareholders have a statutory window of 24 months post-registration to deposit their taahhüt capital into the corporate bank account.</li>
+    </ul>
+
+    <h4>3. Summary of Setup Steps</h4>
+    <p>The tescil lifecycle incorporates MERSİS by-laws drafting, potential tax ID mapping for foreign shareholders, notarized declarations, chamber registration, and subsequent tax office inspections. Having these steps supervised in coordination with registered legal and accounting partner networks prevents administrative delays.</p>
+    <p><em>To structure your entity setup and capital layout under 2026 rules, book a structured Initial Review.</em></p>`
   }
 ];
-

@@ -3,6 +3,7 @@
 import Layout from '../../layouts/Layout.astro';
 import RouteFinder from '../../components/RouteFinder.astro';
 import AdvisoryAssistant from '../../components/AdvisoryAssistant.astro';
+import ClientLogos from '../../components/ClientLogos.astro';
 
 const pageTitle = "Home";
 const pageDesc = "Structured advisory for investment incentives, company formation, relocation-related coordination, and regulatory processes in Türkiye.";
@@ -21,30 +22,25 @@ const pageDesc = "Structured advisory for investment incentives, company formati
 
         <div class="hero-title-box">
           <span class="sec-number">01. CORPORATE ADVISORY</span>
-          <h1 class="hero-main-title">Board-Level Advisory & Structured Market Entry.</h1>
-          <p class="hero-subtitle">Structured advisory for investment incentives, company formation, relocation-related coordination, and regulatory processes in Türkiye.</p>
+          <h1 class="hero-main-title">Investment, Incentives, Company Formation, and Process Coordination</h1>
+          <p class="hero-subtitle">Structured advisory for international investors and businesses planning investments in Türkiye.</p>
+          
+          <div class="hero-cta-row" style="display: flex; gap: var(--space-md); margin-top: var(--space-md); margin-bottom: var(--space-md); flex-wrap: wrap;">
+            <a href="/en/advisory/" class="btn btn-burgundy">01. Book Initial Review</a>
+            <a href="/en/services/" class="btn btn-secondary" style="border-color: var(--color-text-ink); color: var(--color-text-ink);">02. Explore Service Portfolio</a>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 15px; margin-bottom: 5px; font-style: italic; border-left: 2px solid var(--color-burgundy); padding-left: 10px;">
+            "Mentor Group addresses investment, incentives, company formation, and corporate growth decisions through the integrated lenses of financial resilience, operational efficiency, and strategic alignment."
+          </p>
+          
           <hr class="double-rule" />
         </div>
 
         <!-- The Bifurcated Paths Grid -->
         <div class="ledger-row ledger-row-2col">
-          <!-- Path 1: Turkish Corporates -->
-          <div class="ledger-col ledger-col-split path-column green-path">
-            <span class="sec-number">TÜRKİYE-BASED COMPANIES</span>
-            <h3 class="path-title">Investment Incentive Certification in Türkiye</h3>
-            <p class="path-desc">Structured advisory for local and multinational corporations seeking corporate tax cuts, VAT exemptions, customs duty waivers, and social security premium subsidies.</p>
-            <ul class="path-bullet-list">
-              <li>Sanayi ve Teknoloji Bakanlığı incentive scoping</li>
-              <li>Fiscal feasibility and capital structure alignment</li>
-              <li>Dossier preparation and compliance oversight</li>
-            </ul>
-            <div style="margin-top: auto; padding-top: var(--space-md);">
-              <a href="/en/services/investment-incentives/" class="btn btn-primary w-full">INCENTIVE DOSSIER SPEC</a>
-            </div>
-          </div>
-
-          <!-- Path 2: Foreign Investors -->
-          <div class="ledger-col path-column burgundy-path">
+          <!-- Path 1: International Investors -->
+          <div class="ledger-col ledger-col-split path-column burgundy-path">
             <span class="sec-number">INTERNATIONAL INVESTORS</span>
             <h3 class="path-title">Invest & Relocate to Türkiye Portfolio</h3>
             <p class="path-desc">A structured operational directory for foreign direct investors establishing domestic entities, securing work credentials, and managing commercial land or licenses.</p>
@@ -57,6 +53,21 @@ const pageDesc = "Structured advisory for investment incentives, company formati
               <a href="/en/services/invest-relocate/" class="btn btn-burgundy w-full">INVESTOR ROADMAP</a>
             </div>
           </div>
+
+          <!-- Path 2: Turkish Corporates -->
+          <div class="ledger-col path-column green-path">
+            <span class="sec-number">TÜRKİYE-BASED COMPANIES</span>
+            <h3 class="path-title">Investment Incentive Certification in Türkiye</h3>
+            <p class="path-desc">Structured advisory for local and multinational corporations seeking corporate tax cuts, VAT exemptions, customs duty waivers, and social security premium subsidies.</p>
+            <ul class="path-bullet-list">
+              <li>Sanayi ve Teknoloji Bakanlığı incentive scoping</li>
+              <li>Fiscal feasibility and capital structure alignment</li>
+              <li>Dossier preparation and compliance oversight</li>
+            </ul>
+            <div style="margin-top: auto; padding-top: var(--space-md);">
+              <a href="/en/services/investment-incentives/" class="btn btn-primary w-full">INCENTIVE DOSSIER SPEC</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -67,8 +78,8 @@ const pageDesc = "Structured advisory for investment incentives, company formati
     <div class="ledger-container">
       <div class="section-header-box mb-lg">
         <span class="sec-number">02. REGULATORY SCALING</span>
-        <h2>Strategic Route Finder Protocol</h2>
-        <p class="section-subtitle">Process your project metrics through our automated, multi-tiered screening framework to determine your matching regulatory pathway.</p>
+        <h2>Strategic Route Finder Dossier</h2>
+        <p class="section-subtitle">Answer five structural regulatory questions to determine your appropriate path and preliminary advisory support.</p>
         <hr class="double-rule" style="margin-top: 10px;" />
       </div>
       
@@ -80,31 +91,37 @@ const pageDesc = "Structured advisory for investment incentives, company formati
   <section class="py-xl">
     <div class="ledger-container">
       <div class="section-header-box mb-lg">
-        <span class="sec-number">03. ACTIVE DIRECTORIES</span>
-        <h2>Authorized Advisory Services</h2>
-        <p class="section-subtitle">Mitigating bureaucratic friction and optimizing corporate incentives with total regulatory precision.</p>
+        <span class="sec-number">03. ACTIVE SERVICES</span>
+        <h2>Service Portfolio & Quality Standards</h2>
+        <p class="section-subtitle">We manage bureaucratic lifecycles and incentive regulations with the highest degree of compliance authority.</p>
         <hr class="double-rule" style="margin-top: 10px;" />
       </div>
 
       <div class="ledger-row ledger-row-2col">
         <!-- Service Card 1 -->
         <div class="ledger-col ledger-col-split service-card">
-          <span class="ref-stamp">SERVICE-ID: EN-YTB</span>
-          <h3 class="service-card-title">Investment Incentive Certificates</h3>
-          <p class="service-card-text">Corporate profiling and file structuring to secure VAT exclusions, corporate tax reliefs, interest subsidies, and customs duty exemptions from the Turkish Ministry of Industry and Technology.</p>
-          <a href="/en/services/investment-incentives/" class="btn-link">Review Incentive Framework &rarr;</a>
+          <span class="ref-stamp">SERVICE-ID: EN-INV</span>
+          <h3 class="service-card-title">Global Investors & Entity Setup</h3>
+          <p class="service-card-text">Comprehensive market entry oversight, incorporating 100% foreign-owned corporate setup, bank onboarding, commercial land clearance, and residency coordination with registered partner networks.</p>
+          <a href="/en/services/invest-relocate/" class="btn-link">Explore Relocation Roadmap &rarr;</a>
         </div>
 
         <!-- Service Card 2 -->
         <div class="ledger-col service-card">
-          <span class="ref-stamp">SERVICE-ID: EN-INV</span>
-          <h3 class="service-card-title">Invest & Relocate Directory</h3>
-          <p class="service-card-text">Comprehensive market entry oversight, incorporating 100% foreign-owned corporate setup, bank onboarding, commercial land clearance, and residency coordination with accredited partner networks.</p>
-          <a href="/en/services/invest-relocate/" class="btn-link">Explore Relocation Roadmap &rarr;</a>
+          <span class="ref-stamp">SERVICE-ID: EN-YTB</span>
+          <h3 class="service-card-title">Investment Incentive Certification</h3>
+          <p class="service-card-text">Oversight for regional, priority, and strategic state investment certificate submissions, managing VAT exclusions, customs exemptions, tax deductions, and SGK benefits with the Ministry.</p>
+          <a href="/en/services/investment-incentives/" class="btn-link">Review Incentive Specs &rarr;</a>
         </div>
+      </div>
+
+      <div style="margin-top: 25px; border-left: 2px solid var(--color-burgundy); padding-left: 15px; font-style: italic; font-size: 0.82rem; color: var(--color-text-muted);">
+        * Statutory incentive thresholds and investment classifications are regularly updated in the Knowledge Center.
       </div>
     </div>
   </section>
+
+  <ClientLogos locale="en" />
 
   <!-- 04. METHODOLOGY & TIMELINE -->
   <section class="py-xl" style="background-color: var(--color-bg-card);">

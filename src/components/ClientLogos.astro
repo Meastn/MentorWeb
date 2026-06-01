@@ -1,0 +1,311 @@
+---
+import { clientLogos } from '../data/clientLogos';
+
+interface Props {
+  locale?: 'tr' | 'en';
+}
+
+const { locale = 'tr' } = Astro.props;
+const isEn = locale === 'en';
+
+// Translations
+const title = isEn ? "Selected Corporate Collaborations" : "Hizmet Verilen Kurumlardan Seçmeler";
+const subtitle = isEn 
+  ? "Proven advisory and investment coordination experience across diverse industry sectors." 
+  : "Farklı sektörlerde yatırım, teşvik ve kurumsal danışmanlık süreçlerinde çalışma deneyimi.";
+const ariaLabel = isEn ? "Carousel of selected served corporate clients" : "Hizmet verilen kurumlardan seçmeler kayan bant";
+
+// Only render active logos (enabled: true)
+const activeLogos = clientLogos.filter(logo => logo.enabled);
+
+// Sizing variables for CSS/Layout
+const displayWidth = 240;
+const displayHeight = 90;
+---
+
+<section class="client-logos-section" aria-label={title}>
+  <div class="section-divider"></div>
+  
+  <div class="section-header-container">
+    <h3 class="section-title">{title}</h3>
+    {subtitle && <p class="section-subtitle">{subtitle}</p>}
+  </div>
+
+  <div 
+    class="marquee-container" 
+    id="client-logos-marquee" 
+    tabindex="0"
+    role="region"
+    aria-label={ariaLabel}
+  >
+    <div class="marquee-track" id="client-logos-track">
+      {/* First set of logos */}
+      {activeLogos.map((logo) => (
+        <div class="logo-item" style={`width: ${displayWidth}px; height: ${displayHeight}px;`}>
+          <img 
+            src={logo.src} 
+            alt={logo.alt} 
+            loading="lazy" 
+            draggable="false"
+            width={displayWidth}
+            height={displayHeight}
+          />
+        </div>
+      ))}
+      {/* Second set of logos for seamless infinite looping */}
+      {activeLogos.map((logo) => (
+        <div class="logo-item" aria-hidden="true" style={`width: ${displayWidth}px; height: ${displayHeight}px;`}>
+          <img 
+            src={logo.src} 
+            alt={logo.alt} 
+            loading="lazy" 
+            draggable="false"
+            width={displayWidth}
+            height={displayHeight}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <div class="section-divider"></div>
+</section>
+
+<style>
+  .client-logos-section {
+    padding: var(--space-xl) 0;
+    background: transparent;
+    overflow: hidden;
+  }
+  
+  .section-divider {
+    height: 1px;
+    background-color: var(--color-line-muted);
+    opacity: 0.3;
+    margin: 0;
+  }
+
+  .section-header-container {
+    max-width: 1200px;
+    margin: 0 auto var(--space-md);
+    padding: 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-text-ink);
+    letter-spacing: 0.04em;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+  }
+
+  .section-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    letter-spacing: 0.01em;
+    font-style: italic;
+  }
+
+  .marquee-container {
+    overflow-x: hidden; /* Hide scrollbars, interactive javascript handles swiping */
+    width: 100%;
+    position: relative;
+    cursor: grab;
+    padding: var(--space-md) 0;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .marquee-container:focus-visible {
+    outline: 1px solid var(--color-primary-green);
+    outline-offset: 4px;
+  }
+
+  .marquee-container:active {
+    cursor: grabbing;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: scroll-position;
+  }
+
+  .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.55);
+    opacity: 0.85;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  /* Keyboard focus and hover highlights */
+  .marquee-container:focus-within .logo-item img,
+  .marquee-container:hover .logo-item img {
+    opacity: 0.92;
+  }
+
+  .logo-item img:hover {
+    filter: grayscale(0%) brightness(1) !important;
+    opacity: 1 !important;
+  }
+
+  /* Support accessibility standard for motion reduction */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-container {
+      overflow-x: auto;
+      cursor: auto;
+    }
+  }
+</style>
+
+<script>
+  // High-performance requestAnimationFrame client marquee engine with pointer drag and touch swipe support
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('client-logos-marquee');
+    const track = document.getElementById('client-logos-track');
+    
+    if (!container || !track) return;
+    
+    // Check user preference for reduced motion
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let reducedMotion = reducedMotionQuery.matches;
+    reducedMotionQuery.addEventListener('change', (e) => {
+      reducedMotion = e.matches;
+      if (reducedMotion) {
+        container.style.overflowX = 'auto';
+      } else {
+        container.style.overflowX = 'hidden';
+      }
+    });
+
+    if (reducedMotion) {
+      container.style.overflowX = 'auto';
+      return; // Skip animation entirely if motion is reduced
+    }
+
+    let isDragging = false;
+    let isHovered = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let halfWidth = track.scrollWidth / 2;
+    let scrollPos = 0;
+    const speed = 0.4; // Soft, premium and slow flowing speed (pixels per frame)
+
+    // Calculate dimensions
+    const updateHalfWidth = () => {
+      halfWidth = track.scrollWidth / 2;
+    };
+
+    // Initialize layout calculations
+    updateHalfWidth();
+    
+    // Recalculate on image load and window resize
+    window.addEventListener('load', updateHalfWidth);
+    window.addEventListener('resize', updateHalfWidth);
+
+    // Auto-scrolling tick via requestAnimationFrame
+    const tick = () => {
+      if (!isDragging && !isHovered && !reducedMotion) {
+        scrollPos += speed;
+        
+        // Loop seamlessly
+        if (scrollPos >= halfWidth) {
+          scrollPos -= halfWidth;
+        } else if (scrollPos <= 0) {
+          scrollPos += halfWidth;
+        }
+        
+        container.scrollLeft = scrollPos;
+      }
+      requestAnimationFrame(tick);
+    };
+
+    // Listen for hover
+    container.addEventListener('mouseenter', () => {
+      isHovered = true;
+    });
+    
+    container.addEventListener('mouseleave', () => {
+      isHovered = false;
+      if (!isDragging) {
+        scrollPos = container.scrollLeft; // Sync back position on leave
+      }
+    });
+
+    // Unified Pointer Events (handles both Mouse drag and Touch swipe in one block!)
+    container.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      startScrollLeft = container.scrollLeft;
+      container.setPointerCapture(e.pointerId);
+    });
+
+    container.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      
+      const dx = e.clientX - startX;
+      let newScroll = startScrollLeft - dx;
+      
+      // Infinite horizontal boundary containment during manual drag/swipe
+      if (newScroll >= halfWidth) {
+        newScroll -= halfWidth;
+        startX = e.clientX; // reset anchor to prevent jumps
+        startScrollLeft = newScroll;
+      } else if (newScroll <= 0) {
+        newScroll += halfWidth;
+        startX = e.clientX; // reset anchor to prevent jumps
+        startScrollLeft = newScroll;
+      }
+      
+      container.scrollLeft = newScroll;
+      scrollPos = newScroll; // Keep tick synchrony
+    });
+
+    const stopDragging = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      container.releasePointerCapture(e.pointerId);
+      scrollPos = container.scrollLeft; // Synchronize scrolling variable
+    };
+
+    container.addEventListener('pointerup', stopDragging);
+    container.addEventListener('pointercancel', stopDragging);
+    
+    // Keyboard navigation scrolling updates (for accessibility)
+    container.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        scrollPos += 40;
+        if (scrollPos >= halfWidth) scrollPos -= halfWidth;
+        container.scrollLeft = scrollPos;
+        e.preventDefault();
+      } else if (e.key === 'ArrowLeft') {
+        scrollPos -= 40;
+        if (scrollPos <= 0) scrollPos += halfWidth;
+        container.scrollLeft = scrollPos;
+        e.preventDefault();
+      }
+    });
+
+    // Start composition scroll loop
+    requestAnimationFrame(tick);
+  });
+</script>

@@ -1,5 +1,5 @@
 ---
-/* REF: MG-2026-ASTRO-ROUTEFINDER-01 */
+/* REF: MG-2026-ASTRO-ROUTEFINDER-02 */
 
 interface Props {
   locale?: 'tr' | 'en';
@@ -10,29 +10,41 @@ const isEn = locale === 'en';
 
 const translations = {
   sectionTitle: isEn ? 'ROUTE FINDER DOSSIER' : 'YOL HARİTASI TESPİT DOSYASI',
-  refStamp: isEn ? 'FORM-REF: RD-2026-EN-09' : 'FORM-REF: YD-2026-TR-09',
+  refStamp: isEn ? 'FORM-REF: RD-2026-EN-10' : 'FORM-REF: YD-2026-TR-10',
   introduction: isEn 
-    ? 'Answer three structural questions to determine your appropriate regulatory path and matching advisory support scope.'
-    : 'Yatırımınızın hukuki, mali ve teşviksel kapsamını belirlemek için aşağıdaki üç yapısal soruyu yanıtlayınız.',
+    ? 'Answer five structural regulatory questions to determine your appropriate path and preliminary advisory support.'
+    : 'Yatırımınızın hukuki, mali ve teşviksel kapsamını belirlemek için aşağıdaki beş yapısal soruyu yanıtlayınız.',
   
-  step1Title: isEn ? '01. Primary Objective / Ana İşlem Amacı' : '01. Birincil Faaliyet Hedefi / Ana İşlem Amacı',
+  step1Title: isEn ? '01. Target Location & Incentive Region / Yatırım Bölgesi' : '01. Yatırım İli / Bölgesi Nedir?',
   step1Options: [
-    { value: 'incentives', label: isEn ? 'Investment Incentives & Government Supports in Türkiye' : 'Yatırım Teşvik Belgeleri ve Devlet Destekleri Başvuruları' },
-    { value: 'relocate', label: isEn ? 'Market Entry, Company Formation & Relocation to Türkiye' : 'Türkiye’ye Giriş, Şirket Kuruluşu ve Yerleşim Koordinasyonu' }
+    { value: 'region_1_2', label: isEn ? 'Region 1 & 2 (e.g. Istanbul, Ankara, Izmir, Kocaeli, Bursa, Antalya)' : '1. ve 2. Bölge (Örn: İstanbul, Ankara, İzmir, Kocaeli, Bursa, Antalya...)' },
+    { value: 'region_3_4', label: isEn ? 'Region 3 & 4 (e.g. Adana, Trabzon, Manisa, Gaziantep, Konya, Samsun)' : '3. ve 4. Bölge (Örn: Adana, Trabzon, Manisa, Gaziantep, Konya, Samsun...)' },
+    { value: 'region_5_6', label: isEn ? 'Region 5 & 6 (e.g. Sanliurfa, Diyarbakir, Van, Kars, Kahramanmaras, Bingol)' : '5. ve 6. Bölge (Örn: Şanlıurfa, Diyarbakır, Van, Kars, Kahramanmaraş, Bingöl...)' }
   ],
 
-  step2Title: isEn ? '02. Investment Range / Planlanan Yatırım Hacmi' : '02. Tahmini Yatırım Bütçesi / Planlanan Yatırım Hacmi',
+  step2Title: isEn ? '02. Investment Volume & Statutory Thresholds / Yatırım Tutarı' : '02. Yatırım Tutarı Yasal Limitlerin Üzerinde mi?',
   step2Options: [
-    { value: 'small', label: isEn ? 'Under €150,000 / 5,000,000 TRY' : '5.000.000 TL / 150.000 € Altı' },
-    { value: 'medium', label: isEn ? '€150,000 - €1,500,000 / 5,000,000 - 50,000,000 TRY' : '5.000.000 TL - 50.000.000 TL / 150.000 € - 1.500.000 € Arası' },
-    { value: 'large', label: isEn ? 'Over €1,500,000 / 50,000,000 TRY' : '50.000.000 TL / 1.500.000 € Üstü' }
+    { value: 'above_threshold', label: isEn ? 'ABOVE the 2026 minimum threshold (15.1M TRY for Reg 1-2 / 7.5M TRY for Reg 3-6)' : 'EVET, asgari sınırın ÜZERİNDE (1. ve 2. Bölgeler için 15,1 Milyon TL; diğer bölgeler için 7,5 Milyon TL)' },
+    { value: 'below_threshold', label: isEn ? 'BELOW the 2026 minimum threshold (Under 15.1M / 7.5M TRY)' : 'HAYIR, asgari sınırın ALTINDA (15,1 Milyon TL veya 7,5 Milyon TL altı)' }
   ],
 
-  step3Title: isEn ? '03. Operational Timeline / Planlanan Başlangıç' : '03. Operasyonel Takvim / Planlanan Başlangıç',
+  step3Title: isEn ? '03. Investment Sector & Subject / Yatırım Konusu' : '03. Yatırım Konusu Nedir?',
   step3Options: [
-    { value: 'immediate', label: isEn ? 'Immediate execution (0-3 Months)' : 'Derhal / Acil (0-3 Ay İçerisinde)' },
-    { value: 'medium_term', label: isEn ? 'Strategic preparation (3-6 Months)' : 'Hazırlık / Stratejik Planlama (3-6 Ay)' },
-    { value: 'feasibility', label: isEn ? 'Feasibility and scoping stage' : 'Fizibilite / Ön Araştırma Aşaması' }
+    { value: 'eligible_sectors', label: isEn ? 'Manufacturing, High Tech, Energy, Data Center, Green/Digital, Services' : 'İmalat, Yüksek Teknoloji, Enerji, Veri Merkezi, Yeşil/Dijital Dönüşüm veya Hizmet Sektörü' },
+    { value: 'other_sectors', label: isEn ? 'Traditional Agriculture, Real Estate, Local Retail, or Non-eligible sectors' : 'Geleneksel Tarım, Gayrimenkul, Yerel Perakende veya Teşvik Dışı Diğer Sektörler' }
+  ],
+
+  step4Title: isEn ? '04. Project Modification Type / Yatırım Türü' : '04. Yatırımın Türü Nedir?',
+  step4Options: [
+    { value: 'yeni', label: isEn ? 'Greenfield / Complete New Investment' : 'Komple Yeni Yatırım' },
+    { value: 'tevsi', label: isEn ? 'Expansion / Capacity Increase (Tevsi)' : 'Tevsi Yatırımı (Kapasite Artırımı / Genişleme)' },
+    { value: 'modernizasyon', label: isEn ? 'Modernization, Product Diversification, or Integration' : 'Modernizasyon, Ürün Çeşitlendirme veya Entegrasyon/Darboğaz Giderme' }
+  ],
+
+  step5Title: isEn ? '05. Strategic Development Focus / Kalkınma Hamlesi' : '05. Türkiye Yüzyılı Kalkınma Hamlesi Kapsamı',
+  step5Options: [
+    { value: 'hamle_eligible', label: isEn ? 'YES, qualifies as high tech or large scale strategic setup (above 125M / 251M TRY)' : 'EVET, yüksek teknolojili imalat veya büyük ölçekli stratejik yatırım (125 Milyon TL veya 251 Milyon TL üzeri)' },
+    { value: 'hamle_not', label: isEn ? 'NO or Uncertain (We prefer general regional/sectoral incentives)' : 'HAYIR veya BELİRSİZ (Genel bölgesel ve sektörel teşvikler kapsamındayız)' }
   ],
 
   nextBtn: isEn ? 'PROCEED TO NEXT SECTION' : 'SONRAKİ BÖLÜME GEÇ',
@@ -42,22 +54,32 @@ const translations = {
   resultTitle: isEn ? 'PRELIMINARY ADVISORY ASSESSMENT' : 'ÖN DEĞERLENDİRME VE SÜREÇ ÖZETİ',
   resultReset: isEn ? 'RESET ASSESSMENT' : 'ÖN DEĞERLENDİRMEYİ YENİDEN BAŞLAT',
   
-  incentiveRecTitle: isEn ? 'PATHWAY A: INVESTMENT INCENTIVE DEPT' : 'ROTA A: YATIRIM TEŞVİK VE DESTEKLER DANIŞMANLIĞI',
+  incentiveRecTitle: isEn ? 'PATHWAY A: REGIONAL & SECTORAL INVESTMENT INCENTIVES' : 'ROTA A: SEKTÖREL VE BÖLGESEL YATIRIM TEŞVİK BELGESİ',
   incentiveRecDesc: isEn
-    ? 'Based on your response, your project meets the baseline structural requirements for the Turkish State Investment Incentive Certificate (Yatırım Teşvik Belgesi). We recommend exploring our specific Incentive Guide and scheduling the structured Initial Review for dossier formulation.'
-    : 'Yapmış olduğunuz beyana göre, planlanan faaliyetiniz Türkiye Cumhuriyeti Devlet Teşvik ve Yatırım Destekleri (Yatırım Teşvik Belgesi vb.) kapsamıyla eşleşmektedir. Size özel teşvik yönergemizi incelemenizi ve başvuru dosyasının hazırlanması için "İlk Değerlendirme Randevusu" oluşturmanızı tavsiye ederiz.',
+    ? 'Based on your response, your project meets the statutory fixed-capital thresholds under 2026 guidelines (Decree No. 9903). You qualify for VAT exemption, Customs Duty waiver, corporate tax reductions, and SGK premium employer-share support. We recommend booking a structured Initial Review to map your 2025/1 Communiqué filing strategy.'
+    : 'Yapmış olduğunuz beyana göre, planlanan faaliyetiniz 2026 yılı 9903 Sayılı Karar kapsamında Sektörel ve Bölgesel Yatırım Teşvik Belgesi kriterleriyle eşleşmektedir. Yatırımınız için KDV İstisnası, Gümrük Vergisi Muafiyeti, Kurumlar Vergisi İndirimi ve SGK İşveren Hissesi Desteği gibi haklar mevcuttur. Başvuru dosyasının 2025/1 Tebliği standartlarında hazırlanması için uzman kadromuzla "İlk Değerlendirme Randevusu" oluşturmanızı tavsiye ederiz.',
   
-  relocateRecTitle: isEn ? 'PATHWAY B: INVEST & RELOCATE DIRECTORY' : 'ROTA B: YABANCI SERMAYE YATIRIMI VE YERLEŞİM KOORDİNASYONU',
+  strategicRecTitle: isEn ? 'PATHWAY B: STRATEGIC HAMLE & HIGH-TECH SUBSIDIES' : 'ROTA B: TÜRKİYE YÜZYILI KALKINMA HAMLESİ VE STRATEJİK DESTEKLER',
+  strategicRecDesc: isEn
+    ? 'Your project satisfies high capital density or high-tech parameters, making it an excellent candidate for the strategic "Türkiye Century Development Hamle" (Technology Hamle / Strategic Hamle) frameworks. Subsidies can exceed 125,000,000 TRY or 251,000,000 TRY and offer direct state grants. We advise scheduling an Initial Review for comprehensive ministry-level scoping.'
+    : 'Projeniz, yüksek sermaye yoğunluğu veya yüksek teknolojik katma değeri sayesinde Türkiye Yüzyılı Kalkınma Hamlesi (Teknoloji Hamlesi / Stratejik Hamle) kapsamında değerlendirilmeye son derece uygundur. Bu kapsamdaki yatırımlar (125.000.000 TL ve 251.000.000 TL üzeri) çok özel ve yüksek oranlı muafiyetler ile devlet hibelerine hak kazanabilir. Dosyanızın resmen scoping analizi için başmüşavirimiz nezdinde "İlk Değerlendirme Randevusu" almanızı öneririz.',
+
+  relocateRecTitle: isEn ? 'PATHWAY C: FOREIGN CAPITAL SETUP & COMPANY FORMATION' : 'ROTA C: YABANCI SERMAYE YATIRIMI VE ŞİRKET KURULUŞU',
   relocateRecDesc: isEn
-    ? 'Your file requires specialized commercial setup, tax coordination, and regulatory clearance in Türkiye. Our directory provides structured oversight for market entry, company formation, administrative Relocation clearance, and legal partner coordination.'
-    : 'Dosyanız, Türkiye pazarında şirket kurulumu, vergilendirme planlaması, yerleşim/faaliyet izinleri ve akredite yerel ortakların eşgüdümünü gerektirmektedir. Mentor Group, pazar girişinizi koordine etmek üzere özel yol haritaları sunar. Başlamadan önce kapsamlı bir "İlk Değerlendirme Randevusu" almanızı öneririz.',
+    ? 'Your file requires specialized corporate structure setup in Türkiye (under TCC 2026 capital guidelines: 50,000 TRY for LLC / 250,000 TRY for JSC / 500,000 TRY for registered setups). We organize full market entry, bank onboarding, and legal compliance coordination in coordination with our registered partner networks. Book an Initial Review to secure your roadmap.'
+    : 'Yatırımınız, Türkiye pazarında şirket kurulumu (50.000 TL Limited / 250.000 TL Anonim asgari sermaye limitleri), yerleşim/faaliyet izinleri ve idari süreç koordinasyonunu gerektirmektedir. Mentor Group, pazar girişinizi koordine etmek üzere kayıtlı hukuk ve mali müşavirlik partnerlerimizle birlikte özel bir yol haritası sunar. Başlamak için "İlk Değerlendirme Randevusu" alabilirsiniz.',
+
+  belowRecTitle: isEn ? 'ADVISORY NOTICE: 2026 INVESTMENT THRESHOLD LIMITATIONS' : 'BİLGİLENDİRME: 2026 ASGARİ YATIRIM EŞİĞİ VE ALTERNATİF DESTEKLER',
+  belowRecDesc: isEn
+    ? 'Your planned investment is below the statutory 2026 general thresholds (15,100,000 TRY for Regions 1-2; 7,500,000 TRY for Regions 3-6). General YTB certificate tescil is unavailable. However, you can explore the 3,800,000 TRY leasing machinery track, KOSGEB regional programs, or TÜBİTAK R&D grants. Book an Initial Review to map these alternative micro-grants.'
+    : 'Planlanan yatırım bütçeniz 2026 yılı yasal asgari sınırlarının (1. ve 2. bölgelerde 15.100.000 TL; diğer bölgelerde 7.500.000 TL) altında görünmektedir. Bu bütçe düzeyiyle genel veya bölgesel Yatırım Teşvik Belgesi (YTB) tescili mümkün değildir. Ancak, 3.800.000 TL leasing sınırı, KOSGEB destekleri, TÜBİTAK Ar-Ge hibeleri veya alternatif mikro-destek modelleri değerlendirilebilir. Yol haritanızı bu alternatiflere göre şekillendirmek için "İlk Değerlendirme Randevusu" alabilirsiniz.',
 
   readGuideBtn: isEn ? 'VIEW DETAILED SERVICE GUIDE' : 'HİZMET YOL HARİTASINI İNCELE',
-  bookAdvisoryBtn: isEn ? 'BOOK INITIAL REVIEW (€150)' : 'İLK DEĞERLENDİRME RANDEVUSU AL (150 €)',
+  bookAdvisoryBtn: isEn ? 'BOOK INITIAL REVIEW' : 'İLK DEĞERLENDİRME RANDEVUSU AL',
   
   termsNotice: isEn 
     ? 'This tool provides automated preliminary routing based on standard criteria and does not constitute a formal binding legal, tax, or investment guarantee.'
-    : 'Bu tespit aracı, standart kriterlere göre otomatik ön sevk sağlamakta olup hiçbir şekilde resmi hukuki, mali ya da vergi garantisi veya kesin onay taahhüdü teşkil etmez.'
+    : 'Bu tespit aracı, standart kriterlere göre otomatik ön yönlendirme sağlamakta olup hiçbir şekilde resmi hukuki, mali ya da vergi garantisi veya kesin onay taahhüdü teşkil etmez.'
 };
 ---
 
@@ -68,7 +90,7 @@ const translations = {
   </div>
 
   <div class="card-body">
-    <!-- Intro Stage -->
+    <!-- Step 1 -->
     <div class="step-panel active" data-step="1">
       <p class="step-intro">{translations.introduction}</p>
       
@@ -76,7 +98,7 @@ const translations = {
       <div class="radio-grid">
         {translations.step1Options.map((opt, i) => (
           <label class="radio-box">
-            <input type="radio" name="objective" value={opt.value} checked={i === 0} class="radio-input" />
+            <input type="radio" name="location" value={opt.value} checked={i === 0} class="radio-input" />
             <span class="radio-custom"></span>
             <span class="radio-label">{opt.label}</span>
           </label>
@@ -94,7 +116,7 @@ const translations = {
       <div class="radio-grid">
         {translations.step2Options.map((opt, i) => (
           <label class="radio-box">
-            <input type="radio" name="budget" value={opt.value} checked={i === 1} class="radio-input" />
+            <input type="radio" name="budget" value={opt.value} checked={i === 0} class="radio-input" />
             <span class="radio-custom"></span>
             <span class="radio-label">{opt.label}</span>
           </label>
@@ -113,7 +135,45 @@ const translations = {
       <div class="radio-grid">
         {translations.step3Options.map((opt, i) => (
           <label class="radio-box">
-            <input type="radio" name="timeline" value={opt.value} checked={i === 0} class="radio-input" />
+            <input type="radio" name="sector" value={opt.value} checked={i === 0} class="radio-input" />
+            <span class="radio-custom"></span>
+            <span class="radio-label">{opt.label}</span>
+          </label>
+        ))}
+      </div>
+      
+      <div class="step-actions">
+        <button type="button" class="btn btn-secondary prev-step-btn">{translations.prevBtn}</button>
+        <button type="button" class="btn btn-primary next-step-btn">{translations.nextBtn}</button>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-panel" data-step="4">
+      <h4 class="step-question">{translations.step4Title}</h4>
+      <div class="radio-grid">
+        {translations.step4Options.map((opt, i) => (
+          <label class="radio-box">
+            <input type="radio" name="type" value={opt.value} checked={i === 0} class="radio-input" />
+            <span class="radio-custom"></span>
+            <span class="radio-label">{opt.label}</span>
+          </label>
+        ))}
+      </div>
+      
+      <div class="step-actions">
+        <button type="button" class="btn btn-secondary prev-step-btn">{translations.prevBtn}</button>
+        <button type="button" class="btn btn-primary next-step-btn">{translations.nextBtn}</button>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-panel" data-step="5">
+      <h4 class="step-question">{translations.step5Title}</h4>
+      <div class="radio-grid">
+        {translations.step5Options.map((opt, i) => (
+          <label class="radio-box">
+            <input type="radio" name="hamle" value={opt.value} checked={i === 1} class="radio-input" />
             <span class="radio-custom"></span>
             <span class="radio-label">{opt.label}</span>
           </label>
@@ -133,9 +193,18 @@ const translations = {
       <div class="double-rule" style="margin: 15px 0;"></div>
       
       <!-- Dynamic Outcomes -->
-      <div class="outcome-box incentives-outcome active">
+      <div class="outcome-box incentives-outcome">
         <h4 class="outcome-header">{translations.incentiveRecTitle}</h4>
         <p class="outcome-text">{translations.incentiveRecDesc}</p>
+        <div class="outcome-actions">
+          <a href={`${isEn ? '/en' : '/tr'}/services/investment-incentives/`} class="btn btn-secondary">{translations.readGuideBtn}</a>
+          <a href={`${isEn ? '/en' : '/tr'}/advisory/`} class="btn btn-primary">{translations.bookAdvisoryBtn}</a>
+        </div>
+      </div>
+
+      <div class="outcome-box strategic-outcome">
+        <h4 class="outcome-header">{translations.strategicRecTitle}</h4>
+        <p class="outcome-text">{translations.strategicRecDesc}</p>
         <div class="outcome-actions">
           <a href={`${isEn ? '/en' : '/tr'}/services/investment-incentives/`} class="btn btn-secondary">{translations.readGuideBtn}</a>
           <a href={`${isEn ? '/en' : '/tr'}/advisory/`} class="btn btn-primary">{translations.bookAdvisoryBtn}</a>
@@ -147,6 +216,15 @@ const translations = {
         <p class="outcome-text">{translations.relocateRecDesc}</p>
         <div class="outcome-actions">
           <a href={`${isEn ? '/en' : '/tr'}/services/invest-relocate/`} class="btn btn-secondary">{translations.readGuideBtn}</a>
+          <a href={`${isEn ? '/en' : '/tr'}/advisory/`} class="btn btn-primary">{translations.bookAdvisoryBtn}</a>
+        </div>
+      </div>
+
+      <div class="outcome-box below-outcome">
+        <h4 class="outcome-header">{translations.belowRecTitle}</h4>
+        <p class="outcome-text">{translations.belowRecDesc}</p>
+        <div class="outcome-actions">
+          <a href={`${isEn ? '/en' : '/tr'}/services/investment-incentives/`} class="btn btn-secondary">{translations.readGuideBtn}</a>
           <a href={`${isEn ? '/en' : '/tr'}/advisory/`} class="btn btn-primary">{translations.bookAdvisoryBtn}</a>
         </div>
       </div>
@@ -379,19 +457,35 @@ const translations = {
     if (evalBtn) {
       evalBtn.addEventListener('click', () => {
         // Collect choices
-        const objInput = routeFinder.querySelector('input[name="objective"]:checked') as HTMLInputElement;
-        const objective = objInput ? objInput.value : 'incentives';
+        const budgetInput = routeFinder.querySelector('input[name="budget"]:checked') as HTMLInputElement;
+        const budget = budgetInput ? budgetInput.value : 'above_threshold';
+
+        const sectorInput = routeFinder.querySelector('input[name="sector"]:checked') as HTMLInputElement;
+        const sector = sectorInput ? sectorInput.value : 'eligible_sectors';
+
+        const hamleInput = routeFinder.querySelector('input[name="hamle"]:checked') as HTMLInputElement;
+        const hamle = hamleInput ? hamleInput.value : 'hamle_not';
 
         // Select correct report box
         const incentivesOutcome = routeFinder.querySelector('.incentives-outcome');
+        const strategicOutcome = routeFinder.querySelector('.strategic-outcome');
         const relocateOutcome = routeFinder.querySelector('.relocate-outcome');
+        const belowOutcome = routeFinder.querySelector('.below-outcome');
 
-        if (objective === 'incentives') {
-          incentivesOutcome?.classList.add('active');
-          relocateOutcome?.classList.remove('active');
-        } else {
-          incentivesOutcome?.classList.remove('active');
+        // Hide all first
+        incentivesOutcome?.classList.remove('active');
+        strategicOutcome?.classList.remove('active');
+        relocateOutcome?.classList.remove('active');
+        belowOutcome?.classList.remove('active');
+
+        if (budget === 'below_threshold') {
+          belowOutcome?.classList.add('active');
+        } else if (sector === 'other_sectors') {
           relocateOutcome?.classList.add('active');
+        } else if (hamle === 'hamle_eligible') {
+          strategicOutcome?.classList.add('active');
+        } else {
+          incentivesOutcome?.classList.add('active');
         }
 
         // Navigate to result panel

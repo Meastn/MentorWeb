@@ -23,14 +23,14 @@ if (!oppositeUrl.endsWith('/')) {
 
 const navItems = isEn 
   ? [
-      { num: '01', label: 'Investment Incentives', href: `${baseRoute}/services/investment-incentives/` },
-      { num: '02', label: 'Invest & Relocate', href: `${baseRoute}/services/invest-relocate/` },
+      { num: '01', label: 'YTB & Incentives', href: `${baseRoute}/services/investment-incentives/` },
+      { num: '02', label: 'Global Investors', href: `${baseRoute}/services/invest-relocate/` },
       { num: '03', label: 'Corporate', href: `${baseRoute}/about/` },
       { num: '04', label: 'Insights', href: `${baseRoute}/insights/` }
     ]
   : [
-      { num: '01', label: 'Yatırım Teşvikleri', href: `${baseRoute}/services/investment-incentives/` },
-      { num: '02', label: 'Yatırım & Yerleşim', href: `${baseRoute}/services/invest-relocate/` },
+      { num: '01', label: 'YTB & Teşvikler', href: `${baseRoute}/services/investment-incentives/` },
+      { num: '02', label: 'Yabancı Yatırımcılar', href: `${baseRoute}/services/invest-relocate/` },
       { num: '03', label: 'Kurumsal', href: `${baseRoute}/about/` },
       { num: '04', label: 'Bilgi Merkezi', href: `${baseRoute}/insights/` }
     ];
@@ -43,8 +43,11 @@ const advisoryHref = `${baseRoute}/advisory/`;
   <div class="header-inner">
     <div class="logo-area">
       <a href={`${baseRoute}/`} class="logo-link">
-        <span class="logo-title">MENTOR GROUP</span>
-        <span class="logo-subtitle">BILINGUAL ADVISORY</span>
+        <img 
+          src={locale === 'tr' ? '/images/logo-tr.png' : '/images/logo-en.png'} 
+          alt="Mentor Group" 
+          class="logo-img" 
+        />
       </a>
     </div>
 
@@ -115,35 +118,35 @@ const advisoryHref = `${baseRoute}/advisory/`;
     flex-direction: column;
   }
 
-  .logo-title {
-    font-family: var(--font-serif);
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--color-text-ink);
-    line-height: 1.1;
+  .logo-link {
+    display: flex;
+    align-items: center;
   }
 
-  .logo-subtitle {
-    font-family: var(--font-sans);
-    font-size: 0.625rem;
-    font-weight: 600;
-    color: var(--color-text-muted);
-    letter-spacing: 0.15em;
-    margin-top: 1px;
+  .logo-img {
+    height: 30px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  @media (max-width: 480px) {
+    .logo-img {
+      height: 24px;
+    }
   }
 
   .nav-menu {
     display: flex;
     align-items: center;
-    gap: var(--space-xl);
+    gap: 1.5rem;
   }
 
   .nav-list {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: var(--space-lg);
+    gap: 1.1rem;
   }
 
   .nav-link {
@@ -155,6 +158,7 @@ const advisoryHref = `${baseRoute}/advisory/`;
     color: var(--color-text-ink);
     padding: var(--space-xs) 0;
     position: relative;
+    white-space: nowrap;
   }
 
   .nav-num {
@@ -261,7 +265,7 @@ const advisoryHref = `${baseRoute}/advisory/`;
     transition: var(--transition-fast);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .nav-toggle {
       display: flex;
     }
